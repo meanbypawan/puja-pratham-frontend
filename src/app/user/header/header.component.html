@@ -1,0 +1,94 @@
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a routerLink="" class="logo"><img src="../../../assets/images/logo2.png" alt="">Puja Pratham</a>
+
+    <form class="search-form" id="search" #search>
+        <!--  -->
+        <input  name="a" placeholder="search here..."
+            id="search-box" (keyup)="searchProduct($event)">
+        <a><label for="search-box" class="fas fa-search"></label></a>
+    </form>
+
+    <div class="icons">
+        <!-- (click)="navLinks(nav)"
+        (click)="searchBtn(search)"
+    (click)="showCart(cart)" 
+            (click)="showLogin(login)"-->
+            <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
+        <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
+       
+        <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)" ></div>
+        <div id="login-btn" class="fas fa-user"(click)="showLogin(login)" ></div>
+
+    </div>
+
+</header>
+
+<!-- header section ends  -->
+
+<div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
+
+<nav class="navbar-main" id="nav" #nav>
+    <a routerLink="" (click)="closeBar()">home</a>
+    <a routerLink="/shop" (click)="closeBar()">shop</a>
+    <a routerLink="/audio-video" (click)="closeBar()">Audio/Videos</a>
+    <a routerLink="/about" (click)="closeBar()">about</a>
+    <a routerLink="/contact" (click)="closeBar()">contact</a>
+</nav>
+
+<div class="shopping-cart" id="cart" #cart>
+    <div *ngIf="userIsLoggedIn(); else cartElse">
+        <div class="box" *ngFor="let pro of cartList">
+            <i class="fas fa-times" (click)="removeFormCart(pro._id)"></i>
+            <img src="{{pro.image}}" alt="">
+            <div class="content">
+                <h3>{{pro.name}}</h3>
+                <span class="price"> {{pro.price}}</span>
+            </div>
+        </div>
+        <div *ngIf="checkCart(); else cartMessage">
+        <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
+
+        <a (click)="checkout()" (click)="closeBar()" class="btn">checkout cart</a>
+    </div>
+        <ng-template #cartMessage>
+            <h1>No Items added to the Cart</h1>
+        </ng-template>
+    </div>
+</div>
+
+<ng-template #cartElse>
+    <h1>Please Login First</h1>
+</ng-template>
+
+<!-- login form  -->
+<div class="login-form" id="login" #login>
+    <form action="" *ngIf="!userIsLoggedIn(); else elseBlock">
+        <h3>login form</h3>
+        <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
+        <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
+        <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
+        <p>login as user with :<a href="#" (click)="socialLogin()">Google</a></p>
+        <input type="submit" value="login as pandit ji" class="btn" (click)="loginAsPandit()">
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have an account? <a routerLink="signup">create now</a></p>
+        <p>Register As Priest :<a routerLink="/register-priest"> Register</a></p>
+    </form>
+</div>
+
+<ng-template #elseBlock>
+    <div class="box">
+        <div class="dash">
+            <h3>user profile</h3>
+            <img src="{{userProfile.image}}" alt="">
+            <p>{{userProfile.name}}</p>
+            <p><a href="#">Edit Profile</a></p>
+            <p><a href="#">Order history</a></p>
+            <p><a href="#">Remove account</a></p>
+            <p><a href="#">Help</a></p>
+            <input type="submit" value="sign out" class="btn" (click)="signout()">
+        </div>
+    </div>
+</ng-template>

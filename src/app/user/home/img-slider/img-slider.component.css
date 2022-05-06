@@ -1,0 +1,244 @@
+.heading h3 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+section {
+  padding: 3rem 9%;
+  /* position: relative; */
+}
+
+.heading p {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.heading p span {
+  color: yellow;
+}
+
+.heading p a {
+  color: #fff;
+}
+
+.heading p a:hover {
+  color: yellow;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem;
+  border-bottom: 0.1rem solid #ffa047;
+  padding-bottom: 1.5rem;
+}
+
+.title span {
+  font-size: 2.5rem;
+  color: #ffa047;
+}
+
+.title a {
+  font-size: 1.5rem;
+  color: #779;
+}
+
+.title a:hover {
+  color: #ffa047;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  background: #ffa047;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fdb068;
+}
+
+.header {
+  padding: 2rem 9%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #faf6f2f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: #fd860e;
+  font-weight: bolder;
+}
+
+.header .logo img {
+
+  height:80px;
+  width:80px;
+}
+
+.header .search-form {
+  height: 5rem;
+  width: 30rem;
+  border-radius: 5rem;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0.1rem solid #fd860e;
+}
+
+.header .search-form input {
+  height: 100%;
+  width: 100%;
+  padding: 0 1.2rem;
+  font-size: 1.6rem;
+  color: #fd860e;
+  text-transform: none;
+  /* text-decoration: none; */
+  outline: none;
+  border: 0;
+}
+
+.header .search-form label {
+  font-size: 2.2rem;
+  padding-right: 1.7rem;
+  cursor: pointer;
+  color: #fd860e;
+}
+
+.header .search-form label:hover {
+  color: #fd860e;
+}
+
+.header .icons div {
+  margin-left: 2rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fd860e;
+}
+
+.header .icons div:hover {
+  color: rgb(248, 188, 99);
+}
+
+.home {
+  position: relative;
+}
+
+.home .slides-container .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+  display: none;
+}
+
+.home .slides-container .slide.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home .slides-container .slide .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  -webkit-animation: fadeLeft .4s linear .4s backwards;
+          animation: fadeLeft .4s linear .4s backwards;
+}
+
+.home .slides-container .slide .content span {
+  font-size: 2.5rem;
+  color: #779;
+}
+
+.home .slides-container .slide .content h3 {
+  font-size: 6rem;
+  color: #ffa047;
+  padding-top: .5rem;
+}
+
+.home .slides-container .slide .content p {
+  font-size: 1.5rem;
+  color: #779;
+  padding: .5rem 0;
+  line-height: 2;
+}
+ 
+.home .slides-container .slide .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  padding: 3rem 0;
+}
+
+.home .slides-container .slide .image img {
+  width: 100%;
+  -webkit-animation: fadeOut .4s linear;
+          animation: fadeOut .4s linear;
+}
+
+.home #slide-next,
+.home #slide-prev {
+  position: absolute;
+  top: 72%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 3rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #ffa047;
+  text-align: center;
+  background: #fff;
+  cursor: pointer;
+}
+
+.home #slide-next:hover,
+.home #slide-prev:hover {
+  background: #ffa047;
+  color: #fff;
+}
+
+.home #slide-next {
+  right: 2rem;
+}
+
+.home #slide-prev {
+  left: 2rem;
+}

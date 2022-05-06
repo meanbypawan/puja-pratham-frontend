@@ -1,0 +1,35 @@
+<!-- banner section starts  -->
+<div>
+    <section class="title-heading">
+        <span>Popular Packages</span>
+    </section>
+    <section class="banner-container">   
+        <div class="banner" *ngFor=" let  package of packageList|slice:0:6">
+                        <img src={{package.image}} alt="">
+                <div class="content">
+                    <span>limited offer</span>
+                    <h3>upto 50% off</h3>
+                    <a routerLink="shops/{{package._id}}" class="btn">Shop Now</a>
+                </div>
+        </div>
+    </section>
+    
+    <section class="title-heading">
+        <span>Popular Products</span>
+    </section>
+    <section class="banner-container">
+    
+    
+        <div class="banner" *ngFor="let product of productList | slice:0:6">
+            <img src={{product.image}} alt="">
+            <div class="content">
+                <span>limited offer</span>
+                <h3>upto 50% off</h3>
+                <a routerLink="shops/{{product._id}}" class="btn">Shop Now</a>
+            </div>
+        </div>
+    
+    </section>
+    </div>
+    
+    <!-- banner section ends -->

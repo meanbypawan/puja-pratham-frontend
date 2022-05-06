@@ -1,0 +1,72 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    /* background: #faf6f2f5; */
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, #ffa047, #ffa047, #ffa047, #ffa047); */
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color:  #FF9642;
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+    /* .container{
+        width: 800px;
+        height:auto;
+    } */
+    /* .fulbody{
+        width: 1000px;
+        height: 600px;
+    } */
+    
+   .inputc {
+        /* box-shadow: none */
+        border-bottom: 1px solid;
+    }
+    .btn:hover {
+      background: #fdb068;
+    }
+    .image img:hover{
+        -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    }
+    
+    .form-group input[type="text"].form-control:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+
+    .input ,[type="text"],[type="email"],[type="file"]{
+      /* background-color: aqua; */
+   border: none;
+   border-bottom: 1px solid black;
+   background: transparent;
+   height: 40px;
+   /* color: #fff; */
+   font-size:16px;
+   /* border: 1px solid white; */
+    }
+    .btn {
+      
+      background: #ffa047;
+      color: #fff;
+      cursor: pointer;
+     margin-top: 40px;
+      /* margin-right: 40px; */
+      margin-left: 20px;
+      /* text-align: center; */
+      
+      border-radius: 5px;
+      
+    }
