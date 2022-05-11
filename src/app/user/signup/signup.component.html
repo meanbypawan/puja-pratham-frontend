@@ -33,7 +33,7 @@
                       <div class="form-group" style="font-size: medium;">
                         <i class="fa fa-phone mr-3"></i>
                         <label class="form-label ">Contact No.</label>
-                        <input #Mobile="ngModel" required type="text" class="form-control" [(ngModel)]="mobile"  />
+                        <input #Mobile="ngModel" required type="text" maxlength="10" minlength="10" class="form-control" [(ngModel)]="mobile"  />
                         <span *ngIf="Mobile.errors?.['required'] && Mobile.touched" class="text-danger">Contact is required</span>
                       </div>
                       <div class="form-group" style="font-size:medium;">

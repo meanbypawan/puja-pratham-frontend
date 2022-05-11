@@ -9,80 +9,14 @@
   html::-webkit-scrollbar-thumb {
     background: #ffa047;
   } */
+ 
+ 
   
-  .heading h3 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #fff;
-  }
+
   
-  .heading p {
-    color: #fff;
-    font-size: 2rem;
-  }
-  
-  .heading p span {
-    color: yellow;
-  }
-  
-  .heading p a {
-    color: #fff;
-  }
-  
-  .heading p a:hover {
-    color: yellow;
-  }
-  
-  .title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-bottom: 3rem;
-    border-bottom: 0.1rem solid #ffa047;
-    padding-bottom: 1.5rem;
-  }
-  
-  .title span {
-    font-size: 2.5rem;
-    color: #ffa047;
-  }
-  
-  .title a {
-    font-size: 1.5rem;
-    color: #779;
-  }
-  
-  .title a:hover {
-    color: #ffa047;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .9rem 3rem;
-    font-size: 1.7rem;
-    background: #ffa047;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background: #fdb068;
-  }
-  @-webkit-keyframes rotate {
-    0% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-      opacity: 0;
-    }
-  }  
-.header {
+
+ 
+  .header {
     padding: 2rem 9%;
     position: -webkit-sticky;
     position: sticky;
@@ -111,13 +45,14 @@
   
   .header .logo img {
   
-    height: 100px;
-    width: 100px;
+    height:80px;
+    width:90px;
   }
   
   .header .search-form {
     height: 5rem;
     width: 30rem;
+   
     border-radius: 5rem;
     background: #fff;
     overflow: hidden;
@@ -128,6 +63,8 @@
         -ms-flex-align: center;
             align-items: center;
     border: 0.1rem solid #fd860e;
+    margin-right: 100px;
+  
   }
   
   .header .search-form input {
@@ -137,9 +74,10 @@
     font-size: 1.6rem;
     color: #fd860e;
     text-transform: none;
-    /* text-decoration: none; */
+    text-decoration: none;
     outline: none;
     border: 0;
+   
   }
   
   .header .search-form label {
@@ -147,10 +85,12 @@
     padding-right: 1.7rem;
     cursor: pointer;
     color: #fd860e;
+   
   }
   
   .header .search-form label:hover {
-    color: #fd860e;
+    /* color:#fd860e; */
+    color: rgb(248, 188, 99);
   }
   
   .header .icons div {
@@ -159,6 +99,7 @@
     cursor: pointer;
     color: #fd860e;
   }
+ 
   
   .header .icons div:hover {
     color: rgb(248, 188, 99);
@@ -168,7 +109,31 @@
     display: none;
   }
   
+  @media only screen and (max-width: 900px) {
+    .header .logo {
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .header .logo {
+      font-size: 1.7rem;
+    }
+  }
 
+  @media only screen and (max-width: 300px) {
+    .header .logo {
+      font-size: 1.5rem;
+    }
+
+    .header .icons div{
+      font-size: 1.3rem;
+      margin-left: 1rem;
+    }
+
+  }
+
+
+  /* end */
   
   @keyframes rotate {
     0% {
@@ -380,12 +345,27 @@
     border: 0.1rem solid #ffa047;
     margin: .7rem 0;
   }
-  
+  /* btn:hover {
+    color: #212529;
+} */
   
   .login-form form .btn {
     margin: 1rem 0;
     width: 100%;
     text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    background-color: #fd860e;
+    /* display: inline-block; */
+    padding: 0.9rem 3rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .login-form form .btn:hover{
+    color: black;
+
+    background-color: #ffa047;
   }
   
   .login-form form p {
@@ -468,6 +448,10 @@
   .dash a:hover {
     text-decoration: underline;
   }
+
+  .loginuser{
+    font-size: 100px;
+  }
   
   @media (max-width: 991px) {
     html {
@@ -504,9 +488,10 @@
       border-right: 0;
     }
     .header .search-form .active {
-      top: 5;
+      top: -50;
     }
   }
+
   
   @media (max-width: 450px) {
     html {

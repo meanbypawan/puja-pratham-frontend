@@ -26,5 +26,7 @@ export class UserService {
     let api = "http://localhost:3000/user/resend-otp/"+id;
     return this.http.get(api);
   }
-
+  // forgetPassword(){
+  //   let api = "http://localhost:3000/user/"
+  // }
 }

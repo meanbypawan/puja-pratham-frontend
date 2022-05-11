@@ -1,87 +1,108 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<!-- dsnfvfsdkfvfdsklgbvmdzfkfvmlkmvdkvfbvlksv ldgmflkdsamfdlksmffkdgnfsklavbfkjdnfkfnaskajvnsdldkfsnfdklbv -->
-<nav class="navbar navbar-expand-sm  ">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 2rem;">
-      <li class="nav-item dropdown">
-      <div class="dropdown" >
-            <button class="dropbtn">Occassions</button>
-            <div class="dropdown-content1">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <div class="dropdown-content2">
-                <a href="#">Link 4</a>
-                <a href="#">Link 5</a>
-                <a href="#">Link 6</a>
-              </div>
-          </div>
-        </li>
-          
-        <li class="nav-item dropdown">
-          <div class="dropdown">
-            <button class="dropbtn">Puja Samagri
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-            </button>
-            <div class="dropdown-content3">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <div class="dropdown-content4">
-                <a href="#">Link 4</a>
-                <a href="#">Link 5</a>
-                <a href="#">Link 6</a>
-              </div>
-          </div>
-        </li>
-          
+<nav class="navbar navbar-expand-lg navbar-light " style=" font-size: large; ">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item dropdown">
-          <div class="dropdown">
-            <button class="dropbtn">Photo Frams</button>
-            <div class="dropdown-content5">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Occassions
+          </a>
+
+          <div class="dropdown " >
+            <div class="dropdown-content">
+              <a *ngFor="let pack of package">{{pack.name}}</a>
             </div>
-            <div class="dropdown-content6">
-                <a href="#">Link 4</a>
-                <a href="#">Link 6</a>
-                <a href="#">Link 6</a>
-              </div>
+          </div>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Puja Samagri</a>
+          <div class="dropdown " >
+            <div class="dropdown-content">
+              <a *ngFor="let pro of product">{{pro.name}}</a>
+            </div>
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <div class="dropdown">
-            <button class="dropbtn">Book Priest</button>
-            <div class="dropdown-content7">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <div class="dropdown-content8">
-                <a href="#">Link 4</a>
-                <a href="#">Link 6</a>
-                <a href="#">Link 6</a>
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Photo Frames</a>
+            <div class="dropdown " >
+              <div class="dropdown-content">
+              <a *ngFor="let photo of photoFrames">{{photo.name}}</a>
               </div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Murti</a>
+            <div class="dropdown " >
+              <div class="dropdown-content">
+              <a *ngFor="let murti of murtis">{{murti.name}}</a>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Temples</a>
+            <div class="dropdown " >
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Book Puja
+          </a>
+          <div class="dropdown " >
+            <div class="dropdown-content">
+              <a *ngFor="let puj of puja">{{puj.name}}</a>
+            </div>
           </div>
         </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Puja Vidhi</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Shlok</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Orchestra Booking</a>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color: white;">
+            Book Bhajan Mandli
+          </a>
+          <div class="dropdown " >
+            <div class="dropdown-content">
+              <a *ngFor="let orches of orchestra">{{orches.name}}</a>
+            </div>
+          </div>
+        </li>
 
-    </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
+            style="color:white;">
+            Media 
+          </a>
+          <div class="dropdown " >
+            <div class="dropdown-content">
+              <a *ngFor="let media of mediaCategories">{{media.name}}</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-  </nav>
+</nav>

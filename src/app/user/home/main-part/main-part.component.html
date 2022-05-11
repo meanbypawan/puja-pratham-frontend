@@ -1,35 +1,111 @@
-<!-- banner section starts  -->
-<div>
-    <section class="title-heading">
-        <span>Popular Packages</span>
-    </section>
-    <section class="banner-container">   
-        <div class="banner" *ngFor=" let  package of packageList|slice:0:6">
-                        <img src={{package.image}} alt="">
-                <div class="content">
-                    <span>limited offer</span>
-                    <h3>upto 50% off</h3>
-                    <a routerLink="shops/{{package._id}}" class="btn">Shop Now</a>
+<!-- <p>product-packages works!</p> -->
+<section class="section-products">
+        <div class="container">
+                <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+
+                                        <!-- <h3>Featured Product</h3> -->
+                                        <span>Popular Packages</span>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <!-- Single Product -->
+                        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let package of packageList | slice:0:4">
+                                <div id="product-1" class="single-product" >
+                                        <div class="image">
+                                                <img src="{{package.image}}" alt="">
+                                        </div>
+                                        <div class="part-2">
+                                                <h4 class="product-title mt-4">{{package.name}}</h4>
+                                                <!-- <h4 class="product-old-price">$79.99</h4> -->
+                                                <!-- <h4 class="product-price">$49.99</h4> -->
+                                                <button class="btn " type="submit">Shop now</button>
+                                        </div>
+                                </div>
+                        </div>
+
+
                 </div>
         </div>
-    </section>
-    
-    <section class="title-heading">
-        <span>Popular Products</span>
-    </section>
-    <section class="banner-container">
-    
-    
-        <div class="banner" *ngFor="let product of productList | slice:0:6">
-            <img src={{product.image}} alt="">
-            <div class="content">
-                <span>limited offer</span>
-                <h3>upto 50% off</h3>
-                <a routerLink="shops/{{product._id}}" class="btn">Shop Now</a>
-            </div>
+        <!-- </section> -->
+        <!-- <section class="section-products"> -->
+        <div class="container">
+                <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <br>
+                                        <!-- <h3>Featured Product</h3> -->
+                                        <span>Popular Products</span>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <!-- Single Product -->
+                        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of productList | slice:0:4">
+                                <div id="product-9" class="single-product">
+                                        <div class="image">
+                                                <img src="{{product.image}}" alt="">
+                                                <!-- <h2>Shop Now</h2> -->
+                                                <!-- <ul>
+                                                     <h2>Shop Now</h2>
+                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                                </ul> -->
+                                        </div>
+                                        <div class="part-2">
+                                                <h4 class="product-title mt-4">{{product.name}}</h4>
+                                                <!-- <h4 class="product-old-price">$79.99</h4> -->
+                                                <!-- <h4 class="product-price">$49.99</h4> -->
+                                                <button class="btn " type="submit">Shop now</button>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
         </div>
-    
-    </section>
-    </div>
-    
-    <!-- banner section ends -->
+        <!-- </section> -->
+        <!-- <section class="section-products"> -->
+        <div class="container">
+                <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <br>
+                                        <!-- <h3>Featured Product</h3> -->
+                                        <span>Audio/Vedio</span>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <!-- Single Product -->
+                        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let media of mediaList | slice:0:4">
+                                <div id="product-17" class="single-product">
+                                        <div class="image">
+                                                <img src="{{media.image}}" alt="">
+
+                                                <!-- <h2>Shop Now</h2> -->
+                                                <!-- <ul>
+                                                     <h2>Shop Now</h2>
+                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                                </ul> -->
+                                        </div>
+                                        <div class="part-2">
+                                                <h4 class="product-title mt-4">{{media.name}}</h4>
+                                                <!-- <h4 class="product-old-price">$79.99</h4> -->
+                                                <!-- <h4 class="product-price">$49.99</h4> -->
+                                                <button class="btn " type="submit">Play now</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <!-- </div> -->
+
+</section>
+<!-- </section> -->

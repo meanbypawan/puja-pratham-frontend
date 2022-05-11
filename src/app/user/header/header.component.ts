@@ -99,12 +99,29 @@ export class HeaderComponent implements OnInit {
     search.classList.toggle('active');
   }
 
-  loginAsUser() {
-    this.userService.login(this.email,this.password).subscribe(data => {
-      console.log(data);
-      this.userProfile = data.user;
-      sessionStorage.setItem("user", JSON.stringify(data.user));
+   loginAsUser (){
+    this.userService.login(this.email,this.password).subscribe(async data => {
+      let user = {
+        name:data.user.name,
+        image:data.user.image,
+        id:data.user._id
+      }
+      // console.log(data);
+      this.userProfile = user;
+      sessionStorage.setItem("user", JSON.stringify(user));
       sessionStorage.setItem('token', data.token);
+      let audio1 = new Audio();
+      audio1.src = "../../../assets/audios/login(hindi).mp3";
+      audio1.load();
+      let res = await audio1.play();
+      audio1.onended = ()=>{
+        console.log("Audio end.....");
+        let audio2 = new Audio();
+        audio2.src = "../../../assets/audios/login(english).mp3";
+        audio2.load();
+        audio2.play();
+      }
+      
     });
   }
 
@@ -138,5 +155,9 @@ export class HeaderComponent implements OnInit {
 
   checkout() {
     // this.router.navigate(["place-order"]);
+  }
+
+  forgetPassword(){
+    
   }
 }

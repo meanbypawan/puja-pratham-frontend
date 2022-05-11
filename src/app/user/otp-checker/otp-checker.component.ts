@@ -30,9 +30,12 @@ export class OtpCheckerComponent implements OnInit {
         sessionStorage.setItem("user",JSON.stringify(user));
         this.router.navigate([""]);
       }
+      else{
+        console.log(data);
+      }
     },err=>{
       if(err instanceof HttpErrorResponse){
-        console.log(err);
+        console.log("hello");
       }
     })
   }

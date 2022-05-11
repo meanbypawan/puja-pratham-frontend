@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-main-part',
@@ -9,8 +10,25 @@ export class MainPartComponent implements OnInit {
 
   productList: any[] = [];
   packageList: any[] = [];
+  mediaList:any[] = [];
 
-  constructor() {
+  constructor(private categoryService:CategoryService) {
+    categoryService.view().subscribe(data=>{
+      for(let element of data){
+        if(element.type=="product")
+          this.productList.push(element);
+        else  
+          this.packageList.push(element);
+      }
+    });
+    categoryService.viewMedia().subscribe(data=>{
+      // console.log(data);
+      this.mediaList = data;
+    })
+    // categoryService.viewMedia(data=>{
+    //   console.log(data);
+    // })
+
   }
   ngOnInit(): void {}
 }
