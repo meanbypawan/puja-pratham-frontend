@@ -15,6 +15,13 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
+import { MediaGeneralComponent } from './user/media-general/media-general.component';
+import { MediaSpecificComponent } from './user/media-specific/media-specific.component';
+import { TempleSpecificComponent } from './user/temple-specific/temple-specific.component';
+import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.component';
+import { MediaOneComponent } from './user/media-one/media-one.component';
+import { EventComponent } from './user/event/event.component';
+import { EventOneComponent } from './user/event-one/event-one.component';
 import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
 import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -33,7 +40,13 @@ import { ViewMoreComponent } from './user/view-more/view-more.component';
     SignupComponent,
     DashboardComponent,
     OtpCheckerComponent,
-
+    MediaGeneralComponent,
+    MediaSpecificComponent,
+    TempleSpecificComponent,
+    TemplePujaOneComponent,
+    MediaOneComponent,
+    EventComponent,
+    EventOneComponent
     ShopGeneralComponent,
     ShopGeneralAllComponent,
     ShopSpecificComponent,

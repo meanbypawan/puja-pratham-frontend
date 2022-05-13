@@ -20,38 +20,13 @@
 </div>
 </header>
 
-<!-- header section ends  -->
-<!-- header section starts  -->
-
-<!-- <header class="header">
-
-    <a routerLink="" class="logo"><img src="../../../assets/images/logo2.png" alt="">Puja Pratham</a>
-
-    <form class="search-form" id="search" #search>
-        <input  name="a" placeholder="search here..."
-            id="search-box" (keyup)="searchProduct($event)">
-        <a><label for="search-box" class="fas fa-search"></label></a>
-    </form>
-
-    <div class="icons">
-            <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
-        <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
-       
-        <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)" ></div>
-        <div id="login-btn" class="fas fa-user"(click)="showLogin(login)" ></div>
-
-    </div>
-
-</header> -->
-
-<!-- header section ends  -->
-
 <div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
 
 <nav class="navbar-main" id="nav" #nav>
+
     <a routerLink="" (click)="closeBar()" >home</a>
     <a routerLink="/shop" (click)="closeBar()" routerLink="shop-general">shop</a>
-    <a routerLink="/audio-video" (click)="closeBar()">Audio/Videos</a>
+    <a routerLink="/media" (click)="closeBar()">Audio/Videos</a>
     <a routerLink="/about" (click)="closeBar()">about</a>
     <a routerLink="/contact" (click)="closeBar()">contact</a>
 </nav>
@@ -89,10 +64,8 @@
         <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
         <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
         <p>login as user with :<a href="#" (click)="socialLogin()">Google</a></p>
-        <input type="submit" value="login as pandit ji" class="btn" (click)="loginAsPandit()">
         <p>forget password? <a (click)="forgetPassword()">click here</a></p>
         <p>don't have an account? <a routerLink="signup">create now</a></p>
-        <p>Register As Priest :<a routerLink="/register-priest"> Register</a></p>
     </form>
 </div>
 <!-- <audio src="../../../assets/audios/translate_tts.mp3"></audio> -->

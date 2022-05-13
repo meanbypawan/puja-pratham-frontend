@@ -1,0 +1,25 @@
+<div class="container" style="margin-top:50px;">
+    <div class="row cardimg">
+        <div class="col-md-3">
+            <div class="card-sl">
+                <div class="card-image">
+                    <img
+                        src="{{events.image}}" alt=>
+                </div>
+                <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+                <div class="card-heading">
+                  <h4>{{events.name}}</h4>                                 
+                    <h6>Up to 10% Discount</h6>
+                    <h5 for="">Price :  <del style="color:red;">  ₹{{events.price}} </del><span id="first" style="color: green;">{{events.price}}</span></h5><br>                <div class="icon">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                  </div>
+                  <a routerLink="/event-one/{{events._id}}" class="card-button">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

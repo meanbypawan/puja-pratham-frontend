@@ -1,0 +1,154 @@
+/* Basic Styling */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+   
+   .container {
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+  } 
+
+.left-column {
+    width: 55%;
+    /* position: relative; */
+  }
+   
+  .right-column {
+    width: 45%;
+  }
+
+  /* Left Column */
+.left-column img {
+    width: 80%;
+    opacity: 1;
+    transition: all 0.3s ease;
+    height: 450px;
+    border:1px solid coral;
+  }
+/* Product Description */
+.product-description {
+  }
+  .product-description span {
+    font-size: 20px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 5px;
+  }
+  .product-description h1 {
+    /* font-weight: 300; */
+    font-size: 45px;
+    color:#43484D;
+    letter-spacing: 1px;
+    margin-top: px;
+  }
+  .product-description  h2 {
+    /* font-weight: 300; */
+    font-size: 30px;
+    
+    color:orange;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  .product-description  h2 a{
+    /* font-weight: 300; */
+    font-size: 30px;
+    
+    color:black;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+    line-height: 24px;
+  }
+
+  .comment {
+    border-bottom: 2px solid #E1E8EE;
+    border-top: 2px solid #E1E8EE;
+    /* margin-bottom: 20px; */
+    text-align: center;
+    /* margin-top: 20px; */
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+/* Product Price */
+.product-price {
+    display: flex;
+    align-items: center;
+  }
+   
+  .product-price span {
+    font-size: 25px;
+    font-weight: 300;
+    color: #43474D;
+    margin-right: 20px;
+  }
+
+/* Responsive */
+@media (max-width: 915px) {
+    .container {
+    }
+   
+    
+    .right-column {
+      width: 50%;
+      /* margin-left: 375px; */
+      margin-top: 0px;
+    }
+
+    .left-column{
+        width:50%;
+    }
+   
+    .left-column img {
+      height: 450px;
+      left: initial;
+    }
+  }
+   
+  @media (max-width: 535px) {
+    .left-column img {
+     height: 200px;
+       width: 100% ; 
+       /* margin-top: 60px;  */
+     }
+
+    
+    .right-column {
+      width: 50%;
+      /* margin-left: 175px;
+     margin-top: 0px; */
+     margin-left: 15px;
+     /* margin-top: 30px; */
+     padding: 10px;
+    }
+
+    .left-column{
+        width:45%;
+       
+    }
+
+    .product-description h1 , h2{
+        font-size: 25px;
+    }
+
+    .cable-config h1{
+         font-size: 25px;
+    }
+
+    .product-description p{
+        font-size: 10px;
+        /* padding: 10px; */
+    }
+  
+  }

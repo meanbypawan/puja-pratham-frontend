@@ -1,0 +1,32 @@
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<section class="heading">
+    <h3>Audio/Videos</h3>
+</section>
+<section class="audio">
+    <h1 class="title"> <span>Audios</span></h1>
+    <div class="box-container">
+        <a href="/media-one/{{aud._id}}" class="box"  *ngFor = "let aud of audios"   >
+            <img src="{{aud.image}}" alt="">
+            <h3>{{aud.name}}</h3>
+        </a>
+    </div>
+</section>
+
+<section class="videos">
+    <h1 class="title"> <span>Videos</span></h1>
+    <div class="box-container">
+        <div class="box" *ngFor = "let vid of videos">
+            <div class="icons">
+              <a routerLink="/media-one/{{vid._id}}"><i class='bx bx-play-circle'></i></a>
+            </div>
+            <div class="image">
+                <img src="{{vid.image}}" alt="">
+            </div>
+            <div class="content">   
+                <h3>{{vid.name}}</h3>
+            </div>
+        </div>
+        
+    </div> 
+
+</section>
