@@ -15,6 +15,9 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
+import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
+import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
 @NgModule({
@@ -30,6 +33,9 @@ import { ViewMoreComponent } from './user/view-more/view-more.component';
     SignupComponent,
     DashboardComponent,
     OtpCheckerComponent,
+
+    ShopGeneralComponent,
+    ShopGeneralAllComponent,
     ShopSpecificComponent,
     ViewMoreComponent
   ],
@@ -37,7 +43,8 @@ import { ViewMoreComponent } from './user/view-more/view-more.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

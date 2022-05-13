@@ -11,20 +11,5 @@ export class ImgSliderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  index = 0;
-  next() {
-    let slides = document.querySelectorAll('.home .slides-container .slide');
-
-    slides[this.index].classList.remove('active');
-    this.index = (this.index + 1) % slides.length;
-    slides[this.index].classList.add('active');
-  }
-
-  prev() {
-    let slides = document.querySelectorAll('.home .slides-container .slide');
-
-    slides[this.index].classList.remove('active');
-    this.index = (this.index - 1 + slides.length) % slides.length;
-    slides[this.index].classList.add('active');
-  }
+  
 }
