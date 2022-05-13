@@ -15,6 +15,11 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
+import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
+import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
+
+
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +32,17 @@ import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
     FooterComponent,
     SignupComponent,
     DashboardComponent,
-    OtpCheckerComponent
+    OtpCheckerComponent,
+    ShopGeneralComponent,
+    ShopGeneralAllComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

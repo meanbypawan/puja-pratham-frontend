@@ -1,39 +1,57 @@
-<!-- home section starts  -->
-
 <section class="home">
-
-    <div class="slides-container">
-   
-        <div class="slide active">
-            <div class="content">
-                <span>new arrivals</span>
-                <h3>Diwali Pujan Samagri</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quisquam, magnam enim sed debitis perspiciatis.</p>
-                <a href="#" class="btn">Shop Now</a>
-            </div>
-            <div class="image">
-                <img src="../../../../assets/images/POOJA_SAMAGRI1.jpg" style="height:35rem;width: min-content;" alt="">
-            </div>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators" style="margin-top: 30px;">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="content">
+            <span>new arrivals</span>
+            <h3>Diwali Pujan Samagri</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quisquam, magnam enim sed debitis perspiciatis.</p>
+            <a href="#" class="btn">Shop Now</a>
         </div>
-
-        <div class="slide">
+          <div>
+          <img src="../../../../assets/images/POOJA_SAMAGRI1.jpg" alt="Los Angeles">
+        </div>
+            
+        </div>
+        <div class="carousel-item">
             <div class="content">
                 <span>new arrivals</span>
                 <h3>Hawan Samagri</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quisquam, magnam enim sed debitis perspiciatis.</p>
                 <a href="#" class="btn">Shop Now</a>
             </div>
-            <div class="image">
-                <img src="../../../../assets/images/hawanimage.jpg" style="height: 30rem;width:min-content;" alt="">
-            </div>
+
+          <div>
+          <img src="assets/images/hawanimage.jpg" alt="Chicago" >
         </div>
-         
-
+        </div>
+        <!-- <div class="carousel-item">
+          <img src="../../assets/images/POOJA_SAMAGRI1.jpg" alt="New York" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>New York</h3>
+            <p>We love the Big Apple!</p>
+          </div>   
+        </div> -->
+      </div>
+      <a  id="slide-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon" ></span>
+      </a>
+      <a id="slide-next"   href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+      
+    
+    
+      <!-- <a    >
+        <span href="#demo" data-slide="prev" class="fas fa-angle-right"id="slide-next"></span>
+      </a>
+      <a    >
+        <span href="#demo" data-slide="next" class="fas fa-angle-left"  id="slide-prev"></span>
+      </a> -->
     </div>
-
-    <div id="slide-next"  class="fas fa-angle-right" (click)="next()"></div>
-    <div id="slide-prev" class="fas fa-angle-left" (click)="prev()" ></div>
-
-</section>
-
-<!-- home section ends -->
+    </section>
