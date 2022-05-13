@@ -6,6 +6,8 @@ import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
 import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
 import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
 import { SignupComponent } from './user/signup/signup.component';
+import {ShopSpecificComponent} from './user/shop-specific/shop-specific.component';
+import { ViewMoreComponent } from './user/view-more/view-more.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
@@ -14,8 +16,11 @@ const routes: Routes = [
   {path : "" , component:DashboardComponent,children:[
   {path : "" , component:HomeComponent},
   {path :"shop-general", component:ShopGeneralComponent},
-  {path :"shop-general-all/:type",component:ShopGeneralAllComponent}
+  {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
+  {path:"shops/:id",component:ShopSpecificComponent},
+  {path:"viewMore/:id",component:ViewMoreComponent}
   ]}
+  
 ];
 
 @NgModule({
