@@ -15,6 +15,8 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
+import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
+import { ViewMoreComponent } from './user/view-more/view-more.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
     FooterComponent,
     SignupComponent,
     DashboardComponent,
-    OtpCheckerComponent
+    OtpCheckerComponent,
+    ShopSpecificComponent,
+    ViewMoreComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@
 
           <div class="dropdown " >
             <div class="dropdown-content">
-              <a *ngFor="let pack of package">{{pack.name}}</a>
+              <a  *ngFor="let pack of package" routerLink="/shops/{{pack._id}}">{{pack.name}}</a>
             </div>
           </div>
 
@@ -30,7 +30,7 @@
             Puja Samagri</a>
           <div class="dropdown " >
             <div class="dropdown-content">
-              <a *ngFor="let pro of product">{{pro.name}}</a>
+              <a *ngFor="let pro of product" routerLink="/shops/{{pro._id}}">{{pro.name}}</a>
             </div>
           </div>
         </li>
@@ -41,7 +41,7 @@
             Photo Frames</a>
             <div class="dropdown " >
               <div class="dropdown-content">
-              <a *ngFor="let photo of photoFrames">{{photo.name}}</a>
+              <a *ngFor="let photo of photoFrames" routerLink="/shops/{{photo._id}}">{{photo.name}}</a>
               </div>
             </div>
         </li>
@@ -51,7 +51,7 @@
             Murti</a>
             <div class="dropdown " >
               <div class="dropdown-content">
-              <a *ngFor="let murti of murtis">{{murti.name}}</a>
+              <a *ngFor="let murti of murtis" routerLink="/shops/{{murti._id}}" >{{murti.name}}</a>
               </div>
             </div>
         </li>
