@@ -61,9 +61,7 @@
             Temples</a>
             <div class="dropdown " >
               <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a *ngFor="let temp of temples" routerLink="temples/{{temp._id}}">{{temp.name}}</a>
               </div>
             </div>
         </li>
@@ -74,7 +72,7 @@
           </a>
           <div class="dropdown " >
             <div class="dropdown-content">
-              <a *ngFor="let puj of puja">{{puj.name}}</a>
+              <a *ngFor="let puj of puja" routerLink="/event/{{puj._id}}">{{puj.name}}</a>
             </div>
           </div>
         </li>
@@ -82,11 +80,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"
             style="color: white;">
-            Book Bhajan Mandli
+            Dharmik Events
           </a>
           <div class="dropdown " >
             <div class="dropdown-content">
-              <a *ngFor="let orches of orchestra">{{orches.name}}</a>
+              <a *ngFor="let orches of orchestra" routerLink="/event/{{orches._id}}">{{orches.name}}</a>
             </div>
           </div>
         </li>
@@ -98,7 +96,7 @@
           </a>
           <div class="dropdown " >
             <div class="dropdown-content">
-              <a *ngFor="let media of mediaCategories">{{media.name}}</a>
+              <a *ngFor="let media of mediaCategories" routerLink="/medias/{{media._id}}">{{media.name}}</a>
             </div>
           </div>
         </li>

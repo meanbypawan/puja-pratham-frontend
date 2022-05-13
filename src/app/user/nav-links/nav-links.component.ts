@@ -29,6 +29,19 @@ export class NavLinksComponent implements OnInit {
     category.viewMediaCategories().subscribe(data=>{
       this.mediaCategories = data;
     });   
+    category.viewEventCategory().subscribe(data=>{
+      for(let element of data){
+        if(element.type == "pandit"){
+          this.puja.push(element);
+        }
+        else{
+          this.orchestra.push(element);
+        }
+      }
+    });
+    category.viewTemple().subscribe(data=>{
+      this.temples = data;
+    })
   }
   package: any[] = [];
   murtis: any[] = [];
@@ -36,5 +49,6 @@ export class NavLinksComponent implements OnInit {
   product: any[] = [];
   puja:any[]=[];
   orchestra:any[]=[];
+  temples:any[]=[];
   ngOnInit() { }
 }

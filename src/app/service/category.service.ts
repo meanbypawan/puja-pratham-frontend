@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-
   constructor(private http:HttpClient) { }
   viewCategoryByType(type:string):Observable<any>{
     let api = "http://localhost:3000/product-category/view-product-category/"+type; 
@@ -24,8 +23,36 @@ export class CategoryService {
     let api = "http://localhost:3000/mediafile-category/view";
     return this.http.get(api);
   }
-  viewEvent():Observable<any>{
-    let api = "http://localhost:3000/event/view";
+  viewEventCategory():Observable<any>{
+    let api = "http://localhost:3000/event-category/view";
+    return this.http.get(api);
+  }
+  viewTemple():Observable<any>{
+    let api = "http://localhost:3000/temple/view";
+    return this.http.get(api);
+  }
+  viewMediaByCat(id:string):Observable<any>{
+    let api = "http://localhost:3000/mediafile/view-by-cat/"+id;
+    return this.http.get(api);
+  }
+  viewTempleByCategory(id:string):Observable<any>{
+    let api = "http://localhost:3000/templePooja/view-event-categoryId";
+    return this.http.post(api,{id});
+  }
+  viewOneTemplePuja(id:string):Observable<any>{
+    let api = "http://localhost:3000/templePooja/view-one/" + id;
+    return this.http.get(api);
+  }
+  viewOneMedia(id:string):Observable<any>{
+    let api = "http://localhost:3000/mediafile/view-one/" + id;
+    return this.http.get(api);
+  }
+  viewEventByCategory(id:string):Observable<any>{
+    let api = "http://localhost:3000/event/view-event-categoryId";
+    return this.http.post(api,{id});
+  }
+  viewOneEvent(id:string):Observable<any>{
+    let api = "http://localhost:3000/event/view-one/"+id;
     return this.http.get(api);
   }
 }

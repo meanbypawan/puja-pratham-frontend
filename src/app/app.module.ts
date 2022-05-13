@@ -15,6 +15,13 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
+import { MediaGeneralComponent } from './user/media-general/media-general.component';
+import { MediaSpecificComponent } from './user/media-specific/media-specific.component';
+import { TempleSpecificComponent } from './user/temple-specific/temple-specific.component';
+import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.component';
+import { MediaOneComponent } from './user/media-one/media-one.component';
+import { EventComponent } from './user/event/event.component';
+import { EventOneComponent } from './user/event-one/event-one.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,14 @@ import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
     FooterComponent,
     SignupComponent,
     DashboardComponent,
-    OtpCheckerComponent
+    OtpCheckerComponent,
+    MediaGeneralComponent,
+    MediaSpecificComponent,
+    TempleSpecificComponent,
+    TemplePujaOneComponent,
+    MediaOneComponent,
+    EventComponent,
+    EventOneComponent
   ],
   imports: [
     BrowserModule,

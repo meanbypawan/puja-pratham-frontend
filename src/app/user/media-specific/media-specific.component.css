@@ -1,0 +1,219 @@
+
+section {
+    padding: 3rem 9%;
+  }
+  
+  .heading {
+    background: #faf6f2f5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  .heading h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #ffa047;
+  }
+  
+  .heading p {
+    color: #ffa047;
+    font-size: 2rem;
+  }
+  
+  .heading p span {
+    color: yellow;
+  }
+  
+  .heading p a {
+    color: #fff;
+  }
+  
+  .heading p a:hover {
+    color: yellow;
+  }
+  
+  .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 0.1rem solid #ffa047;
+    padding-bottom: 1.5rem;
+  }
+  
+  .title span {
+    font-size: 2.5rem;
+    color: #ffa047;
+  }
+  
+  .title a {
+    font-size: 1.5rem;
+    color: #779;
+  }
+  
+  .title a:hover {
+    color: #ffa047;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    background: #ffa047;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #ffa047;
+  }
+  
+.audio .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(16rem, 1fr)),[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .audio .box-container .box {
+    padding: 2rem;
+    border: 0.1rem solid #ffa047;
+    text-align: center;
+  }
+  
+  .audio .box-container .box:hover {
+    background: #ffa047;
+  }
+     
+  .audio .box-container .box:hover h3 {
+    color: #fff;
+  }
+  
+  .audio .box-container .box img {
+    height: 6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .audio .box-container .box h3 {
+    font-size: 1.7rem;
+    color: #ffa047;
+  }
+  
+  .videos .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(26rem, 1fr)),[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .videos .box-container .box {
+    position: relative;
+    background: #f2f2f2;
+    overflow: hidden;
+    
+  }
+  
+  .videos .box-container .box:hover .image img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  
+  .videos .box-container .box:hover .icons {
+    top: 0;
+  }
+  
+  .videos .box-container .box .icons {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: .5rem;
+    background: rgba(242, 242, 242, 0.7);
+    z-index: 10;
+  }
+  
+  .videos .box-container .box .icons a {
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    width: 5rem;
+    background: #fff;
+    color: #ffa047;
+    font-size: 2rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .videos .box-container .box .icons a:hover {
+    background: #ffa047;
+    color: #fff;
+  }
+  
+  .videos .box-container .box .image {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .videos .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .videos .box-container .box .content {
+    padding: 1.5rem 2rem;
+  }
+  
+  .videos .box-container .box .content .price {
+    font-size: 1.7rem;
+    color: #779;
+  }
+  
+  .videos .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #ffa047;
+    padding: .5rem 0;
+  }
+  
+  .videos .box-container .box .content .stars {
+    font-size: 1.7rem;
+  }
+  
+  .videos .box-container .box .content .stars i {
+    color: gold;
+  }
+  
+  .videos .box-container .box .content .stars span {
+    color: #779;
+  }
+  
