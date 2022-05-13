@@ -22,6 +22,11 @@ import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.c
 import { MediaOneComponent } from './user/media-one/media-one.component';
 import { EventComponent } from './user/event/event.component';
 import { EventOneComponent } from './user/event-one/event-one.component';
+import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
+import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
+import { ViewMoreComponent } from './user/view-more/view-more.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,12 +47,17 @@ import { EventOneComponent } from './user/event-one/event-one.component';
     MediaOneComponent,
     EventComponent,
     EventOneComponent
+    ShopGeneralComponent,
+    ShopGeneralAllComponent,
+    ShopSpecificComponent,
+    ViewMoreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

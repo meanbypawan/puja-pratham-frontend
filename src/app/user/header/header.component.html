@@ -23,8 +23,9 @@
 <div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
 
 <nav class="navbar-main" id="nav" #nav>
-    <a routerLink="" (click)="closeBar()">home</a>
-    <a routerLink="/shop" (click)="closeBar()">shop</a>
+
+    <a routerLink="" (click)="closeBar()" >home</a>
+    <a routerLink="/shop" (click)="closeBar()" routerLink="shop-general">shop</a>
     <a routerLink="/media" (click)="closeBar()">Audio/Videos</a>
     <a routerLink="/about" (click)="closeBar()">about</a>
     <a routerLink="/contact" (click)="closeBar()">contact</a>
