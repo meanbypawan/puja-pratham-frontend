@@ -1,8 +1,9 @@
 <main class="container">
     <div class="left-column">
-  <div>    <img src="{{media.image}}" alt=""> 
+   <iframe width="560" height="315" [src]="link|safePipe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
-   </div>
+
+ 
     </div>
     <div class="right-column">
       <div class="product-description">
@@ -13,7 +14,7 @@
         <p style="justify-content: center;">{{media.lyrics}}</p>
       </div>
   <div>
-    <a href="{{media.link}}" target="blank"><button  class="btn btn-warning py-3" style=" text-align: center; font-size: 20px;">Play Now</button></a>
+    <a href="{{link}}" target="blank"><button  class="btn btn-warning py-3" style=" text-align: center; font-size: 20px;">Play Now</button></a>
   </div>
     </div>
 </main>

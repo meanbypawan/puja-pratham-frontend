@@ -1,25 +1,22 @@
 <div class="container" style="margin-top:50px;">
     <div class="row cardimg">
-        <div class="col-md-3">
+        <div class="col-md-3" *ngFor="let event of events">
             <div class="card-sl">
                 <div class="card-image">
                     <img
-                        src="{{events.image}}" alt=>
+                        src="{{event.image}}"/>
                 </div>
-                <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
                 <div class="card-heading">
-                  <h4>{{events.name}}</h4>                                 
-                    <h6>Up to 10% Discount</h6>
-                    <h5 for="">Price :  <del style="color:red;">  ₹{{events.price}} </del><span id="first" style="color: green;">{{events.price}}</span></h5><br>                <div class="icon">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="far fa-star" aria-hidden="true"></i>
-                    <i class="far fa-star" aria-hidden="true"></i>
-                  </div>
-                  <a routerLink="/event-one/{{events._id}}" class="card-button">View More</a>
+                  <h1>{{event.name}}</h1>
+                    <h2 for="">Price :  {{event.price}}</h2>          
+                </div>   
+                <div class="icon">
+                    <button class="btn btn-success ml-5 p-3 pr-5" style="border-radius:10%;">Book Now</button>
+                    <button class="btn btn-warning ml-5 p-3 pr-5" routerLink="/event-one/{{event._id}}" style="border-radius:10%;">Read More</button>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
+<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6UDcWF8pfmJrM3QBv0UASp?utm_source=generator" width="50%" height="315" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2WuuCY9Wqwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->

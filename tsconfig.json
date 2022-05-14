@@ -23,6 +23,8 @@
       "dom"
     ]
   },
+  // "angularCompilerOptions": { "fullTemplateTypeCheck": true, "strictInjectionParameters": true, "enableIvy": false }
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

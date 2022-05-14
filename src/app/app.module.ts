@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './user/home/home.component';
 import { MainPartComponent } from './user/home/main-part/main-part.component';
@@ -10,7 +12,6 @@ import { WhyUsComponent } from './user/home/why-us/why-us.component';
 import { HeaderComponent } from './user/header/header.component';
 import { NavLinksComponent } from './user/nav-links/nav-links.component';
 import { FooterComponent } from './user/footer/footer.component';
-import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { HttpClientModule} from "@angular/common/http";
@@ -24,9 +25,9 @@ import { EventComponent } from './user/event/event.component';
 import { EventOneComponent } from './user/event-one/event-one.component';
 import { ShopGeneralComponent } from './user/shop-general/shop-general.component';
 import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-all.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
+import { SafePipePipe } from './safe-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,11 +47,12 @@ import { ViewMoreComponent } from './user/view-more/view-more.component';
     TemplePujaOneComponent,
     MediaOneComponent,
     EventComponent,
-    EventOneComponent
+    EventOneComponent,
     ShopGeneralComponent,
     ShopGeneralAllComponent,
     ShopSpecificComponent,
-    ViewMoreComponent
+    ViewMoreComponent,
+    SafePipePipe
   ],
   imports: [
     BrowserModule,

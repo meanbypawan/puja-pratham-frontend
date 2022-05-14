@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:"templePujaOne/:id",component:TemplePujaOneComponent},
   {path : "media-one/:id",component:MediaOneComponent},
   {path:"event/:id",component:EventComponent},
-  {path:"event-one/:id",component:EventOneComponent}
+  {path:"event-one/:id",component:EventOneComponent},
   {path :"shop-general", component:ShopGeneralComponent},
   {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
   {path:"shops/:id",component:ShopSpecificComponent},
