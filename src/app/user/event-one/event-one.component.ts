@@ -13,6 +13,7 @@ export class EventOneComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute,private service:CategoryService) {
     this.id = activatedRoute.snapshot.paramMap.get("id");
     service.viewOneEvent(this.id).subscribe(data=>{
+      console.log(this.event);
       this.event = data;
     })
     

@@ -12,8 +12,9 @@ id:string="";
 templePuja:any;
   constructor(private service:CategoryService,private activatedRoute:ActivatedRoute) {
     this.id = activatedRoute.snapshot.paramMap.get("id");
+    console.log(this.id);
     service.viewOneTemplePuja(this.id).subscribe(data=>{
-      // console.log(data);
+      console.log(data);
       this.templePuja = data;
     })
    }

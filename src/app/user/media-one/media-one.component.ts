@@ -10,12 +10,17 @@ import { CategoryService } from 'src/app/service/category.service';
 export class MediaOneComponent implements OnInit {
   id:string="";
   media:any;
+  link:string="";
   constructor(private router:Router,private service:CategoryService,private activatedRoute:ActivatedRoute) {
       router.events.subscribe(event=>{
         if(event instanceof NavigationEnd){
           this.id = activatedRoute.snapshot.paramMap.get("id");
           service.viewOneMedia(this.id).subscribe(data=>{
+            console.log(data);
             this.media = data;
+            this.link = data.link;
+            console.log(this.link);
+            console.log(this.link);
           })
         }
       })

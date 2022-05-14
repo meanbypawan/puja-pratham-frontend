@@ -9,13 +9,13 @@
                 </div>
                 <div class="row">
                         <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let package of packageList | slice:0:4">
-                                <div id="product-1" class="single-product" >
+                                <div id="product-1" class="single-product">
                                         <div class="image">
                                                 <img src="{{package.image}}" alt="There is supposed to be a picture">
                                         </div>
                                         <div class="part-2">
                                                 <h4 class="product-title mt-4">{{package.name}}</h4>
-                                                <button class="btn " type="submit">Shop now</button>
+                                                <button class="btn " type="submit" routerLink="/shops/{{package._id}}">Shop now</button>
                                         </div>
                                 </div>
                         </div>
@@ -36,11 +36,12 @@
                         <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of productList | slice:0:4">
                                 <div id="product-9" class="single-product">
                                         <div class="image">
-                                                <img src="{{product.image}}" alt="https://www.google.com/search?q=gnaesh+image&sxsrf=ALiCzsb6tSog6wfqJ9Sz-ihxj7mxPurW2g:1652335648766&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiQy5P7pdn3AhWWe94KHQgbCOUQ_AUoAnoECAEQBA&biw=1294&bih=668&dpr=1#imgrc=CEuxJqds8-zs7M">
+                                                <img src="{{product.image}}"
+                                                        alt="https://www.google.com/search?q=gnaesh+image&sxsrf=ALiCzsb6tSog6wfqJ9Sz-ihxj7mxPurW2g:1652335648766&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiQy5P7pdn3AhWWe94KHQgbCOUQ_AUoAnoECAEQBA&biw=1294&bih=668&dpr=1#imgrc=CEuxJqds8-zs7M">
                                         </div>
                                         <div class="part-2">
                                                 <h4 class="product-title mt-4">{{product.name}}</h4>
-                                                <button class="btn " type="submit">Shop now</button>
+                                                <button class="btn " type="submit" routerLink="/shops/{{product._id}}">Shop now</button>
                                         </div>
                                 </div>
                         </div>

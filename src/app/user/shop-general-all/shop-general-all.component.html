@@ -1,32 +1,32 @@
+<div class="container">
+  <div class="row cardimg">
+    <div class="col-md-3" style="margin-top: 40px;"
+      *ngFor="let product of typeList| paginate:  { itemsPerPage: 20, currentPage: p, totalItems: total }">
+      <div class="card-sl">
+        <div class="card-image">
+          <img src="{{product.image}}" />
+        </div>
+
+        <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+        <div class="card-heading">
+          <h4>{{product.name}}</h4>
 
 
-             <div class="container" >
-                <div class="row cardimg">
-                    <div class="col-md-3" style="margin-top: 40px;" *ngFor="let product of typeList| paginate:  { itemsPerPage: 4, currentPage: p, totalItems: total }">
-                      <div class="card-sl">
-                        <div class="card-image">
-                            <img
-                                src="{{product.image}}"/>
-                        </div>
-            
-                        <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
-                        <div class="card-heading">
-                          <h4>{{product.name}}</h4>
-                          
-                       
-                            <h6>Up to {{product.discount}}% Discount</h6>
-                            <h5 for="">Price :  <del style="color:red;">3000</del><span id="first" style="color: green;"> {{product.price}} ₹</span></h5><br>                <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                          </div>
-                          <a href="#" class="card-button">View More</a>
-                        </div>
-                    </div>
-            
-                    </div>
-                </div>
-                <pagination-controls class="pagination"  (pageChange)="pageChangeEvent($event)"></pagination-controls>
-            </div>
+          <h6>Up to {{product.discount}}% Discount</h6>
+          <h5 for="">Price : <del style="color:red;">3000</del><span id="first" style="color: green;"> {{product.price}}
+              ₹</span></h5><br>
+          <div class="icon">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="far fa-star" aria-hidden="true"></i>
+            <i class="far fa-star" aria-hidden="true"></i>
+          </div>
+          <a href="#" class="card-button">View More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <pagination-controls class="pagination" (pageChange)="pageChangeEvent($event)"></pagination-controls>
+</div>

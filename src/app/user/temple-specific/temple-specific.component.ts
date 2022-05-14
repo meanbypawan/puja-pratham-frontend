@@ -18,7 +18,6 @@ export class TempleSpecificComponent implements OnInit {
         service.viewTempleByCategory(this.id).subscribe(data=>{
           // console.log(data);
           this.templePojaas = data;
-
         })
       }
     })

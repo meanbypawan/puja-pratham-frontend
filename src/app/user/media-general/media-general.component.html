@@ -1,32 +1,36 @@
-<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 <section class="heading">
-    <h3>Audio/Videos</h3>
-</section>
-<section class="audio">
-    <h1 class="title"> <span>Audios</span></h1>
-    <div class="box-container">
-        <a href="/media-one/{{aud._id}}" class="box"  *ngFor = "let aud of audios"   >
-            <img src="{{aud.image}}" alt="">
-            <h3>{{aud.name}}</h3>
-        </a>
-    </div>
-</section>
-
-<section class="videos">
-    <h1 class="title"> <span>Videos</span></h1>
-    <div class="box-container">
-        <div class="box" *ngFor = "let vid of videos">
-            <div class="icons">
-              <a routerLink="/media-one/{{vid._id}}"><i class='bx bx-play-circle'></i></a>
-            </div>
-            <div class="image">
-                <img src="{{vid.image}}" alt="">
-            </div>
-            <div class="content">   
-                <h3>{{vid.name}}</h3>
-            </div>
+    <h1>Audios</h1>    
+  </section>
+  <div class="container-fluid contenedor text-center">
+     <div class=" container text-center">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto" *ngFor="let aud of audios">
+           <div class="text-center">
+           </div>
+           <article class="text-left">
+              <h2>{{aud.name}}</h2>
+              <i class="fa fa-music fa-2x" ></i>
+           </article>
+           <img src="{{aud.image}}" alt="" routerLink="/media-one/{{aud._id}}">
         </div>
-        
-    </div> 
+     </div>
+  </div>
 
+  <section class="heading">
+    <h3>videos</h3>    
 </section>
+<div class="container">
+    <div class="row flex-xl-nowrap">
+      
+      <div class="card-deck">
+          <div class="card border-0 col-sm-4 p-0" *ngFor="let vid of videos">
+            <div class="card-body">
+                <img src="{{vid.image}}" alt="" routerLink="/media-one/{{vid._id}}">
+                <div class="icons">
+                    <a href="" ><i class="fa fa-play"></i><h6>Play Now</h6></a>
+                      
+                  </div>
+              <p class="card-text font-weight-bold programme-title lead">{{vid.name}}</p>
+              
+            </div>
+          </div>
+  </div>

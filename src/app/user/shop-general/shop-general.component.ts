@@ -16,7 +16,7 @@ export class ShopGeneralComponent implements OnInit {
     console.log("hello");
     this.shopService.ViewProduct().subscribe(data => {
       if (data) {
-        // console.log(data);
+        console.log(data);
         for (let element of data) {
           if (element.catId.type == "product")
             this.productList.push(element);
@@ -25,11 +25,7 @@ export class ShopGeneralComponent implements OnInit {
           else if (element.catId.type == "photo")
             this.photoFrameList.push(element);
           else if(element.catId.type == "Murti")
-          this.murtiList.push(element);
-         else
-         alert('data not fetched');
-       
-
+            this.murtiList.push(element);
         }
       }
       else
