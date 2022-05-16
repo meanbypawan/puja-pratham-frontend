@@ -11,6 +11,7 @@ export class ViewMoreComponent implements OnInit {
 
   ID='';
   product:any;
+  points:any[]=[];
 
   constructor(private prouctService: ProductService, private ActivatedRoute: ActivatedRoute, private router:Router) {
   this.router.events.subscribe(event=>{
@@ -19,6 +20,9 @@ export class ViewMoreComponent implements OnInit {
     this.prouctService.ViewMore(this.ID).subscribe(data=>{
       console.log(data)
       this.product = data;
+      let des = data.description;
+      this.points = des.split("\n");
+      console.log(this.points); 
     })
    }
   })
