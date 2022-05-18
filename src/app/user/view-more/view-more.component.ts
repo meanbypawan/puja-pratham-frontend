@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-view-more',
@@ -11,9 +12,13 @@ export class ViewMoreComponent implements OnInit {
 
   ID='';
   product:any;
+
+  cart:any[]=[];
+
   points:any[]=[];
 
-  constructor(private prouctService: ProductService, private ActivatedRoute: ActivatedRoute, private router:Router) {
+
+  constructor(private userService:UserService,private prouctService: ProductService, private ActivatedRoute: ActivatedRoute, private router:Router) {
   this.router.events.subscribe(event=>{
   this.ID = <string>this.ActivatedRoute.snapshot.paramMap.get("id");
   if(event instanceof NavigationEnd){
@@ -27,8 +32,32 @@ export class ViewMoreComponent implements OnInit {
    }
   })
 }
-
+addToCart(productId:any){
+  let flag=false;
+  for(let element of this.cart){
+    if(element._id == productId){
+      flag=true;
+      break;
+    }
+  }
+  if(flag){
+    alert("Product is already added to your cart");
+  }
+  else{
+    this.userService.addToCart(productId).subscribe(data=>{
+      if(data){
+        alert("Product Added");
+        this.ngOnInit();
+      }
+    })
+  }
+}
   ngOnInit(): void {
+    this.userService.viewCart().subscribe(data=>{
+      if(data){
+        this.cart = data.productList;
+      }
+    })
   }
 
 }

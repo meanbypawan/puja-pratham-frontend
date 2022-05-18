@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/service/product.service';
 import { UserService } from 'src/app/service/user.service';
+declare var webkitSpeechRecognition:any;
 
 @Component({
   selector: 'app-header',
@@ -14,23 +17,50 @@ export class HeaderComponent implements OnInit {
   userProfile: any;
   panditProfile: any;
   cartList: any[] = [];
-  constructor(private userService:UserService) {
-    // let login = <HTMLDivElement>document.querySelector("#login");
-    // let closer: any = document.querySelector('#closer');
-    // closer.style.display = 'block';
-    // login.classList.toggle('active');
+  search:any; 
+  
+  constructor(private userService:UserService,private productService:ProductService,private router:Router) {
+    this.viewCartProduct();
+  }
+
+  searching(){
+    if("webkitSpeechRecognition" in window){
+      let audio = new Audio();
+      audio.src =  "../../../assets/audios/mic2.mp3";
+      audio.load();
+      audio.play();
+      let vSearch = new webkitSpeechRecognition();
+      vSearch.lang = "en-US";
+      vSearch.start();
+
+      vSearch.onresult = async (e:any) =>{
+        this.search = await e.results[0][0].transcript;
+        vSearch.stop();
+        this.router.navigate(["search",this.search]).then(()=>{
+          location.reload();
+        })
+      }
+      vSearch.onerror = function(e:any){
+        console.log(e);
+        vSearch.stop();
+      }
+    }
+    else{
+      console.log("Your browser dosen't support speech recognition");
+    }
   }
   totalPrice?: number = 0;
   viewCartProduct() {
-    // this.cartService.viewCart().subscribe(data => {
-    //   if (data) {
-    //     this.cartList = data.productList;
-    //     this.totalPrice = 0;
-    //     for (let element of this.cartList) {
-    //       this.totalPrice += element.price;
-    //     }
-    //   }
-    // });
+    this.totalPrice = 0;
+    this.userService.viewCart().subscribe(data=>{
+      if(data){
+        this.cartList = data.productList;
+        for(let element of this.cartList){
+          element.discountedPrice = element.price - (element.price * element.discount / 100) ;
+          this.totalPrice += element.discountedPrice;
+        }
+      }
+    })
   }
   checkCart() {
     if (this.cartList.length > 0)
@@ -72,7 +102,7 @@ export class HeaderComponent implements OnInit {
     let closer: any = document.querySelector('#closer');
     closer.style.display = 'block';
     cart.classList.toggle('active');
-    if (localStorage.getItem("user"))
+    if (sessionStorage.getItem("user"))
       this.viewCartProduct();
   }
   showLogin(login: any) {
@@ -92,8 +122,6 @@ export class HeaderComponent implements OnInit {
     nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
-    // search.classList.remove('active');
-
   }
   searchBtn(search: any) {
     search.classList.toggle('active');
@@ -107,7 +135,6 @@ export class HeaderComponent implements OnInit {
           image:data.user.image,
           id:data.user._id
         }
-        // console.log(data);
         this.userProfile = user;
         sessionStorage.setItem("user", JSON.stringify(user));
         sessionStorage.setItem('token', data.token);
@@ -125,8 +152,6 @@ export class HeaderComponent implements OnInit {
       else{
         console.log(data+"kjf");
       }
-      
-      
     });
   }
 
@@ -154,15 +179,17 @@ export class HeaderComponent implements OnInit {
 
   words: string = "";
   searchProduct(event: any) {
-    // let val = event.target.value;
-    // this.router.navigate(["shops", val]);
+    let val = event.target.value;
+    this.router.navigate(["search", val]);
   }
 
   checkout() {
-    // this.router.navigate(["place-order"]);
+    this.router.navigate(["order"]);
   }
 
   forgetPassword(){
     
   }
+  
+  
 }

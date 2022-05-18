@@ -1,23 +1,20 @@
-<!-- <p>shop-general works!</p> -->
-<!-- <p>shop works!</p> -->
 <div *ngIf="packageList.length>0">
     <section class="headin" style="background-color: #fff ; ">
         <h3>Our Packages</h3>
     </section>
-
-    <div class="container">
+        <div class="container">
         <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let category of  packageList | slice:0:4" style="margin-top:50px;">
+            <div class="col-md-3" *ngFor="let package of  packageList | slice:0:4" style="margin-top:50px;">
                 <div class="card-sl">
                     <div class="card-image">
-                        <img src="{{category.image}}" />
+                        <img src="{{package.image}}" />
                     </div>
 
-                    <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(package._id)"></i></a>
                     <div class="card-heading">
-                        <h4>{{category.name}}</h4>
+                        <h4>{{package.name}}</h4>
                         <h6>Up to 10% Discount</h6>
-                        <h5 for="">Price : <del style="color:red;">3000</del><span id="first" style="color: green;">
+                        <h5 for="">Price : <del style="color:red; text-decoration-line: line-through;">3000</del><span id="first" style="color: green;">
                                 2700 ₹</span></h5><br>
                         <div class="icon">
                             <i class="fa fa-star" aria-hidden="true"></i>
@@ -26,7 +23,7 @@
                             <i class="far fa-star" aria-hidden="true"></i>
                             <i class="far fa-star" aria-hidden="true"></i>
                         </div>
-                        <a href="#" class="card-button">View More</a>
+                        <a class="card-button">View More</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +46,8 @@
                         <img src="{{product.image}}" />
                     </div>
 
-                    <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+                    <a class="card-action"><i 
+                         class="fas fa-shopping-cart" (click)="addToCart(product._id)"></i></a>
                     <div class="card-heading">
                         <h4>{{product.name}}</h4>
 
@@ -82,13 +80,13 @@
     </section>
     <div class="container">
         <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let frams of photoFrameList | slice:0.4" style="margin-top:50px;">
+            <div class="col-md-3" *ngFor="let frams of photoFrameList | slice:0:4"  style="margin-top:50px;">
                 <div class="card-sl">
                     <div class="card-image">
                         <img src="{{frams.image}}" />
                     </div>
 
-                    <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(frams._id)"></i></a>
                     <div class="card-heading">
                         <h4>{{frams.name}}</h4>
 
@@ -103,7 +101,7 @@
                             <i class="far fa-star" aria-hidden="true"></i>
                             <i class="far fa-star" aria-hidden="true"></i>
                         </div>
-                        <a href="#" class="card-button">View More</a>
+                        <a class="card-button">View More</a>
                     </div>
                 </div>
             </div>
@@ -120,13 +118,13 @@
     </section>
     <div class="container">
         <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let murti of murtiList | slice:0.4" style="margin-top:50px;">
+            <div class="col-md-3" *ngFor="let murti of murtiList | slice:0:4" style="margin-top:50px;">
                 <div class="card-sl">
                     <div class="card-image">
                         <img src="{{murti.image}}" />
                     </div>
 
-                    <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(murti._id)"></i></a>
                     <div class="card-heading">
                         <h4>{{murti.name}}</h4>
 
@@ -141,7 +139,7 @@
                             <i class="far fa-star" aria-hidden="true"></i>
                             <i class="far fa-star" aria-hidden="true"></i>
                         </div>
-                        <a href="#" class="card-button">View More</a>
+                        <a class="card-button">View More</a>
                     </div>
                 </div>
             </div>

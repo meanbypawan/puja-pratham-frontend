@@ -11,6 +11,7 @@ export class MediaOneComponent implements OnInit {
   id:string="";
   media:any;
   link:string="";
+  lyrics:any;
   constructor(private router:Router,private service:CategoryService,private activatedRoute:ActivatedRoute) {
       router.events.subscribe(event=>{
         if(event instanceof NavigationEnd){
@@ -19,8 +20,7 @@ export class MediaOneComponent implements OnInit {
             console.log(data);
             this.media = data;
             this.link = data.link;
-            console.log(this.link);
-            console.log(this.link);
+            this.lyrics = data.lyrics.split("\n\n");
           })
         }
       })

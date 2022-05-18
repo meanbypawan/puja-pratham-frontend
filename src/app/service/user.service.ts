@@ -41,5 +41,42 @@ export class UserService {
    let api = "http://localhost:3000/user/viewOne/"+id;
    return this.http.get(api);
   }
+  
+  public addToCart(productId:string):Observable<any>{
+    let api = "http://localhost:3000/cart/add-to-cart";
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    return this.http.post(api,{userId:userId,productId:productId});
+  }
+  public viewCart():Observable<any>{
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    let api = "http://localhost:3000/cart/view-one/"+userId;
+    return this.http.get(api);
+  }
+  public removeFromCart(productId:any):Observable<any>{
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    let api = "http://localhost:3000/cart/delete-product/"+userId+"/"+productId;
+    return this.http.delete(api);
+  }
 
+  public placeOrder(order:any):Observable<any>{
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    order.userId = userId;
+    let api = "http://localhost:3000/order/place-order-by-cash";
+    return this.http.post(api,order);
+  }
+
+  public deletecart():Observable<any>{
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    let api = "http://localhost:3000/cart/delete-cart/" + userId;
+    return this.http.delete(api);
+  }
+
+  public createOrder():Observable<any>{
+    let api = "http://localhost:3000/order/create";
+    return this.http.get(api);
+  }
+  public placeOrder2(order:any):Observable<any>{
+    let api = "http://localhost:3000/order/order-status";
+    return this.http.post(api,order);
+  }
 }
