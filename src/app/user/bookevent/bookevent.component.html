@@ -1,0 +1,96 @@
+<form class="modal-content" action="/action_page.php">
+    <div class="container">
+        <h1><b> Book Puja </b></h1>
+      <label ><b>Date</b></label>
+      <input 
+           name="date"
+           type="text"
+           placeholder="Please select date"
+         
+          [bsConfig]="{ isAnimated: true }" 
+          bsDatepicker
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+       required>
+
+      <label><b>Time Slots</b>
+    <br></label><br><br>
+   
+        <input style="border: 1px solid #888; height: 50px;width: 100px; border-radius: 10px; text-align: center;"  
+        class="test ml-3" 
+        matInput [(ngModel)]="startTime" 
+        placeholder="start" 
+        [ngxMatTimepicker]="picker"         
+        >
+        <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+
+        <input  style="border: 1px solid #888; height: 50px;width: 100px; border-radius: 10px; text-align: center;" matInput class="test ml-5" placeholder="end" [(ngModel)]="endTime" [ngxMatTimepicker]="pickers">
+        <ngx-mat-timepicker #pickers></ngx-mat-timepicker><br>
+
+      <label ><br><b>Contact No.</b>
+    <br></label>
+      <input type="Number" placeholder="Enter Contact Number" name="contact" required>
+  
+
+      
+      <label><b>Address</b>
+        <br></label>
+          <input type="address" placeholder="address" name="address" required>
+
+          
+          <!-- <label><b>Payment Mode</b>
+            <br></label><br>
+            <label >
+              <input style="margin-top: 10px; color: orange;"  type="radio"  name="Payment Mode">   Cash On Delievery
+            </label><br/>
+            <label>
+              <input style="margin-top: 5px;" type="radio"  name="Payment Mode">   Online Payment
+            </label><br><br> -->
+
+            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+              Payment Mode
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" style="padding-top:5px" href="#">Cash On Delievery</a>
+              <a class="dropdown-item" style="padding-top:10px" href="#">Online Payment</a>
+            </div> <br><br>
+
+      <label for="psw-repeat"><b>Note :-    </b> </label><br>
+      <p style="padding-left: 45px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque eos ratione omnis fugit qui ad ipsa debitis odio magnam?</p>   
+    </div>
+
+
+<!--     
+<form class="modal-content" action="/action_page.php" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container">
+  <h1>Book Priest</h1>
+  <hr>
+  <div class="form-group">
+  <label for="name"><b>Date</b></label>
+  <input type="text"  id="date"
+placeholder="Sart Date" name="name"      formControlName="name" required>
+  <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-light" style="color:red">
+      <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+      <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+  </div>
+</div>
+
+  <label for="psw"><b>Time</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required>
+
+  <label for="psw-repeat"><b>Contact no</b></label>
+  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+  <label for="psw-repeat"><b>Address</b></label>
+  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+  <label for="psw-repeat"><b>Note</b></label>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, itaque?</p>
+
+  <div class="clearfix">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Order</button>
+  </div>
+</div>
+</form> -->

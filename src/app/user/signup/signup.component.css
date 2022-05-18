@@ -43,7 +43,7 @@
       border-radius: 15px;
       margin-top: 100px;
     }
-   .inputc {
+   .input {
         /* box-shadow: none */
         border-bottom: 1px solid;
     }
@@ -61,10 +61,12 @@
    border: none;
    border-bottom: 1px solid black;
    background: transparent;
-   height: 30px;
+   height: 25px;
+   /* margin-bottom: 25px; */
    /* color: #fff; */
    font-size:16px;
     }
+    
     /* .btn {
       
       background: #ffa047;
@@ -76,9 +78,18 @@
       border-radius: 5px;
     } */
     .i{
-      margin-top: 20px;
+      margin-top: 10px;
     }
     .form-group input[type="text"],input[type="email"],input[type="file"].form-control:focus{
       outline: none !important;
       box-shadow: none !important;
+  }
+
+  .form-label{
+    /* padding-top: 30px; */
+  }
+
+  .btn{
+    justify-content: center;
+    color: #fff;
   }

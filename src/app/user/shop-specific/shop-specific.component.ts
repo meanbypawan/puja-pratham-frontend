@@ -6,7 +6,8 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-shop-specific',
   templateUrl: './shop-specific.component.html',
-  styleUrls: ['./shop-specific.component.css']
+  styleUrls: ['./shop-specific.component.css'],
+  // providers:[UserService]
 })
 export class ShopSpecificComponent implements OnInit {
  catid='';

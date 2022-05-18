@@ -15,6 +15,7 @@ import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.c
 import { TempleSpecificComponent } from './user/temple-specific/temple-specific.component';
 import {ShopSpecificComponent} from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
+import { BookeventComponent } from './user/bookevent/bookevent.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { OrderComponent } from './user/order/order.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
   {path:"shops/:id",component:ShopSpecificComponent},
   {path:"viewMore/:id",component:ViewMoreComponent},
+   {path:"bookEvent/:id",component:BookeventComponent}
   {path:"search/:keywords",component:SearchResultComponent},
   {path:"order",component:OrderComponent},
   ]}

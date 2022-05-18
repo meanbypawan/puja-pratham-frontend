@@ -45,10 +45,10 @@
   
                       <div class="form-group" style="font-size: medium;" >
                         <i class="fa fa-picture-o mr-3"></i>
-                        <label class="form-label">Upload your image</label>
+                        <label class="form-label" id="uploadimg">Upload your image</label>
                         <input type="file" (change)="selectImage($event)" class="form-control"/>
                       </div>
-                            <button [disabled]="!(username.valid && Email.valid && Address.valid && Mobile.valid)" type="submit" (click)="sendOtp()" class="btn btn-warning  mt-4" >Send OTP</button>
+                            <button [disabled]="!(username.valid && Email.valid && Address.valid && Mobile.valid)" type="submit" (click)="sendOtp()" class="btn mt-4" >Send OTP</button>
                   </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
