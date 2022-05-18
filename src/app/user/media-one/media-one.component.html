@@ -1,9 +1,6 @@
 <main class="container">
     <div class="left-column">
-   <iframe width="560" height="315" [src]="link|safePipe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-
-
- 
+   <iframe width="490" height="315" [src]="link|safePipe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
     </div>
     <div class="right-column">
       <div class="product-description">
@@ -11,7 +8,7 @@
           {{media.catId.name}}</span>
         <h1>{{media.name}}</h1>
         <h2>Lyrics</h2><br>
-        <p style="justify-content: center;">{{media.lyrics}}</p>
+        <p style="justify-content: center;" *ngFor="let lyric of lyrics">{{lyric}} <br></p>
       </div>
   <div>
     <a href="{{link}}" target="blank"><button  class="btn btn-warning py-3" style=" text-align: center; font-size: 20px;">Play Now</button></a>

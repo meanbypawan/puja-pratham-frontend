@@ -15,10 +15,15 @@ import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.c
 import { TempleSpecificComponent } from './user/temple-specific/temple-specific.component';
 import {ShopSpecificComponent} from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { OrderComponent } from './user/order/order.component';
+import { PlaceOrderComponent } from './user/place-order/place-order.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
   {path : "otp-checker/:id" , component:OtpCheckerComponent},
+  {path:"place-order",component:PlaceOrderComponent},
+
   
   {path : "" , component:DashboardComponent,children:[
   {path : "" , component:HomeComponent},
@@ -32,7 +37,9 @@ const routes: Routes = [
   {path :"shop-general", component:ShopGeneralComponent},
   {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
   {path:"shops/:id",component:ShopSpecificComponent},
-  {path:"viewMore/:id",component:ViewMoreComponent}
+  {path:"viewMore/:id",component:ViewMoreComponent},
+  {path:"search/:keywords",component:SearchResultComponent},
+  {path:"order",component:OrderComponent},
   ]}
   
 ];

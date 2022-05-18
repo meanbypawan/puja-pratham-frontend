@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row cardimg">
     <div class="col-md-3" style="margin-top: 40px;"
-      *ngFor="let product of typeList| paginate:  { itemsPerPage: 20, currentPage: p, totalItems: total }">
+      *ngFor="let product of typeList| paginate:  { itemsPerPage: 12, currentPage: p, totalItems: total }">
       <div class="card-sl">
         <div class="card-image">
           <img src="{{product.image}}" />
         </div>
 
-        <a class="card-action" href="#"><i class="fa fa-shopping-cart fa-lg"></i></a>
+        <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(product._id)"></i></a>
         <div class="card-heading">
           <h4>{{product.name}}</h4>
 
@@ -22,7 +22,7 @@
             <i class="far fa-star" aria-hidden="true"></i>
             <i class="far fa-star" aria-hidden="true"></i>
           </div>
-          <a href="#" class="card-button">View More</a>
+          <a class="card-button">View More</a>
         </div>
       </div>
 
