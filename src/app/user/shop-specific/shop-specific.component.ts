@@ -18,6 +18,7 @@ export class ShopSpecificComponent implements OnInit {
      this.catid   =  <string>this.ActivatedRoute.snapshot.paramMap.get("id");
      if(event instanceof NavigationEnd){
        this.productService.productViewbyCategoryId(this.catid).subscribe(data=>{
+         console.log(data)
          this.products = data;
        })
      }
