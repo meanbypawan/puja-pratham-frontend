@@ -1,32 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShopServiceService } from 'src/app/service/shop-service.service';
+import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-shop-general-all',
   templateUrl: './shop-general-all.component.html',
   styleUrls: ['./shop-general-all.component.css']
 })
 export class ShopGeneralAllComponent implements OnInit {
-   typeList:any[]=[];
+  typeList: any[] = [];
   p: number = 1;
   total: number = 0;
-   type:any;
-  constructor(private shopService: ShopServiceService,private activatedRoute:ActivatedRoute) {
+  type: any;
+  cart:any[]=[];
+  constructor(private userService:UserService,private shopService: ShopServiceService, private activatedRoute: ActivatedRoute) {
     this.type = activatedRoute.snapshot.paramMap.get("type");
     console.log(this.type)
     this.shopService.ViewProduct().subscribe(data => {
       if (data) {
-        // console.log(data);
         for (let element of data) {
           if (element.catId.type == this.type)
             this.typeList.push(element);
-          // else if (element.catId.type == "package")
-          //   this.packageList.push(element);
-          // else if (element.catId.type == "photo")
-          //   this.photoFrameList.push(element);
-          // else
-          //   this.murtiList.push(element);
-
         }
       }
       else
@@ -37,10 +31,35 @@ export class ShopGeneralAllComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.userService.viewCart().subscribe(data=>{
+      if(data){
+        this.cart = data.productList;
+      }
+    })
   }
 
-pageChangeEvent(event: number){
+  pageChangeEvent(event: number) {
     this.p = event;
     this.typeList;
-}
+  }
+  addToCart(productId: any) {
+    let flag = false;
+    for (let element of this.cart) {
+      if (element._id == productId) {
+        flag = true;
+        break;
+      }
+    }
+    if (flag) {
+      alert("Product is already added to your cart");
+    }
+    else {
+      this.userService.addToCart(productId).subscribe(data => {
+        if (data) {
+          alert("Product Added");
+          this.ngOnInit();
+        }
+      })
+    }
+  }
 }

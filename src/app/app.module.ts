@@ -28,6 +28,9 @@ import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-al
 import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
 import { SafePipePipe } from './safe-pipe.pipe';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { OrderComponent } from './user/order/order.component';
+import { PlaceOrderComponent } from './user/place-order/place-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,10 @@ import { SafePipePipe } from './safe-pipe.pipe';
     ShopGeneralAllComponent,
     ShopSpecificComponent,
     ViewMoreComponent,
-    SafePipePipe
+    SafePipePipe,
+    SearchResultComponent,
+    OrderComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,

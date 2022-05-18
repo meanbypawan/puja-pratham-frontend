@@ -23,4 +23,8 @@ export class ProductService {
   public ViewMore(id:string):Observable<any>{
     return this.http.post(this.viewMore, {_id:id});
   }
+  public searchResult(search:any){
+    let api = "http://localhost:3000/product/search";
+    return this.http.post<any>(api,{keywords:search});
+  }
 }
