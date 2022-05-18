@@ -42,6 +42,10 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { OrderComponent } from './user/order/order.component';
+import { PlaceOrderComponent } from './user/place-order/place-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +71,11 @@ import { MatInputModule } from '@angular/material/input';
     ShopSpecificComponent,
     ViewMoreComponent,
     SafePipePipe,
-    BookeventComponent
+    BookeventComponent,
+    EditProfileComponent
+    SearchResultComponent,
+    OrderComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,

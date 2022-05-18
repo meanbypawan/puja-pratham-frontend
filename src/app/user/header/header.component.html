@@ -7,9 +7,9 @@
     <form class="search-form" id="search" #search>
         <input  name="a" placeholder="search here..."
             id="search-box" (keyup)="searchProduct($event)">
-        <a><label for="search-box" class="fas fa-search"></label></a>
+        <a><label for="search-box" class="fas fa-microphone" (click)="searching()"></label></a>
     </form>
-
+<audio src="../../../assets/audios/mic.wav"></audio>
     <div class="icons">
         <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
     <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
@@ -38,7 +38,7 @@
             <img src="{{pro.image}}" alt="">
             <div class="content">
                 <h3>{{pro.name}}</h3>
-                <span class="price"> {{pro.price}}</span>
+                <span class="price"> {{pro.discountedPrice}}</span>
             </div>
         </div>
         <div *ngIf="checkCart(); else cartMessage">
@@ -130,10 +130,11 @@
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
             <p>{{userProfile.name}}</p>
-            <p><a href="#">Edit Profile</a></p>
-            <p><a href="#">Order history</a></p>
-            <p><a href="#">Remove account</a></p>
-            <p><a href="#">Help</a></p>
+            <p><a routerLink="/edit-profile/{{userProfile.id}}">Edit Profile</a></p>
+            <p><a >Order history</a></p>
+            <p><a >Remove account</a></p>
+            <p><a >Help</a></p>
+
             <input type="submit" value="sign out" class="btn" (click)="signout()">
         </div>
     </div>

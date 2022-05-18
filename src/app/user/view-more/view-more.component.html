@@ -19,7 +19,6 @@
         <div class="media-body" style="justify-content: center;">
           <h3 class="name">faizan</h3>
           <p class="detail">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia quos provident tempora, ipsam unde omnis similique totam asperiores rerum nam, et aperiam molestias enim reiciendis rem quod ducimus atque! Incidunt.</p>
-  
         </div>
       </div>
   
@@ -32,10 +31,10 @@
         <span>{{product.catId.name}}</span>
         <h1>{{product.name}}</h1>
         <h2>{{product.price}}</h2>
-        <p style="justify-content: center;">The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy
-          headband and on-ear cushions suitable for live performance</p>
-      </div>
 
+        <p style="justify-content: center;" *ngFor="let point of points">{{point}}</p>
+  <button class="btn btn-primary" (click)="addToCart(product._id)">Add to Cart</button>
+      </div>
     </div>
   
   
