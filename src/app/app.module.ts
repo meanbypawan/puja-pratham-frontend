@@ -72,7 +72,7 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
     ViewMoreComponent,
     SafePipePipe,
     BookeventComponent,
-    EditProfileComponent
+    EditProfileComponent,
     SearchResultComponent,
     OrderComponent,
     PlaceOrderComponent
