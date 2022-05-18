@@ -75,10 +75,11 @@
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
             <p>{{userProfile.name}}</p>
-            <p><a >Edit Profile</a></p>
+            <p><a routerLink="/edit-profile/{{userProfile.id}}">Edit Profile</a></p>
             <p><a >Order history</a></p>
             <p><a >Remove account</a></p>
             <p><a >Help</a></p>
+
             <input type="submit" value="sign out" class="btn" (click)="signout()">
         </div>
     </div>

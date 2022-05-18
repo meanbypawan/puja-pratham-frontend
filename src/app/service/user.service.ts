@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -29,6 +30,17 @@ export class UserService {
   // forgetPassword(){
   //   let api = "http://localhost:3000/user/"
   // }
+
+  editProfile(formdata:FormData):Observable<any>{
+   let api = "http://localhost:3000/user/update-profile"
+    return this.http.post(api,formdata);
+  }
+  
+  viewOneUser():Observable<any>{
+   let id = JSON.parse(sessionStorage.getItem("user" || "{}")).id;
+   let api = "http://localhost:3000/user/viewOne/"+id;
+   return this.http.get(api);
+  }
   
   public addToCart(productId:string):Observable<any>{
     let api = "http://localhost:3000/cart/add-to-cart";

@@ -1,0 +1,77 @@
+<div style="background-color: #fff;" class="mt-5">
+
+  <section class=" gradient-form" style="  margin-bottom: 80px;">
+    <div class="container ">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-xl">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg">
+                <div class="card-body p-md-5 mx" style="  padding-bottom: 100px;">
+
+                  <div class="text-center design mb-5 ">
+                    <img src="../../../assets/images/logo2.png" style="width: 180px;" alt="logo">
+                    <h1 style="color:#ff9642;font-weight: bolder;text-decoration: none; ">Puja Pratham</h1>
+                  </div>
+
+                  <div class="form-group" style="font-size: medium;">
+                    <i class="fa fa-user fa-lg mr-3"></i>
+
+                    <label class="form-label">Name</label>
+                    <input required #username="ngModel" type="text" class="form-control"
+                      [(ngModel)]="name">
+                    <!-- <span *ngIf="username.errors?.['required'] && username.touched" class="text-danger">Name is
+                      required</span> -->
+                  </div>
+
+                  <div class="form-group" style="font-size:medium;">
+                    <i class="fa fa-address-card mr-3"></i>
+                    <label class="form-label 2">Address</label>
+                    <input type="text" required #Address="ngModel" class="form-control"
+                      [(ngModel)]="address" />
+                    <!-- <span *ngIf="Address.errors?.['required'] && Address.touched" class="text-danger">Address is
+                      required</span> -->
+                  </div>
+
+                  <div class="form-group" style="font-size: medium;">
+                    <i class="fa fa-picture-o mr-3"></i>
+                    <label class="form-label">Upload your image</label>
+                    <input type="file" (change)="selectImage($event)" class="form-control" />
+                  </div>
+                  <button [disabled]="!(username.valid && Address.valid)" type="submit" (click)="editProfile()"
+                    class="btn btn-warning  mt-4">Update</button>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4" style="font-size: large;">
+
+                  <div class="image mb-5" style="margin-bottom: 100px;">
+                    <img src="../../../assets/images/ganeshji.jpg" style="opacity: 0.4;" alt="" width="100%"
+                      height="100%">
+                    <p class="large mt-5 ml-5">
+                      <marquee>
+                        <br>
+                        <br>
+                        <br>
+                        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ<br>
+                        निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा
+                        <br>
+                        <br>
+                        <br>
+
+
+                      </marquee>
+
+                    </p>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -28,6 +28,7 @@ import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-al
 import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
 import { SafePipePipe } from './safe-pipe.pipe';
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { OrderComponent } from './user/order/order.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
@@ -56,6 +57,7 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
     ShopSpecificComponent,
     ViewMoreComponent,
     SafePipePipe,
+    EditProfileComponent
     SearchResultComponent,
     OrderComponent,
     PlaceOrderComponent
