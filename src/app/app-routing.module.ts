@@ -40,7 +40,7 @@ const routes: Routes = [
   {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
   {path:"shops/:id",component:ShopSpecificComponent},
   {path:"viewMore/:id",component:ViewMoreComponent},
-   {path:"bookEvent/:id",component:BookeventComponent}
+   {path:"bookEvent/:id",component:BookeventComponent},
   {path:"search/:keywords",component:SearchResultComponent},
   {path:"order",component:OrderComponent},
   ]}
