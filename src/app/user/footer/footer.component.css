@@ -1,10 +1,12 @@
 
 section {
     padding: 3rem 9%;
+    /* margin-top: 40px; */
   }
 .footer {
  
     background: #faf6f2f5;
+    margin-top: 40px;
     
   } 
   .btn {
@@ -15,6 +17,7 @@ section {
     background: #ffa047;
     color: #fff;
     cursor: pointer;
+    border-radius: 25px;
   }
   
   .btn:hover {
@@ -29,8 +32,13 @@ section {
     -ms-grid-columns: (minmax(25rem, 1fr)),[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
+    /* margin-top: 50px; */
   }
-  
+
+  /* .box-container{
+    margin-top: 40px;
+  }
+   */
   .footer .box-container .box h3 {
     font-size: 2.2rem;
     color: #ffa047;
@@ -72,6 +80,7 @@ section {
     text-transform: none;
     margin: .7rem 0;
     border: 0.1rem solid #ffa047;
+    border-radius: 25px;
   }
   .footer .box-container .box form input[type="text"] {
     width: 100%;
@@ -85,8 +94,8 @@ section {
   
   
 .credit {
-    padding-top: 40px;
-    height: 130px;
+    padding-top: 25px;
+    height: 80px;
     text-align: center;
     font-size: 2rem;
     color: #fff;

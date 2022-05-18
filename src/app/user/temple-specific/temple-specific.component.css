@@ -51,20 +51,23 @@ body {
 
 
 .card-heading h1 {
-  font-size: 22px;
+  font-size: 20px;
   padding-top: 5px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
 }
 
 .card-heading h2 {
-  font-size: 18px;
+  font-size: 16px;
   padding-top : 5px;
 }
 
 .card-sl {
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-  height: 380px;
-  width: 95%;
+  height: 350px;
+  width: 94%;
   /* height: 150px; */
   margin-bottom: 30px;
   /* background-color: #314E52; */
@@ -132,7 +135,7 @@ body {
 
 
 
-@media only screen and (max-width:550px) {
+@media only screen and (min-width:200px)  and (max-width:499px) {
   .card-image img {
     max-height: 250px;
     width: 100%;
@@ -166,17 +169,23 @@ body {
   }
 
 }
-/* 
-@media only screen and (min-width:550px) {
 
-
-  .msgBtn {
-    font-size: 13px;
- 
-  }
-
-  .msgBtn2 {
-    font-size: 1px;
-    margin-left: 15px;
-  }
+@media only screen and (min-width:500px)  and (max-width:930px) {
+/* .row{
+  width: 25%;
 } */
+.testing{
+  width: 50%;
+}
+
+}
+
+@media only screen and (min-width:931px)  and (max-width:1250px) {
+  /* .row{
+    width: 25%;
+  } */
+  .testing{
+    width: 33.3%;
+  }
+  
+  }

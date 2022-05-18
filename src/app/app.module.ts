@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -28,6 +29,19 @@ import { ShopGeneralAllComponent } from './user/shop-general-all/shop-general-al
 import { ShopSpecificComponent } from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
 import { SafePipePipe } from './safe-pipe.pipe';
+import { BookeventComponent } from './user/bookevent/bookevent.component';
+
+// Datepicker module
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+//timepicker
+
+
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,14 +66,20 @@ import { SafePipePipe } from './safe-pipe.pipe';
     ShopGeneralAllComponent,
     ShopSpecificComponent,
     ViewMoreComponent,
-    SafePipePipe
+    SafePipePipe,
+    BookeventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    NgxMatTimepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

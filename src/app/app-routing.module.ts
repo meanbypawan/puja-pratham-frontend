@@ -15,6 +15,7 @@ import { TemplePujaOneComponent } from './user/temple-puja-one/temple-puja-one.c
 import { TempleSpecificComponent } from './user/temple-specific/temple-specific.component';
 import {ShopSpecificComponent} from './user/shop-specific/shop-specific.component';
 import { ViewMoreComponent } from './user/view-more/view-more.component';
+import { BookeventComponent } from './user/bookevent/bookevent.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path :"shop-general", component:ShopGeneralComponent},
   {path :"shop-general-all/:type",component:ShopGeneralAllComponent},
   {path:"shops/:id",component:ShopSpecificComponent},
-  {path:"viewMore/:id",component:ViewMoreComponent}
+  {path:"viewMore/:id",component:ViewMoreComponent},
+   {path:"bookEvent/:id",component:BookeventComponent}
   ]}
   
 ];
