@@ -46,6 +46,8 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
 import { SearchResultComponent } from './search-result/search-result.component';
 import { OrderComponent } from './user/order/order.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
+import { OrderHistoryComponent } from './user/order-history/order-history.component';
+import { GoogleLoginProvider,SocialAuthServiceConfig,SocialLoginModule } from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,8 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
     EditProfileComponent,
     SearchResultComponent,
     OrderComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -88,8 +91,24 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
     MatFormFieldModule,
     MatInputModule,
     NgxMatTimepickerModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+               '547163577773-7iqaf7gelrihr2a4kftjpilevu7mv3jq.apps.googleusercontent.com'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

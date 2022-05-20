@@ -1,5 +1,3 @@
-<!-- header section starts  -->
-
 <header class="header">
 
     <a routerLink="" class="logo"><img src="../../../assets/images/logo2.png" alt="">Puja Pratham</a>
@@ -56,7 +54,6 @@
 
 <ng-template #cartElse>
     <h1>Please Login First</h1>
-    
 </ng-template>
 
 <!-- login form  -->
@@ -66,23 +63,23 @@
         <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
         <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
         <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
-        <p>login as user with :<a href="#" (click)="socialLogin()">Google</a></p>
+        <p>login as user with :<a (click)="socialLogin()">Google</a></p>
         <p>forget password? <a (click)="forgetPassword()">click here</a></p>
         <p>don't have an account? <a routerLink="signup">create now</a></p>
     </form>
 </div>
-<!-- <audio src="../../../assets/audios/translate_tts.mp3"></audio> -->
 <ng-template #elseBlock>
     <div class="box">
         <div class="dash">
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
             <p style="padding-top: 5px;">{{userProfile.name}}</p>
-            <h2 routerLink="/edit-profile/{{userProfile.id}}">Edit Profile</h2>
-            <h2>Order history</h2>
+            <h2 routerLink="/edit-profile/{{userProfile.id}}" *ngIf="userProfile.flag==false">Edit Profile</h2>
+            <h2 routerLink="/order-history">Order history</h2>
             <h2>Remove account</h2>
             <h2>Help</h2>
             <button type="submit" value="sign out" class="btn" (click)="signout()">Sign Out</button>
+
         </div>
     </div>
 </ng-template>
