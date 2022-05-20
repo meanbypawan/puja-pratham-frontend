@@ -1,4 +1,4 @@
-/* 
+
 
   section {
     padding: 3rem 9%;
@@ -84,6 +84,7 @@
     -webkit-animation: fadeOut .4s linear;
             animation: fadeOut .4s linear;
             height: 400px;
+            /* border-radius: 20px; */
            
   }
   
@@ -154,17 +155,17 @@
     }
     .home .carousel .carousel-inner .carousel-item  img{
       height: 200px;
-      width: 400px;
+      width: 340px;
     }
   }
 
   @media only screen and (min-width: 600px){
     .home #slide-next{
-      margin-top: 250px;
+      margin-top: 290px;
       margin-right: -70px;
     }
     .home #slide-prev{
-      margin-top: 250px;
+      margin-top: 290px;
       margin-left: -70px;
     }
     .home .carousel .carousel-inner .carousel-item  img{
@@ -209,7 +210,7 @@
       margin-top: 0px;
 
     }
-  } */
+  }
 
 
 

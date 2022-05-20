@@ -10,8 +10,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
     height: 390px;
-    width: 94%;
+    width: 90%;
     position: relative;
+    /* margin-left: 15px; */
   }
   .card-heading color{
     background-image: linear-gradient(315deg, #FBCC34  0%, #Ff9642  60%);
@@ -104,16 +105,20 @@ body {
   .card-button {
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 60%;
+    height: 35px;
     background-color:transparent;
     color:black;
     border-radius:25px;
     border: 1px solid #ff9642 ;
 /* margin-left: 70px; */
     justify-content: center;
-  margin-left: 13px;
+  /* margin-left: 13px; */
   position: absolute;
+  text-align: center;
+  padding-top: 3px;
   bottom: 13px;
+
   }
   
   .card-button:hover {
@@ -157,15 +162,29 @@ body {
     font-size: 15px;
   }
  
-  @media only screen and (min-width: 250px) and (max-width: 450px) {
+  @media only screen and (min-width: 100px) and (max-width: 349px) {
     .card-sl{
-      margin-left: 12px;
+      width: 95%;
     }
   }
 
-  @media only screen and (min-width: 460px) and (max-width: 950px) {
+  @media only screen and (min-width: 350px) and (max-width: 499px) {
     .card-sl{
-      margin-left: 16px;
+      width: 80%;
     }
+  }
+
+  @media only screen and (min-width: 500px) and (max-width: 999px) {
+    .card-sl{
+    }
+    .col-md-6{
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) and (max-width: 1250px) {
+   .col-lg-3{
+     width: 33.3%;
+   }
   }
   

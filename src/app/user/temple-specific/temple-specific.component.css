@@ -22,7 +22,8 @@ body {
   padding: 7px;
   background: transparent;
   font-size: 13px;
-  /* margin-top: 30px; */
+   margin-right: 10px;
+
 }
 
 .msgBtn2 {
@@ -31,11 +32,12 @@ body {
   width: 100%;
   border-radius: 20px;
   font-size: 13px;
-  margin-left: 11px;
+  /* margin-left: 11px; */
   padding: 7px;
-  /* margin-top: 30px; */
   background-color: #fb641b;
   color: #fff;
+  margin-left: 10px;
+
 }
 
 .msgBtn:hover {
@@ -67,11 +69,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
   height: 350px;
-  width: 94%;
-  /* height: 150px; */
+  width: 90%;
   margin-bottom: 30px;
-  /* background-color: #314E52; */
-  margin-left: 10px;
   position: relative;
 }
 
@@ -97,15 +96,6 @@ body {
   background: #fff;
   padding: 10px 15px;
 }
-
-/* .card-text {
-    padding: 10px 15px;
-    background: #fff;
-    font-size: 14px;
-    color: #636262;
-  }
-   */
-
 
 
 @-webkit-keyframes pulse {
@@ -143,19 +133,15 @@ body {
   }
 
   .card-sl {
-    margin-left: 35px;
     width: 80%;
   }
 
   .msgBtn {
     font-size: 15px;
-
   }
 
   .msgBtn2 {
     font-size: 15px;
-    margin-left: 10px;
-
   }
 
   .msgBtn:hover {
@@ -171,9 +157,7 @@ body {
 }
 
 @media only screen and (min-width:500px)  and (max-width:930px) {
-/* .row{
-  width: 25%;
-} */
+
 .testing{
   width: 50%;
 }
@@ -181,11 +165,8 @@ body {
 }
 
 @media only screen and (min-width:931px)  and (max-width:1250px) {
-  /* .row{
-    width: 25%;
-  } */
+ 
   .testing{
     width: 33.3%;
   }
-  
   }

@@ -41,8 +41,10 @@
         </div>
         <div *ngIf="checkCart(); else cartMessage">
         <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
-
-        <a (click)="checkout()" (click)="closeBar()" class="btn">checkout cart</a>
+     <div>
+        <a (click)="checkout()" style="justify-content: center;
+        display: flex;margin-left: 55px;" (click)="closeBar()" class="btn">checkout cart</a>
+     </div>
     </div>
         <ng-template #cartMessage>
             <h1>No Items added to the Cart</h1>
@@ -71,11 +73,13 @@
         <div class="dash">
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
-            <p>{{userProfile.name}}</p>
-            <p><a routerLink="/edit-profile/{{userProfile.id}}" *ngIf="userProfile.flag==false">Edit Profile</a></p>
-            <p><a routerLink="/order-history">Order history</a></p>
-            <p><a >Remove account</a></p>
-            <input type="submit" value="sign out" class="btn" (click)="signout()">
+            <p style="padding-top: 5px;">{{userProfile.name}}</p>
+            <h2 routerLink="/edit-profile/{{userProfile.id}}" *ngIf="userProfile.flag==false">Edit Profile</h2>
+            <h2 routerLink="/order-history">Order history</h2>
+            <h2>Remove account</h2>
+            <h2>Help</h2>
+            <button type="submit" value="sign out" class="btn" (click)="signout()">Sign Out</button>
+
         </div>
     </div>
 </ng-template>
