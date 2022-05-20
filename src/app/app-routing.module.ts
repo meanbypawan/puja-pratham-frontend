@@ -20,6 +20,7 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
 import { SearchResultComponent } from './search-result/search-result.component';
 import { OrderComponent } from './user/order/order.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
+import { OrderHistoryComponent } from './user/order-history/order-history.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
@@ -43,12 +44,13 @@ const routes: Routes = [
    {path:"bookEvent/:id",component:BookeventComponent},
   {path:"search/:keywords",component:SearchResultComponent},
   {path:"order",component:OrderComponent},
+  {path : "order-history",component:OrderHistoryComponent}
   ]}
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

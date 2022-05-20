@@ -1,20 +1,24 @@
 <section class="heading">
     <h1>Audios</h1>    
   </section>
-  <div class="container-fluid contenedor text-center">
-     <div class=" container text-center" >
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto" *ngFor="let aud of audios" >
-           <div class="text-center">
+  <div class="container">
+   <div class="row flex-xl-nowrap">
+     
+     <div class="card-deck">
+         <div class="card border-0 col-sm-4 p-0" *ngFor="let aud of audios">
+           <div class="card-body">
+               <img src="{{aud.image}}" alt="" routerLink="/media-one/{{aud._id}}">
+               <div class="icons">
+                   <a href="" ><i class="fa fa-play"></i><h6>Play Now</h6></a>
+                     
+                 </div>
+             <p class="card-text font-weight-bold programme-title lead">{{aud.name}}</p>
+             
            </div>
-           <article class="text-left">
-              <h2>{{aud.name}}</h2>
-              <i class="fa fa-music fa-2x" ></i>
-           </article>
-           <img src="{{aud.image}}" alt="" routerLink="/media-one/{{aud._id}}">
-        </div>
-     </div>
-  </div>
-
+         </div>
+ </div>
+ </div>
+</div>
   <section class="heading">
     <h3>videos</h3>    
 </section>
@@ -33,5 +37,6 @@
               
             </div>
           </div>
-          
   </div>
+  </div>
+</div>

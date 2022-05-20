@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { ProductService } from 'src/app/service/product.service';
 import { UserService } from 'src/app/service/user.service';
 declare var webkitSpeechRecognition:any;
@@ -11,7 +12,7 @@ declare var webkitSpeechRecognition:any;
 })
 export class HeaderComponent implements OnInit {
 
-  // user!: SocialUser;
+  user!: SocialUser;
   email: string = "";
   password: string = "";
   userProfile: any;
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
   cartList: any[] = [];
   search:any; 
   
-  constructor(private userService:UserService,private productService:ProductService,private router:Router) {
+  constructor(private authService: SocialAuthService,private userService:UserService,private productService:ProductService,private router:Router) {
     this.viewCartProduct();
   }
 
@@ -51,16 +52,18 @@ export class HeaderComponent implements OnInit {
   }
   totalPrice?: number = 0;
   viewCartProduct() {
-    this.totalPrice = 0;
-    this.userService.viewCart().subscribe(data=>{
-      if(data){
-        this.cartList = data.productList;
-        for(let element of this.cartList){
-          element.discountedPrice = element.price - (element.price * element.discount / 100) ;
-          this.totalPrice += element.discountedPrice;
+    if(sessionStorage.getItem("user")){
+      this.totalPrice = 0;
+      this.userService.viewCart().subscribe(data=>{
+        if(data){
+          this.cartList = data.productList;
+          for(let element of this.cartList){
+            element.discountedPrice = element.price - (element.price * element.discount / 100) ;
+            this.totalPrice += element.discountedPrice;
+          }
         }
-      }
-    })
+      })
+    } 
   }
   checkCart() {
     if (this.cartList.length > 0)
@@ -68,24 +71,40 @@ export class HeaderComponent implements OnInit {
     return false;
   }
   ngOnInit(): void {
-    // this.authService.authState.subscribe((data: any) => {
-    //   this.user = data;
-    //   this.userService.socialLogin(this.user).subscribe(data => {
-    //     this.userProfile = data;
-    //     localStorage.setItem("token", data.token);
-    //     localStorage.setItem("user", JSON.stringify(data.user));
-    //   });
-    // });
+    this.authService.authState.subscribe((data: any) => {
+      this.user = data;
+      this.userService.socialLogin(this.user).subscribe(data => {
+        let user = {
+          name:data.user.name,
+          image:data.user.image,
+          id:data.user._id,
+          flag:true
+        }
+        this.userProfile = user;
+        sessionStorage.setItem("user", JSON.stringify(user));
+        sessionStorage.setItem('token', data.token);
+        let audio1 = new Audio();
+        audio1.src = "../../../assets/audios/login(hindi).mp3";
+        audio1.load();
+        audio1.play();
+        audio1.onended = ()=>{
+          let audio2 = new Audio();
+          audio2.src = "../../../assets/audios/login(english).mp3";
+          audio2.load();
+          audio2.play();
+        }
+      });
+    });
   }
 
   removeFormCart(pid: string) {
-    // this.cartService.removeFromCart(pid).subscribe(data => {
-    //   this.viewCartProduct();
-    // })
+    this.userService.removeFromCart(pid).subscribe(data => {
+      this.viewCartProduct();
+    })
   }
 
   socialLogin() {
-    // this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   signOut() {

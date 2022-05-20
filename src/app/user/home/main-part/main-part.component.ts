@@ -10,10 +10,7 @@ export class MainPartComponent implements OnInit {
 
   productList: any[] = [];
   packageList: any[] = [];
-  audiomediaList:any[]=[];
-  videomediaList:any[]=[];
-  audio="audio";
-  video="video";
+  mediaList:any[]=[];
   constructor(private categoryService:CategoryService) {
     
     categoryService.view().subscribe(data=>{
@@ -25,19 +22,9 @@ export class MainPartComponent implements OnInit {
       }
     });
     categoryService.viewMedia().subscribe(data=>{
-      // console.log(this.type);
-      // this.mediaList = data;    
-      // console.log(data.type+"hiii"); 
-      // console.log(data);
-      for(let element of data){
-        if(element.type=="audio")
-          this.audiomediaList.push(element);
-          
-        else if(element.type == "video")
-          this.videomediaList.push(element);
-        console.log(element.type);
+      if(data){
+        this.mediaList = data;
       }
-      
     })
   }
   ngOnInit(): void {}
