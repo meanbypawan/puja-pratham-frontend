@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class ShopServiceService {
 
-  productView = 'http://localhost:3000/product/view';
+  productView = 'https://puja-pratham-backend.herokuapp.com/product/view';
   // categoryView='http://localhost:3000/product-category/view';
   // photoFrams='http://localhost:3000/mediafile-category/view';
   constructor(private http: HttpClient) {}
