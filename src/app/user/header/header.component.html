@@ -43,8 +43,10 @@
         </div>
         <div *ngIf="checkCart(); else cartMessage">
         <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
-
-        <a (click)="checkout()" (click)="closeBar()" class="btn">checkout cart</a>
+     <div>
+        <a (click)="checkout()" style="justify-content: center;
+        display: flex;margin-left: 55px;" (click)="closeBar()" class="btn">checkout cart</a>
+     </div>
     </div>
         <ng-template #cartMessage>
             <h1>No Items added to the Cart</h1>
@@ -54,61 +56,7 @@
 
 <ng-template #cartElse>
     <h1>Please Login First</h1>
-     <!-- Navbar-collapse -->
-  
-     <ul class="top-menu list-inline mb-0 d-none d-lg-block" id="top-menu">
-        <li class="list-inline-item">
-          <a href="#" class="search_toggle" id="search-icon"><i class="tf-ion-android-search"></i></a>
-        </li>
-  
-        <li class="dropdown cart-nav dropdown-slide list-inline-item">
-          <a href="#" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
-            <i class="tf-ion-android-cart"></i>
-          </a>
-          <div class="dropdown-menu cart-dropdown">
-            <!-- Cart Item -->
-            <div class="media">
-              <a href="#">
-                <img class="media-object img- mr-3" src="assets/images/cart-1.jpg" alt="image" />
-              </a>
-              <div class="media-body">
-                <h6>Ladies Bag</h6>
-                <div class="cart-price">
-                  <span>1 x</span>
-                  <span>1250.00</span>
-                </div>
-              </div>
-              <a href="#" class="remove"><i class="tf-ion-close"></i></a>
-            </div><!-- / Cart Item -->
-  
-            <!-- Cart Item -->
-            <div class="media">
-              <a href="#">
-                <img class="media-object img-fluid mr-3" src="assets/images/cart-2.jpg" alt="image" />
-              </a>
-              <div class="media-body">
-                <h6>Skinny Jeans</h6>
-                <div class="cart-price">
-                  <span>1 x</span>
-                  <span>1250.00</span>
-                </div>
-              </div>
-              <a href="#" class="remove"><i class="tf-ion-close"></i></a>
-            </div><!-- / Cart Item -->
-  
-            <div class="cart-summary">
-              <span class="h6">Total</span>
-              <span class="total-price h6">$1799.00</span>
-  
-              <div class="text-center cart-buttons mt-3">
-                <a href="#" class="btn btn-small btn-transparent btn-block">View Cart</a>
-                <a href="#" class="btn btn-small btn-main btn-block">Checkout</a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="list-inline-item"><a href="#"><i class="tf-ion-ios-person mr-3"></i></a></li>
-      </ul>
+    
 </ng-template>
 
 <!-- login form  -->
@@ -129,13 +77,12 @@
         <div class="dash">
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
-            <p>{{userProfile.name}}</p>
-            <p><a routerLink="/edit-profile/{{userProfile.id}}">Edit Profile</a></p>
-            <p><a >Order history</a></p>
-            <p><a >Remove account</a></p>
-            <p><a >Help</a></p>
-
-            <input type="submit" value="sign out" class="btn" (click)="signout()">
+            <p style="padding-top: 5px;">{{userProfile.name}}</p>
+            <h2 routerLink="/edit-profile/{{userProfile.id}}">Edit Profile</h2>
+            <h2>Order history</h2>
+            <h2>Remove account</h2>
+            <h2>Help</h2>
+            <button type="submit" value="sign out" class="btn" (click)="signout()">Sign Out</button>
         </div>
     </div>
 </ng-template>

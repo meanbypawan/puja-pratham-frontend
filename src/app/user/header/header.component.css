@@ -145,7 +145,7 @@
   
 #closer {
     position: fixed;
-    top: 1.5rem;
+    top: 1.2rem;
     right: 2rem;
     font-size: 5rem;
     cursor: pointer;
@@ -245,6 +245,7 @@
     gap: 1.5rem;
     position: relative;
     margin-bottom: 1rem;
+    /* height: 2000px; */
   }
   
   .shopping-cart .box .fa-times {
@@ -293,9 +294,22 @@
   }
   
   .shopping-cart .btn {
-    width: 100%;
+    width: 60%;
     text-align: center;
+    background-color:#ffa047;
+    color: #fff;
+    margin: 1rem 0;
+   font-size: 15px;
+    height: 35px;
+    border-radius: 20px;
+    
   }
+
+  .shopping-cart .btn:hover{
+    color: black;
+    background-color:#eeae71 ;
+  }
+
   
   .login-form {
     position: fixed;
@@ -303,7 +317,7 @@
     right: -101%;
     z-index: 1000;
     width: 35rem;
-    height: 100vh;
+    height: 80vh;
     background: #fff;
     padding: 2rem;
     display: -webkit-box;
@@ -388,7 +402,7 @@
     right: -101%;
     z-index: 1000;
     width: 35rem;
-    height: 100vh;
+    height: 80vh;
     background: #fff;
     padding: 2rem;
     display: -webkit-box;
@@ -412,6 +426,8 @@
   .box {
     padding: 1.7rem;
     border: 0.1rem solid #ffa047;
+    text-align: center;
+    margin-top: 30px;
   }
   .dash h3 {
     font-size: 2.2rem;
@@ -427,8 +443,19 @@
   }
   .dash .btn {
     margin: 1rem 0;
-    width: 100%;
+    width: 70%;
+    height: 35px;
     text-align: center;
+    color: #fff;
+    background-color:#ffa047 ;
+    border-radius: 25px;
+    font-size: 15px;
+    padding-top: 4px;
+  }
+
+  .dash .btn:hover{
+       color: black;
+       background-color:#f7af6d ;
   }
   
   .dash p {
@@ -440,9 +467,14 @@
   
   .dash a {
     color: #ffa047;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     padding-top: 2px;
     font-size: 2rem;
+  }
+
+  .dash h2{
+    color:#ffa047 ;
+    padding: 3px;
   }
   
   .dash a:hover {
@@ -452,6 +484,17 @@
   .loginuser{
     font-size: 100px;
   }
+
+
+  @media (min-width: 385px) and (max-width: 440px){
+.box{
+  margin-top: 0;
+}
+.login-form{
+  height: 62vh;
+}
+  }
+
   
   @media (max-width: 991px) {
     html {

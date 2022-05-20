@@ -55,4 +55,17 @@ export class CategoryService {
     let api = "http://localhost:3000/event/view-one/"+id;
     return this.http.get(api);
   }
+  bookEventOnCash(order:any):Observable<any>{
+    let api = "http://localhost:3000/book-event/book-now-on-cash";
+    return this.http.post(api,order);
+  }
+  createEvent():Observable<any>{
+    let api = "http://localhost:3000/book-event/create";
+    return this.http.get(api);
+  }
+  bookEventOnline(order:any):Observable<any>{
+    let api = "http://localhost:3000/book-event/order-online";
+    return this.http.post(api,order);
+  }
+
 }
