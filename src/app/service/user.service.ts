@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { SocialUser } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -78,5 +79,16 @@ export class UserService {
   public placeOrder2(order:any):Observable<any>{
     let api = "http://localhost:3000/order/order-status";
     return this.http.post(api,order);
+  }
+
+  public orderHistory():Observable<any>{
+    let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
+    let api = "http://localhost:3000/order/view-orders/"+userId;
+    return this.http.get(api);
+  }
+
+  socialLogin(user:SocialUser):Observable<any>{
+    let socialApi = "http://localhost:3000/user/login-by-social-media";
+    return this.http.post(socialApi,{name : user.name,email : user.email,image : user.photoUrl})
   }
 }

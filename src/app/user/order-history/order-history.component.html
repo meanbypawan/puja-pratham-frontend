@@ -1,0 +1,20 @@
+<table class="table mt-3 ml-3 mr-3">
+    <thead>
+        <th>Date Of Order</th>
+        <th>Status</th>
+        <th>Mode of Payment</th>
+        <th>Items Qty</th>
+        <th>Total</th>
+        <th>View Details</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order.date}}</td>
+            <td>{{order.orderStaus}}</td>
+            <td>{{order.payment_type}}</td>
+            <td>{{order.productList.length}}</td>
+            <td>{{order.amount}}</td>
+            <td><button class="btn btn-primary" (click)="viewDetails(order._id)">View Details</button></td>
+        </tr>
+    </tbody>
+</table>

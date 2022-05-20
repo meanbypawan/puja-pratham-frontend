@@ -31,11 +31,14 @@ export class ShopGeneralAllComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.userService.viewCart().subscribe(data=>{
-      if(data){
-        this.cart = data.productList;
-      }
-    })
+    if(sessionStorage.getItem("user")){
+      this.userService.viewCart().subscribe(data=>{
+        if(data){
+          this.cart = data.productList;
+          console.log(this.cart);
+        }
+      })
+    }
   }
 
   pageChangeEvent(event: number) {
@@ -43,23 +46,26 @@ export class ShopGeneralAllComponent implements OnInit {
     this.typeList;
   }
   addToCart(productId: any) {
-    let flag = false;
-    for (let element of this.cart) {
-      if (element._id == productId) {
-        flag = true;
-        break;
-      }
-    }
-    if (flag) {
-      alert("Product is already added to your cart");
-    }
-    else {
-      this.userService.addToCart(productId).subscribe(data => {
-        if (data) {
-          alert("Product Added");
-          this.ngOnInit();
+    if(sessionStorage.getItem("user")){
+      let flag=false;
+      for(let element of this.cart){
+        if(element._id == productId){
+          flag=true;
+          break;
         }
-      })
-    }
+      }
+      if(flag){
+        alert("Product is already added to your cart");
+      }
+      else{
+        this.userService.addToCart(productId).subscribe(data=>{
+          if(data){
+            alert("Product Added");
+            this.ngOnInit();
+          }
+        })
+      }
+    }else 
+      alert("Please Login First");
   }
 }
