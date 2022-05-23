@@ -56,7 +56,6 @@
     <h1>Please Login First</h1>
 </ng-template>
 
-<!-- login form  -->
 <div class="login-form" id="login" #login>
     <form action="" *ngIf="!userIsLoggedIn(); else elseBlock">
         <h3>login form</h3>
@@ -74,12 +73,11 @@
             <h3>user profile</h3>
             <img src="{{userProfile.image}}" alt="">
             <p style="padding-top: 5px;">{{userProfile.name}}</p>
-            <h2 routerLink="/edit-profile/{{userProfile.id}}" *ngIf="userProfile.flag==false">Edit Profile</h2>
+            <h2 routerLink="/edit-profile/{{userProfile.id}}" *ngIf="userProfile.flag">Edit Profile</h2>
             <h2 routerLink="/order-history">Order history</h2>
             <h2>Remove account</h2>
             <h2>Help</h2>
             <button type="submit" value="sign out" class="btn" (click)="signout()">Sign Out</button>
-
         </div>
     </div>
 </ng-template>

@@ -1,0 +1,95 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  .maintable{
+      /* margin-left: 400px; */
+      margin-top: 50px;
+      border: 1px solid #ff9642;
+      /* width: 1400px; */
+      box-shadow: 10px 10px 8px #38373785;
+      margin: auto;
+      margin-top: 20px;
+      
+  }
+  a {
+    color: #28acd7;
+    text-decoration: none;
+  }
+   .my_account_orders {
+    border-collapse: collapse;
+    border-spacing: 0;
+   width: 800px;
+    /* width: 100%; */
+  }
+  .maintable tbody tr td{
+      text-align: center;
+  }
+  .maintable thead tr td{
+    text-align: center;
+    /* margin-left: 40px; */
+  }
+  .head{
+      /* margin-left: 50px; */
+  }
+  .my_account_orders th {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th,
+  td {
+    padding: 6px;
+    font-size: 15px;
+  }
+  
+  @media 
+  only screen and (max-width: 600px) {
+    /* Force table to not be like tables anymore */
+      table, thead, tbody, th, td, tr { 
+          display: block; 
+      }
+    
+      .my_account_orders{
+          width: 300px;
+      }
+    /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr { 
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+    
+    td { 
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee; 
+          position: relative;
+          padding-left: 35%; 
+      }
+    
+    td:last-child { 
+           border-width: 0;
+      }
+    
+    td:before { 
+       content: attr(data-title);
+       color: #ccc;
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 6px;
+          left: 6px;
+          width: 45%; 
+          padding-right: 10px; 
+          white-space: nowrap;
+      }
+  }
+ @media only screen and (min-width:567px) and (max-width:768px){
+    .my_account_orders{
+        width: 700px;
+    }
+ }

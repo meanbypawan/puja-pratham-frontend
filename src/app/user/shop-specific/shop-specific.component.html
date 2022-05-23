@@ -10,8 +10,7 @@
                 <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(product._id)"></i></a>
                 <div class="card-heading">
                   <h4>{{product.name}}</h4>                                 
-                    <h1>Up to 10% Discount</h1>
-                    <h5 for="">Price :  <del style="color:red;"> {{product.price}} ₹</del><span id="first" style="color: green;">2700</span></h5> 
+                    <h5 for="">Price : ₹ <del style="color:red; text-decoration-line: line-through;"> {{product.price}} </del><span id="first" style="color: green;">{{product.discountedPrice}} </span>{{product.discount}}% Off</h5> 
                     <div class="icon">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -26,7 +25,5 @@
             </div>
             </div>
         </div>
-     
-      
     </div>
     </div>

@@ -48,6 +48,7 @@ import { OrderComponent } from './user/order/order.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { GoogleLoginProvider,SocialAuthServiceConfig,SocialLoginModule } from 'angularx-social-login';
+import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-pooja.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +79,8 @@ import { GoogleLoginProvider,SocialAuthServiceConfig,SocialLoginModule } from 'a
     SearchResultComponent,
     OrderComponent,
     PlaceOrderComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    BookTemplePoojaComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,7 @@ import { GoogleLoginProvider,SocialAuthServiceConfig,SocialLoginModule } from 'a
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-               '547163577773-7iqaf7gelrihr2a4kftjpilevu7mv3jq.apps.googleusercontent.com'
+               '1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com'
             ),
           },
         ],

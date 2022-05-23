@@ -25,7 +25,8 @@ export class OtpCheckerComponent implements OnInit {
         let user = {
           name:data.user.name,
           image:data.user.image,
-          id:data.user._id
+          id:data.user._id,
+          flag:true
         }
         sessionStorage.setItem("user",JSON.stringify(user));
         this.router.navigate([""]);

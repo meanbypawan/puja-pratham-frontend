@@ -1,20 +1,30 @@
-<table class="table mt-3 ml-3 mr-3">
-    <thead>
-        <th>Date Of Order</th>
-        <th>Status</th>
-        <th>Mode of Payment</th>
-        <th>Items Qty</th>
-        <th>Total</th>
-        <th>View Details</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let order of orders">
-            <td>{{order.date}}</td>
-            <td>{{order.orderStaus}}</td>
-            <td>{{order.payment_type}}</td>
-            <td>{{order.productList.length}}</td>
-            <td>{{order.amount}}</td>
-            <td><button class="btn btn-primary" (click)="viewDetails(order._id)">View Details</button></td>
-        </tr>
-    </tbody>
+<table class="shop_table my_account_orders maintable" *ngIf="orders.length>0">
+	<thead>
+		<tr id="head" style="margin-left:100px;">
+			<th class="order-number">S.No</th>
+			<th class="order-date">Total Price</th>
+			<th class="order-status">Items</th>
+			<th class="order-total">Date</th>
+			<th class="order-actions">Full Detils</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="order" *ngFor="let order of orders;index as i">
+			<td class="order-number" data-title="Order">
+				<a>{{i+1}}</a>
+			</td>
+			<td class="order-date" data-title="Date">
+				<time datetime="2014-06-12" title="1402562157">{{order.amount}}</time>
+			</td>
+			<td class="order-status" data-title="Status">
+				{{order.productList.length}}
+			</td>
+			<td class="order-total" data-title="Total">
+				<span class="amount">{{order.date}}</span>
+			</td>
+			<td>
+				<button type="menu" class="btn btn-warning">view more</button>
+			</td>
+		</tr>
 </table>
+<h1 *ngIf="orders.length==0" style="color:Red;">You do not have any order till now</h1>
