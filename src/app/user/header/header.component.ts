@@ -78,7 +78,7 @@ export class HeaderComponent implements OnInit {
           name:data.user.name,
           image:data.user.image,
           id:data.user._id,
-          flag:true
+          flag:false
         }
         this.userProfile = user;
         sessionStorage.setItem("user", JSON.stringify(user));
@@ -152,7 +152,8 @@ export class HeaderComponent implements OnInit {
         let user = {
           name:data.user.name,
           image:data.user.image,
-          id:data.user._id
+          id:data.user._id,
+          flag:true
         }
         this.userProfile = user;
         sessionStorage.setItem("user", JSON.stringify(user));

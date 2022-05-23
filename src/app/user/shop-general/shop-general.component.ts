@@ -18,6 +18,7 @@ export class ShopGeneralComponent implements OnInit {
     this.shopService.ViewProduct().subscribe(data => {
       if (data) {
         for (let element of data) {
+          element.discountedPrice = element.price - (element.price * element.discount / 100);
           if (element.catId.type == "product")
             this.productList.push(element);
           else if (element.catId.type == "package")
