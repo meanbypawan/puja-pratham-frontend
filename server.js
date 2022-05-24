@@ -8,4 +8,4 @@ app.get('/',(req,res)=>{
 app.use((request,response)=>{
     res.sendFile('index.html',{root:'dist/puja_pratham_frontend'});
 })
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8000);
