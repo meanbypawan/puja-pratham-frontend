@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
       vSearch.onresult = async (e:any) =>{
         this.search = await e.results[0][0].transcript;
+        console.log(this.search);
         vSearch.stop();
         this.router.navigate(["search",this.search]).then(()=>{
           location.reload();

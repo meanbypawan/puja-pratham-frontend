@@ -1,6 +1,6 @@
-<form class="modal-content" action="/action_page.php" >
+<form class="modal-content">
   <div class="container">
-    <h1><b> Book Puja </b></h1>
+    <h1><b> Book Event </b></h1>
     <label><b>Date</b></label>
     <input name="date" type="text" placeholder="Please select date" [(ngModel)]="date" [bsConfig]="{ isAnimated: true }"
       bsDatepicker [minDate]="minDate" [maxDate]="maxDate" required>
@@ -12,9 +12,6 @@
       class="test ml-3" name="starttime" matInput [(ngModel)]="startTime" placeholder="start" [ngxMatTimepicker]="picker">
     <ngx-mat-timepicker #picker></ngx-mat-timepicker>
 
-    <!-- <input style="border: 1px solid #888; height: 50px;width: 100px; border-radius: 10px; text-align: center;" matInput
-      class="test ml-5" name="endtime" placeholder="end" [(ngModel)]="endTime" [ngxMatTimepicker]="pickers">
-    <ngx-mat-timepicker #pickers></ngx-mat-timepicker><br> -->
    <br><br>
     <label><br><b>Contact No.</b>
       <br></label>
@@ -32,18 +29,7 @@
 
     <br><br>
     <label for="psw-repeat"><b>Note :- </b> </label><br>
-    <p style="padding-left: 45px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque eos ratione
-      omnis fugit qui ad ipsa debitis odio magnam?</p>
+    <p style="padding-left: 45px;">{{event.name}} will be performed by {{event.catId.type}}. On the day of booking you will get the proper arrangement of the Items which are necessary for the {{event.name}}. If you choose cash option then you have to pay to that delievery guy. And the {{event.catId.type}} will not demand for any dakshina. If anything changes then we will contact to you on the number provided by you. </p>
   </div>
   <button (click)="bookEvent()" class="btn btn-primary">Book</button>
 </form>
-
-
-
- <!-- <button change="onlinePayment()" type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-      Payment Mode
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" style="padding-top:5px">Cash On Delievery</a>
-      <a class="dropdown-item" style="padding-top:10px">Online Payment</a>
-    </div> <br><br> -->

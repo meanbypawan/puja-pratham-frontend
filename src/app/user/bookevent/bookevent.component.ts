@@ -30,12 +30,14 @@ export class BookeventComponent implements OnInit {
     this.id = activatedRoute.snapshot.paramMap.get("id");
     cateService.viewOneEvent(this.id).subscribe(data=>{
       this.event = data;
+      console.log(this.event);
     })
     
   }
 
   bookEvent(){
-    let userId=JSON.parse(sessionStorage.getItem("user")||"{}").id;
+    if(sessionStorage.getItem("user")){
+      let userId=JSON.parse(sessionStorage.getItem("user")||"{}").id;
     let order={
       userId:userId,
       mobile_no:this.contact,
@@ -108,6 +110,11 @@ export class BookeventComponent implements OnInit {
         rzp1.open();
       })
     }
+    }
+    else{
+      alert("Please Login First");
+    }
+    
   }
 
   onlinePayment(event:any){

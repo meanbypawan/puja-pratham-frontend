@@ -91,4 +91,15 @@ export class UserService {
     let socialApi = "https://puja-pratham-backend.herokuapp.com/user/login-by-social-media";
     return this.http.post(socialApi,{name : user.name,email : user.email,image : user.photoUrl})
   }
+
+  createTemplePooja():Observable<any>{
+    let api = "http://localhost:3000/book-temple-pooja/create";
+    return this.http.get(api);
+  }
+
+  placeTemplePooja(order:any):Observable<any>{
+    let api = "http://localhost:3000/book-temple-pooja/place";
+    return this.http.post(api,order);
+  }
+
 }
