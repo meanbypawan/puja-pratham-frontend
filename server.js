@@ -6,6 +6,6 @@ app.get('/',(req,res)=>{
     res.sendFile('index.html',{root:'dist/puja_pratham_frontend'})
 });
 app.use((request,response)=>{
-    res.sendFile('index.html',{root:'dist/puja_pratham_frontend'});
+    response.sendFile('index.html',{root:'dist/puja_pratham_frontend'});
 })
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 8080);
