@@ -41,9 +41,8 @@
         </div>
         <div *ngIf="checkCart(); else cartMessage">
         <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
-     <div>
-        <a (click)="checkout()" style="justify-content: center;
-        display: flex;margin-left: 55px;" (click)="closeBar()" class="btn">checkout cart</a>
+     <div class="button">
+        <a (click)="checkout()"  (click)="closeBar()" class="btn">checkout cart</a>
      </div>
     </div>
         <ng-template #cartMessage>

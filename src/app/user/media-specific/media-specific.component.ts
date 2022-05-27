@@ -23,8 +23,8 @@ export class MediaSpecificComponent implements OnInit {
           for(let element of data){
             if(element.type == "audio")
               this.audios.push(element);
-            else  
-              this.videos.push(element);
+            else if(element.type == "video") 
+            this.videos.push(element);
           }
         })
       }
