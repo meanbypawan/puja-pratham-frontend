@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/service/category.service';
 import { UserService } from 'src/app/service/user.service';
 declare let Razorpay: any;
@@ -15,7 +16,7 @@ export class BookTemplePoojaComponent implements OnInit {
   mobile:string;
   comeStatus:any;
   templePooja:any;
-  constructor(private router:Router,private userService : UserService,private activatedRoute:ActivatedRoute,private categoryService:CategoryService) {
+  constructor(private toasterService:ToastrService,private router:Router,private userService : UserService,private activatedRoute:ActivatedRoute,private categoryService:CategoryService) {
     this.id = activatedRoute.snapshot.paramMap.get("id");
     categoryService.viewOneTemplePuja(this.id).subscribe(data=>{
       this.templePooja = data;
@@ -61,6 +62,7 @@ export class BookTemplePoojaComponent implements OnInit {
                   this.router.navigate(['']);
                   this.router.events.subscribe(event=>{
                     if(event instanceof NavigationEnd){
+                      this.toasterService.success("Ordered","Yor order have been sucessfully")
                       location.reload();
                     }
                   })
@@ -81,11 +83,13 @@ export class BookTemplePoojaComponent implements OnInit {
           rzp1.open();
         })
       }
+      else{
+        this.toasterService.warning("Please fill the column of come or not","Will You Come")
+      }
     }
     else{
-      alert("Please Login First");
+      this.toasterService.error("Please Login First","Login Failed");
     }
-    
   }
   ngOnInit(): void {
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -16,7 +17,7 @@ export class EditProfileComponent implements OnInit {
   image:string = "";
   user:any;
 
-  constructor(private userService:UserService,private router:Router) {
+  constructor(private userService:UserService,private router:Router,private toasterService:ToastrService) {
     userService.viewOneUser().subscribe(data=>{
       // console.log(data);
       this.user = data;
@@ -45,6 +46,7 @@ export class EditProfileComponent implements OnInit {
             name : data.name,
             image : data.image
           };
+          this.toasterService.success("Profile editted Successfully","Profile Editted");
           sessionStorage.setItem("user",JSON.stringify(user));
           this.router.navigate([""]);
         })
@@ -52,6 +54,8 @@ export class EditProfileComponent implements OnInit {
     },err=>{
       if(err instanceof HttpErrorResponse){
         console.log(err);
+        this.toasterService.error("Error","Something went Wrong");
+
       }
     })
   }

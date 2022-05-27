@@ -93,3 +93,90 @@ body {
         width: 700px;
     }
  }
+
+ body{background: #eee}
+
+.date{font-size: 11px}
+
+.comment-text{font-size: 12px}
+
+.fs-12{font-size: 12px}
+
+.shadow-none{box-shadow: none}
+
+.name{color: #ff9642}
+
+.cursor{
+    color: #314E52;
+    padding-bottom: 15px;
+}
+
+.cursor{cursor: pointer}
+
+.textarea{resize: none}
+.fullbody{
+    box-shadow: 0 6px 15px 0 #ff9642;
+    width: 400px;
+    border-radius: 15px;
+    
+}
+.comment span{
+    font-size: 15px;
+    color: #314E52;
+}
+.icon{
+    text-align: center;
+    color: #ff9642;
+    padding-bottom: 5px;
+}
+.rating > span:hover:before {
+    content: "\2605";
+    position: absolute;
+ }
+.image{
+   
+    text-align: center;
+    border-radius:30%;
+
+}
+img{
+    border-radius: 5%;
+}
+.comment{
+    margin-top: 30px;
+   
+}
+#second{
+    background-color: #ff9642;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 15px;
+    color: white;
+}
+h3{
+    padding-top: 20px;
+    color: #314E52;
+}
+#first{
+    border:1px solid #ff9642;
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+}
+
+.inputpall{
+   font-size: 25px; 
+   
+}
+
+@media only screen and (min-width:567px) and (max-width:768px){
+    .fullbody{
+        width: 100%;
+    } 
+}
+
+@media only screen and (min-width:320px) and (max-width:567px){
+    .fullbody{
+        width: 100%;
+    }   
+}

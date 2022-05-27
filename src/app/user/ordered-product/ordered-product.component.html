@@ -1,0 +1,187 @@
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title1">
+                <div class="row">
+                    <div class="col" style="color:#ff9642;">
+                        <h4>OrderId - {{products._id}}</h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted" style="color:#ff9642;"></div>
+                </div>
+            </div>
+            <div class="row  border-bottom" *ngFor="let product of products.productList">
+                <div class="row main align-items-center">
+                    <div class="col-4"><img c src="{{product.product.image}}" style="border-radius:20px;"></div>
+                    <div class="col  explain">
+                        <div class="row">{{product.product.name}}</div>
+
+                        <div class="row" style="padding-top: 5px;"> {{product.qty}} Qty</div>
+
+                        <div class="row" style="padding-top: 5px;">{{product.totalPrice}} ₹</div>
+
+                    </div>
+                    <div class="col" style="padding-left: 20px;">
+                        <button class="Review" data-toggle="modal" attr.data-target="{{'#id'+product.product._id}}"
+                            *ngIf="product.flag ">Review</button>
+                        <button class="Review" data-toggle="modal" (click)="viewReview(product.product._id)"
+                            attr.data-target="{{'#id1'+product.product._id}}" *ngIf="!product.flag ">View
+                            Review</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="{{'id' + product.product._id}}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal Page</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container mt-1 fullbody">
+                                    <div class="image mt-5 ">
+                                        <img src="{{product.product.image}}" id="hello" style="margin:auto;" alt=""
+                                            width="200px" height="180px">
+                                        <h3>{{product.product.name}}</h3>
+                                    </div>
+                                    <div class="d-flex justify-content-center row">
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column comment-section">
+                                                <div class="icon mt-2">
+                                                    <i class="far fa-star fa-2x"
+                                                        (click)="changeStar(product.product._id+' 1')"
+                                                        id="{{product.product._id}} 1" aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x"
+                                                        (click)="changeStar(product.product._id+' 2')"
+                                                        id="{{product.product._id}} 2" aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x"
+                                                        (click)="changeStar(product.product._id+' 3')"
+                                                        id="{{product.product._id}} 3" aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x"
+                                                        (click)="changeStar(product.product._id+' 4')"
+                                                        id="{{product.product._id}} 4" aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x"
+                                                        (click)="changeStar(product.product._id+' 5')"
+                                                        id="{{product.product._id}} 5" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="bg-white inputall">
+                                                    <div class="d-flex flex-row fs-12 comment">
+                                                        <div class="like p-2 cursor "><i
+                                                                class="fa fa-commenting-o fa-2x"></i><span
+                                                                class="ml-1">Comment</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-light p-2">
+                                                    <div class="d-flex flex-row align-items-start"><textarea
+                                                            class="form-control ml-1 shadow-none textarea"
+                                                            placeholder="Add Your Comment" style="width:400px;"
+                                                            style="height:100px;" [(ngModel)]="message"></textarea>
+                                                    </div>
+                                                    <div class="mt-2 text-center"><button
+                                                            class="btn btn- btn-sm shadow-none mt-3" id="second"
+                                                            type="button"
+                                                            (click)="postComment(product.product._id)">Post
+                                                            comment</button><button
+                                                            class="btn btn-outline- btn-sm ml-1 shadow-none mt-3"
+                                                            id="first" type="button">Cancel</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="{{'id1' + product.product._id}}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal Page</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container mt-1 fullbody">
+                                    <div class="image mt-5 ">
+                                        <img src="{{product.product.image}}" id="hello" style="margin:auto;" alt=""
+                                            width="200px" height="180px">
+                                        <h3>{{product.product.name}}</h3>
+                                    </div>
+                                    <div class="d-flex justify-content-center row">
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column comment-section">
+                                                <div class="icon mt-2">
+                                                    <i class="far fa-star fa-2x" id="{{product.product._id}}  1"
+                                                        aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x" id="{{product.product._id}}  2"
+                                                        aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x" id="{{product.product._id}}  3"
+                                                        aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x" id="{{product.product._id}}  4"
+                                                        aria-hidden="true"></i>
+                                                    <i class="far fa-star fa-2x" id="{{product.product._id}}  5"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                                <div class="bg-white inputall">
+                                                    <div class="d-flex flex-row fs-12 comment">
+                                                        <div class="like p-2 cursor "><i
+                                                                class="fa fa-commenting-o fa-2x"></i><span
+                                                                class="ml-1">Comment</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-light p-2">
+                                                    <div class="d-flex flex-row align-items-start"><textarea
+                                                            class="form-control ml-1 shadow-none textarea"
+                                                            placeholder="Add Your Comment" style="width:400px;"
+                                                            style="height:100px;" [(ngModel)]="message"></textarea>
+                                                    </div>
+                                                    <div class="mt-2 text-center"><button
+                                                            class="btn btn- btn-sm shadow-none mt-3" id="second"
+                                                            type="button"
+                                                            (click)="postComment(product.product._id)">Post
+                                                            comment</button><button
+                                                            class="btn btn-outline- btn-sm ml-1 shadow-none mt-3"
+                                                            id="first" type="button">Cancel</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="back-to-shop"><a >&leftarrow;</a><span class="text-muted">Back to shop</span></div> -->
+        </div>
+        <div class="col-md-4 summary">
+            <div style="color: #ff9642;">
+                <h5><b>Order Details</b></h5>
+            </div>
+            <div class="row" style="border-top: 1px solid #779; padding: 2vh 0;">
+                <div class="col">Total Price</div>
+                <div class="col text-right">{{products.amount}} ₹</div>
+            </div>
+            <div class="row" style="padding: 2vh 0;">
+                <div class="col">Status</div>
+                <div class="col text-right">{{products.orderStaus}}</div>
+            </div>
+            <div class="row" style=" padding: 2vh 0;">
+                <div class="col">Payment Type</div>
+                <div class="col text-right">{{products.payment_type}}</div>
+            </div>
+            <div class="row" style=" padding: 2vh 0;" *ngIf="products.paymentMethod">
+                <div class="col">Payment Method</div>
+                <div class="col text-right">{{products.paymentMethod}}</div>
+            </div>
+            <button class="btn">Cancel</button>
+        </div>
+    </div>

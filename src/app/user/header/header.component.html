@@ -10,7 +10,7 @@
 <audio src="../../../assets/audios/mic.wav"></audio>
     <div class="icons">
         <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
-    <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
+    <!-- <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div> -->
    
     <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)" ></div>
     <div id="login-btn" class="fas fa-user"(click)="showLogin(login)" ></div>
@@ -20,14 +20,14 @@
 
 <div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
 
-<nav class="navbar-main" id="nav" #nav>
+<!-- <nav class="navbar-main" id="nav" #nav>
 
     <a routerLink="" (click)="closeBar()" >home</a>
     <a routerLink="/shop" (click)="closeBar()" routerLink="shop-general">shop</a>
     <a routerLink="/media" (click)="closeBar()">Audio/Videos</a>
     <a routerLink="/about" (click)="closeBar()">about</a>
     <a routerLink="/contact" (click)="closeBar()">contact</a>
-</nav>
+</nav> -->
 
 <div class="shopping-cart" id="cart" #cart>
     <div *ngIf="userIsLoggedIn(); else cartElse">

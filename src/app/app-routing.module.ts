@@ -22,6 +22,7 @@ import { OrderComponent } from './user/order/order.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-pooja.component';
+import { OrderedProductComponent } from './user/ordered-product/ordered-product.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:"search/:keywords",component:SearchResultComponent},
   {path:"order",component:OrderComponent},
   {path : "order-history",component:OrderHistoryComponent},
-  {path : "book-temple-pooja/:id", component:BookTemplePoojaComponent}
+  {path : "book-temple-pooja/:id", component:BookTemplePoojaComponent},
+  {path:"view-ordered-product/:id", component:OrderedProductComponent}
   ]}
   
 ];

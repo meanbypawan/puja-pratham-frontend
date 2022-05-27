@@ -12,6 +12,7 @@ export class OrderHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.orderHistory().subscribe(data=>{
+      console.log(data);
       this.orders = data;
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       for(let order of this.orders){
@@ -22,5 +23,21 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   viewDetails(id:any){}
+
+  changeStar(number:any){
+    // console.log(number);
+    let id = number.split(" ")[0];
+    let stars = number.split(" ")[1];
+    // let filledStar = document.getElementById(number);
+    // console.log(filledStar.classList);
+    for(let i=1;i<=stars;i++){
+      number = id + " " + i;
+      console.log(number);
+      let filledStar = document.getElementById(number);
+      
+      filledStar.className = "fa fa-star fa-2x";
+    }
+    // filledStar.className = "fa fa-star fa-2x";
+  }
 
 }

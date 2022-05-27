@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/service/category.service';
 declare let Razorpay: any;
 
-// import {  HostListener, ViewChild } from '@angular/core';
-// import { BsDatepickerDirective } from 'ngx-bootstrap/datepicker';
-// import { componentFactoryName } from '@angular/compiler';
 @Component({
   selector: 'app-bookevent',
   templateUrl: './bookevent.component.html',
@@ -22,7 +20,7 @@ export class BookeventComponent implements OnInit {
   maxDate: Date;
   id:string;
   event:any;
-  constructor(private router:Router,private activatedRoute:ActivatedRoute,private cateService:CategoryService) {
+  constructor(private tostarService:ToastrService,private router:Router,private activatedRoute:ActivatedRoute,private cateService:CategoryService) {
     this.minDate = new Date();
     this.maxDate = new Date();
     this.minDate.setDate(this.minDate.getDate()+2);
@@ -32,7 +30,6 @@ export class BookeventComponent implements OnInit {
       this.event = data;
       console.log(this.event);
     })
-    
   }
 
   bookEvent(){
@@ -110,11 +107,13 @@ export class BookeventComponent implements OnInit {
         rzp1.open();
       })
     }
+    else{
+      this.tostarService.warning("Please select the payment mode","Payment Type Not Found");
+    }
     }
     else{
-      alert("Please Login First");
+      this.tostarService.error("Please Login First","Login Failed");
     }
-    
   }
 
   onlinePayment(event:any){

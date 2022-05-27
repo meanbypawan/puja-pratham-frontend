@@ -9,7 +9,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="order" *ngFor="let order of orders;index as i">
+		<tr class="order" *ngFor="let order of orders | slice:0:3;index as i">
 			<td class="order-number" data-title="Order">
 				<a>{{i+1}}</a>
 			</td>
@@ -23,8 +23,72 @@
 				<span class="amount">{{order.date}}</span>
 			</td>
 			<td>
-				<button type="menu" class="btn btn-warning">view more</button>
+				<button type="menu" class="btn btn-warning" data-toggle="modal"
+					routerLink="/view-ordered-product/{{order._id}}">Review</button>
 			</td>
+			<!-- <div class="modal fade" id="{{'myModel' + order._id}}" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Modal Page</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="container mt-1 fullbody">
+								<div class="image mt-5 ">
+									<img src="{{order.productList[0].product.image}}" style="margin:auto;" alt=""
+										width="200px" height="180px">
+									<h3>{{order.productList[0].product.name}}</h3>
+								</div>
+								<div class="d-flex justify-content-center row">
+									<div class="col-md-8">
+										<div class="d-flex flex-column comment-section">
+											<div class="icon mt-2">
+												<i class="far fa-star fa-2x" (click)="changeStar(order._id+' 1')"
+													id="{{order._id}} 1" aria-hidden="true"></i>
+												<i class="far fa-star fa-2x" (click)="changeStar(order._id+' 2')"
+													id="{{order._id}} 2" aria-hidden="true"></i>
+												<i class="far fa-star fa-2x" (click)="changeStar(order._id+' 3')"
+													id="{{order._id}} 3" aria-hidden="true"></i>
+												<i class="far fa-star fa-2x" (click)="changeStar(order._id+' 4')"
+													id="{{order._id}} 4" aria-hidden="true"></i>
+												<i class="far fa-star fa-2x" (click)="changeStar(order._id+' 5')"
+													id="{{order._id}} 5" aria-hidden="true"></i>
+											</div>
+											<div class="bg-white inputall">
+												<div class="d-flex flex-row fs-12 comment">
+													<div class="like p-2 cursor "><i
+															class="fa fa-commenting-o fa-2x"></i><span
+															class="ml-1">Comment</span></div>
+													<div class="like p-2 cursor "><i class="fa fa-share fa-2x"></i><span
+															class="ml-1">Share</span></div>
+												</div>
+											</div>
+											<div class="bg-light p-2">
+												<div class="d-flex flex-row align-items-start"><textarea
+														class="form-control ml-1 shadow-none textarea"
+														placeholder="Add Your Comment" style="width:400px;"
+														style="height:100px;"></textarea></div>
+												<div class="mt-2 text-center"><button
+														class="btn btn- btn-sm shadow-none mt-3" id="second"
+														type="button">Post comment</button><button
+														class="btn btn-outline- btn-sm ml-1 shadow-none mt-3" id="first"
+														type="button">Cancel</button></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div> -->
 		</tr>
 </table>
 <h1 *ngIf="orders.length==0" style="color:Red;">You do not have any order till now</h1>
+
+<!-- Modal -->

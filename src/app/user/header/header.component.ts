@@ -1,6 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/service/product.service';
 import { UserService } from 'src/app/service/user.service';
 declare var webkitSpeechRecognition:any;
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
   cartList: any[] = [];
   search:any; 
   
-  constructor(private authService: SocialAuthService,private userService:UserService,private productService:ProductService,private router:Router) {
+  constructor(private toasterService:ToastrService,private authService: SocialAuthService,private userService:UserService,private productService:ProductService,private router:Router) {
     this.viewCartProduct();
   }
 
@@ -81,6 +82,7 @@ export class HeaderComponent implements OnInit {
           id:data.user._id,
           flag:false
         }
+        this.toasterService.success('You have been login sucessfully!', 'Success');
         this.userProfile = user;
         sessionStorage.setItem("user", JSON.stringify(user));
         sessionStorage.setItem('token', data.token);
@@ -108,11 +110,6 @@ export class HeaderComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  signOut() {
-    // localStorage.removeItem("token");
-    // this.authService.signOut();
-  }
-
   navLinks(nav: any) {
     let closer: any = document.querySelector('#closer');
     closer.style.display = 'block';
@@ -133,13 +130,13 @@ export class HeaderComponent implements OnInit {
 
   closeBar() {
     let closer: any = document.querySelector('#closer');
-    let nav: any = document.querySelector('#nav');
+    // let nav: any = document.querySelector('#nav');
     let cart: any = document.querySelector('#cart');
     let login: any = document.querySelector('#login');
     let search: any = document.querySelector('#search');
 
     closer.style.display = 'none';
-    nav.classList.remove('active');
+    // nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
   }
@@ -156,6 +153,7 @@ export class HeaderComponent implements OnInit {
           id:data.user._id,
           flag:true
         }
+        this.toasterService.success('You have been login sucessfully!', 'Success');
         this.userProfile = user;
         sessionStorage.setItem("user", JSON.stringify(user));
         sessionStorage.setItem('token', data.token);
@@ -174,15 +172,6 @@ export class HeaderComponent implements OnInit {
         console.log(data+"kjf");
       }
     });
-  }
-
-  loginAsPandit() {
-    // this.priest.priestLogin(this.email, this.password).subscribe((data) => {
-    //   if (data.status == "success") {
-    //     localStorage.setItem('token', data.token);
-    //     this.router.navigate(['priest'])
-    //   };
-    // });
   }
 
   userIsLoggedIn() {
@@ -209,8 +198,5 @@ export class HeaderComponent implements OnInit {
   }
 
   forgetPassword(){
-    
   }
-  
-  
 }

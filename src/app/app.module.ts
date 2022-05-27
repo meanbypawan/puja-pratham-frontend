@@ -15,7 +15,7 @@ import { NavLinksComponent } from './user/nav-links/nav-links.component';
 import { FooterComponent } from './user/footer/footer.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { OtpCheckerComponent } from './user/otp-checker/otp-checker.component';
 import { MediaGeneralComponent } from './user/media-general/media-general.component';
 import { MediaSpecificComponent } from './user/media-specific/media-specific.component';
@@ -34,6 +34,7 @@ import { BookeventComponent } from './user/bookevent/bookevent.component';
 // Datepicker module
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ToastrModule } from 'ngx-toastr';
 
 //timepicker
 
@@ -49,6 +50,9 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { GoogleLoginProvider,SocialAuthServiceConfig,SocialLoginModule } from 'angularx-social-login';
 import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-pooja.component';
+import { CacheInterceptorService } from './interceptor/cache-interceptor.service';
+import { TokenInterceptorService } from './interceptor/token-interceptor.service';
+import { OrderedProductComponent } from './user/ordered-product/ordered-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +85,7 @@ import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-p
     PlaceOrderComponent,
     OrderHistoryComponent,
     BookTemplePoojaComponent,
+    OrderedProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +98,9 @@ import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-p
     MatFormFieldModule,
     MatInputModule,
     NgxMatTimepickerModule,
-    SocialLoginModule
+    SocialLoginModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [
     {
@@ -109,6 +116,16 @@ import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-p
           },
         ],
       } as SocialAuthServiceConfig,
+    },
+    {
+      useClass: CacheInterceptorService,
+      provide: HTTP_INTERCEPTORS,
+      multi: true
+    },
+    {
+      useClass: TokenInterceptorService,
+      provide: HTTP_INTERCEPTORS,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

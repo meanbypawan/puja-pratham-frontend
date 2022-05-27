@@ -58,7 +58,7 @@
                 </div>
                 <div class="row flex-xl-nowrap">
                         <div class="card-deck">
-                                <div class="card border-0 col-sm-4 p-0" *ngFor="let media of mediaList">
+                                <div class="card border-0 col-sm-4 p-0" *ngFor="let media of mediaList | slice:0:4 ">
                                         <div class="card-body">
                                                 <img src="{{media.image}}" alt="" routerLink="/media-one/{{media._id}}">
                                                 <div class="icons">
