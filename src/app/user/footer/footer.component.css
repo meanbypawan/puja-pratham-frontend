@@ -79,7 +79,7 @@ section {
     color: #ffa047;
     text-transform: none;
     margin: .7rem 0;
-    border: 0.1rem solid #ffa047;
+    border:2px solid #ffa047;
     border-radius: 25px;
   }
   .footer .box-container .box form input[type="text"] {

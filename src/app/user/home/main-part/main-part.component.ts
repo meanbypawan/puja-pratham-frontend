@@ -24,7 +24,8 @@ export class MainPartComponent implements OnInit {
     categoryService.viewMedia().subscribe(data=>{
       if(data){
         this.mediaList = data;
-      }
+          console.log(this.mediaList)
+        }
     })
   }
   ngOnInit(): void {}

@@ -235,6 +235,13 @@
     background: #ffa047;
   }
   
+  .button{
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    display: flex;;
+    justify-content: center;
+  }
   .shopping-cart .box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -250,17 +257,17 @@
   
   .shopping-cart .box .fa-times {
     position: absolute;
-    top: 50%;
-    right: 1rem;
+    top: 12%;
+    right: 0.6rem;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font-size: 2rem;
-    color: #779;
+    color: #ffa047;
     cursor: pointer;
   }
   
   .shopping-cart .box .fa-times:hover {
-    color: #ffa047;
+    color:  rgb(248, 188, 99);
   }
   
   .shopping-cart .box img {
@@ -317,7 +324,7 @@
     right: -101%;
     z-index: 1000;
     width: 35rem;
-    height: 80vh;
+    height: 100vh;
     background: #fff;
     padding: 2rem;
     display: -webkit-box;
@@ -490,10 +497,8 @@
 .box{
   margin-top: 0;
 }
-.login-form{
-  height: 62vh;
-}
   }
+
 
   
   @media (max-width: 991px) {
