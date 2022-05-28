@@ -9,7 +9,7 @@ body {
   .card-sl {
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-    height: 390px;
+    height: 372px;
     width: 90%;
     position: relative;
     /* margin-left: 15px; */
@@ -44,7 +44,7 @@ body {
     /* margin-bottom: 150px; */
     color: #314E52;
     font-size: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
     padding-left: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
