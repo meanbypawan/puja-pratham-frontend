@@ -49,6 +49,7 @@ export class OrderedProductComponent implements OnInit {
     }
   }
   userId: any;
+  message1:any;
   postComment(id: string) {
     let userId = JSON.parse(sessionStorage.getItem("user") || '{}').id;
     this.userId = userId;
@@ -69,7 +70,8 @@ export class OrderedProductComponent implements OnInit {
       if(element.flag == false){
         for(let el of element.product.comments){
           if(el.userId == this.userId){
-            let stars = el.ratting;   
+            let stars = el.ratting;  
+            this.message1 = el.message; 
             console.log(stars);       
             for(let i=1;i<=stars;i++){
               support = document.getElementById(id+"  " + i);      

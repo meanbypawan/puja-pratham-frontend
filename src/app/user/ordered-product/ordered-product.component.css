@@ -102,6 +102,7 @@ a{
 .close{
     margin-left: auto;
     font-size: 0.7rem;
+    font-size: 30px;
 }
 img{
     width: 80%;
@@ -181,7 +182,7 @@ input:focus::-webkit-input-placeholder
     width: 50%;
     font-size: 0.9rem;
     margin-top: 4vh;
-    font-size: 15px;
+    font-size: 11px;
     padding: 1vh;
     border-radius: 15px;
     /* margin-bottom: -5px; */
