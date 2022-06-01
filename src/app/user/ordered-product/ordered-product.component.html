@@ -25,7 +25,7 @@
                             *ngIf="product.flag ">Review</button>
                         <button class="Review" data-toggle="modal" (click)="viewReview(product.product._id)"
                             attr.data-target="{{'#id1'+product.product._id}}" *ngIf="!product.flag ">View
-                            Review</button>
+                            </button>
                     </div>
                 </div>
                 <div class="modal fade" id="{{'id' + product.product._id}}" tabindex="-1" role="dialog"
@@ -138,15 +138,9 @@
                                                     <div class="d-flex flex-row align-items-start"><textarea
                                                             class="form-control ml-1 shadow-none textarea"
                                                             placeholder="Add Your Comment" style="width:400px;"
-                                                            style="height:100px;" [(ngModel)]="message"></textarea>
+                                                            style="height:100px;" [(ngModel)]="message1" disabled="true"></textarea>
                                                     </div>
-                                                    <div class="mt-2 text-center"><button
-                                                            class="btn btn- btn-sm shadow-none mt-3" id="second"
-                                                            type="button"
-                                                            (click)="postComment(product.product._id)">Post
-                                                            comment</button><button
-                                                            class="btn btn-outline- btn-sm ml-1 shadow-none mt-3"
-                                                            id="first" type="button">Cancel</button></div>
+                                                    <div class="mt-2 text-center"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,6 +176,6 @@
                 <div class="col">Payment Method</div>
                 <div class="col text-right">{{products.paymentMethod}}</div>
             </div>
-            <button class="btn">Cancel</button>
+            <!-- <button class="btn">Cancel</button> -->
         </div>
     </div>

@@ -117,11 +117,11 @@ import { OrderedProductComponent } from './user/ordered-product/ordered-product.
         ],
       } as SocialAuthServiceConfig,
     },
-    {
-      useClass: CacheInterceptorService,
-      provide: HTTP_INTERCEPTORS,
-      multi: true
-    },
+    // {
+    //   useClass: CacheInterceptorService,
+    //   provide: HTTP_INTERCEPTORS,
+    //   multi: true
+    // },
     {
       useClass: TokenInterceptorService,
       provide: HTTP_INTERCEPTORS,
