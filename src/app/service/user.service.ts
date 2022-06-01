@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { SocialUser } from 'angularx-social-login';
 import { Observable } from 'rxjs';
