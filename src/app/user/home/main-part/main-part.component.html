@@ -2,44 +2,46 @@
         <div class="container package">
                 <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                                <div class="header" style="margin-top: 20px;">
+                                <div class="header" style="margin-top: 30px;">
                                         <br>
                                         <span>Popular Packages</span>
                                 </div>
                         </div>
                 </div>
-                <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let package of packageList | slice:0:4">
-                                <div id="product-1" class="single-product" style="margin-top: 30px;">
+                <div class="row" >
+                        <div class="col-md-6 col-lg-4 col-xl-3 col-xl-2" style="margin-top: 50px;"  *ngFor="let package of packageList | slice:0:4">
+                                <div id="product-1" class="single-product">
                                         <div class="image">
                                                 <img src="{{package.image}}" alt="There is supposed to be a picture">
                                         </div>
                                         <div class="part-2">
-                                                <h4 class="product-title mt-4">{{package.name}}</h4>
-                                                <button class="btn " type="submit"
+                                                <h4 class="product-title ">{{package.name}}</h4>
+                                                <button class="btn" style="text-align: center;" type="submit"
                                                         routerLink="/shops/{{package._id}}">Shop now</button>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </div>
+
+        
         <div class="container product">
                 <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                                <div class="header" style="margin-top: 20px;">
+                                <div class="header" style="margin-top: 60px;">
                                         <br>
                                         <span>Popular Products</span>
                                 </div>
                         </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of productList | slice:0:4">
-                                <div id="product-2" class="single-product" style="margin-top: 30px;">
+                        <div class="col-md-6 col-lg-4 col-xl-3 col-xl-2" style="margin-top: 50px;" *ngFor="let product of productList | slice:0:4">
+                                <div id="product-2" class="single-product" >
                                         <div class="image">
                                                 <img src="{{product.image}}" alt="There is supposed to be a picture">
                                         </div>
                                         <div class="part-2">
-                                                <h4 class="product-title mt-4">{{product.name}}</h4>
+                                                <h4 class="product-title">{{product.name}}</h4>
                                                 <button class="btn " type="submit"
                                                         routerLink="/shops/{{product._id}}">Shop now</button>
                                         </div>
@@ -48,21 +50,28 @@
 
                 </div>
         </div>
+
+
+
+
+
+
+        <!-- dsnfjsg -->
         <div class="container">
                 <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                                <div class="header" style="margin-top: 20px;">
+                                <div class="header" style="margin-top: 60px;">
                                         <br>
-                                        <span>Audio/Vedio</span>
+                                        <span>Audio/Video</span>
                                 </div>
                         </div>
                 </div>
-                <div class="row flex-xl-nowrap">
-                        <div class="card-deck">
-                                <div class="card border-0 col-sm-4 p-0" *ngFor="let media of mediaList | slice:0:4 ">
-
-                                        <div class="card-body">
-                                                <img src="{{media.image}}" alt="" routerLink="/media-one/{{media._id}}">
+                <!-- <div class="row flex-xl-nowrap">
+                        <div class="card-deck" style="margin-top: 30px;">
+                                <div class="card-1 col-md-6 col-lg-4 col-xl-3 col-xl-2" *ngFor="let media of mediaList | slice:0:4 ">
+3
+                                        <div class="card-body" >
+                                                <img src="{{media.image}}" class="media" alt="" routerLink="/media-one/{{media._id}}">
                                                 <div class="icons">
                                                         <a><i class="fa fa-play" *ngIf="media.type=='video'"
                                                                         routerLink="/media-one/{{media._id}}"></i>
@@ -82,6 +91,37 @@
                                 </div>
                         </div>
 
+                </div> -->
+                <div class="row">
+                        <!-- <div class="card-deck" style="margin-top: 30px;">| -->
+                                <div class="col-md-6 col-lg-4 col-xl-3 col-xl-2" *ngFor="let media of mediaList | slice:0:4 " style="margin-top: 50px;">
+
+                                        <div class="card-body" >
+                                                <img src="{{media.image}}" class="media" alt="" routerLink="/media-one/{{media._id}}">
+                                                <div class="icons">
+                                                        <a><i class="fa fa-play" *ngIf="media.type=='video'"
+                                                                        routerLink="/media-one/{{media._id}}"></i>
+                                                                <i class="fas fa-music" *ngIf="media.type=='audio'"
+                                                                        routerLink="/media-one/{{media._id}}"></i>
+                                                                <h6  routerLink="/media-one/{{media._id}}">Play Now</h6>
+                                                        </a>
+                                                </div>
+
+                                                <h1 style="color: orange;text-align: center;padding-top: 14px;">
+                                                        {{media.type}}</h1>
+
+                                                <p class="card-text font-weight-bold programme-title lead">
+                                                        {{media.name}}</p>
+
+                                        </div>
+                                </div>
+                        <!-- </div> -->
+
                 </div>
+
+
+
+
+
         </div>
 </section>

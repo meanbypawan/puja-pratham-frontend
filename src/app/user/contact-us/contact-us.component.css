@@ -1,0 +1,73 @@
+section {
+    padding: 3rem 9%;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 4rem;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    background: #ffa047;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .btn:hover {
+    background: #fdb068;
+  }
+.contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 3rem 0;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .contact form {
+    padding: 3rem;
+    background: #f6fbf6;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+            flex: 1 1 40rem;
+  }
+  
+  .contact form h3 {
+    font-size: 3rem;
+    padding-bottom: 5rem;
+    color: #ffa047;
+   
+  }
+  
+  .contact form span {
+    display: block;
+    padding-bottom: 1rem;
+    color: #779;
+    font-size: 1.6rem;
+  }
+  
+  .contact form .box {
+    width: 100%;
+    background: none;
+    border-bottom: 0.1rem solid #ffa047;
+    font-size: 1.6rem;
+    color: #ffa047;
+    text-transform: none;
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .contact form textarea {
+    height: 7rem;
+    resize: none;
+  }
+  
+  .contact .map {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+            flex: 1 1 40rem;
+    width: 100%;
+  }
+  

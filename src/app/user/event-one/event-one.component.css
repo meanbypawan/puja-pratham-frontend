@@ -1,154 +1,124 @@
 /* Basic Styling */
 html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-  }
-   
-   .container {
-    margin: 0 auto;
-    padding: 15px;
-    display: flex;
-  } 
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ 
+.bigImage{
+  /* height: 460px; */
+  width: 90%;
+  /* height: 340px; */
+  margin-top: 10px;
 
-.left-column {
-    width: 55%;
-    /* position: relative; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* border: 2px solid #779 ; */
+
+}
+.card{
+/* border: 3px solid #779 ; */
+/* margin-top: 30px; */
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+width: 80%;
+border-radius:10px ;
+/* margin-top: 10px; */
+ display: flex;
+justify-content: center;
+margin: auto;
+
+
+}
+
+
+.product-description span {
+  font-size: 20px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.product-description h1 , h2 {
+  font-weight: 300;
+  font-size: 30px;
+  color:#43484D;
+  letter-spacing: -1px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+h5{
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 6px;
+  margin-top: 20px;
+}
+.product-description p {
+  font-size: 12px;
+  /* font-weight: 300px; */
+  color: black;
+  line-height: 24px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.viewMore{
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  color: rgb(65, 77, 253);
+}
+
+ .btn {
+  width: 25%;
+  text-align: center;
+  background-color:#ffa047;
+  color: #fff;
+  margin: 1rem 0;
+ font-size: 15px;
+  height: 35px;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.btn:hover{
+  color: black;
+  background-color:#eeae71 ;
+}
+.h2{
+ font-size: 16px;
+ margin-left: 15px;
+ margin-right: 6px;
+}
+
+.comment {
+ 
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1099px) {
+  .bigImage{
+    width: 95%;
+    height: 250px;
   }
-   
-  .right-column {
+  .card{
+width: 90%;
+  }
+
+}
+
+@media only screen and (min-width: 450px) and (max-width: 500px){
+  .btn{
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 450px){
+  .btn{
     width: 45%;
   }
-
-  /* Left Column */
-.left-column img {
-    width: 80%;
-    opacity: 1;
-    transition: all 0.3s ease;
-    height: 450px;
-    border:1px solid coral;
-  }
-/* Product Description */
-.product-description {
-  }
-  .product-description span {
-    font-size: 20px;
-    color: #358ED7;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-top: 5px;
-  }
-  .product-description h1 {
-    /* font-weight: 300; */
-    font-size: 45px;
-    color:#43484D;
-    letter-spacing: 1px;
-    margin-top: px;
-  }
-  .product-description  h2 {
-    /* font-weight: 300; */
-    font-size: 30px;
-    
-    color:orange;
-    letter-spacing: 1px;
-    margin-top: 8px;
-  }
-
-  .product-description  h2 a{
-    /* font-weight: 300; */
-    font-size: 30px;
-    
-    color:black;
-    letter-spacing: 1px;
-    margin-top: 8px;
-  }
-  .product-description p {
-    font-size: 16px;
-    font-weight: 300;
-    color: black;
-    line-height: 24px;
-  }
-
-  .comment {
-    border-bottom: 2px solid #E1E8EE;
-    border-top: 2px solid #E1E8EE;
-    /* margin-bottom: 20px; */
-    text-align: center;
-    /* margin-top: 20px; */
-    font-size: 25px;
-    margin-top: 20px;
-  }
-
-/* Product Price */
-.product-price {
-    display: flex;
-    align-items: center;
-  }
-   
-  .product-price span {
-    font-size: 25px;
-    font-weight: 300;
-    color: #43474D;
-    margin-right: 20px;
-  }
-
-/* Responsive */
-@media (max-width: 915px) {
-    .container {
-    }
-   
-    
-    .right-column {
-      width: 50%;
-      /* margin-left: 375px; */
-      margin-top: 0px;
-    }
-
-    .left-column{
-        width:50%;
-    }
-   
-    .left-column img {
-      height: 450px;
-      left: initial;
-    }
-  }
-   
-  @media (max-width: 535px) {
-    .left-column img {
-     height: 200px;
-       width: 100% ; 
-       /* margin-top: 60px;  */
-     }
-
-    
-    .right-column {
-      width: 50%;
-      /* margin-left: 175px;
-     margin-top: 0px; */
-     margin-left: 15px;
-     /* margin-top: 30px; */
-     padding: 10px;
-    }
-
-    .left-column{
-        width:45%;
-       
-    }
-
-    .product-description h1 , h2{
-        font-size: 25px;
-    }
-
-    .cable-config h1{
-         font-size: 25px;
-    }
-
-    .product-description p{
-        font-size: 10px;
-        /* padding: 10px; */
-    }
-  
-  }
+}

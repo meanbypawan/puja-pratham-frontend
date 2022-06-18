@@ -1,43 +1,77 @@
 <div *ngIf="packageList.length>0">
-    <section class="headin" style="background-color: #fff ; ">
-        <h3>Our Packages</h3>
-    </section>
-        <div class="container">
-        <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let package of  packageList | slice:0:4" style="margin-top:50px;">
-                <div class="card-sl">
-                    <div class="card-image">
-                        <img src="{{package.image}}" />
+    <section  style="margin-top: 20px;">
+        <div class="container package">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header" style="margin-top: 20px;">
+                                    <br>
+                                    <span>Popular Packages</span>
+                            </div>
                     </div>
-                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(package._id)"></i></a>
-                    <div class="card-heading">
-                        <h4>{{package.name}}</h4>
-                        <h6>Up to 10% Discount</h6>
-                        <h5 for="">Price : <del style="color:red; text-decoration-line: line-through;">3000</del><span id="first" style="color: green;">
-                                2700 ₹</span></h5><br>
-                        <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                        </div>
-                        <a class="card-button">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="lpg">
-                <a routerLink="/shop-general-all/package">View all >></a>
             </div>
         </div>
-    </div>
+    </section>
+     
+    <div class="container" >
+        <div class="row cardimg">
+            <div class="col-md-6 col-lg-3" *ngFor="let package of  packageList | slice:0:4">
+                <div style="display: flex; justify-content: center;">          
+                      <div class="card-sl" style="margin-top:40px; ">
+                    <div class="card-image">
+                        <img
+                            src="{{package.image}}" alt=>
+                    </div>
+                    <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(package._id)"></i></a>
+                    <div class="card-heading">
+                      <h4>{{package.name}}</h4>                                 
+                      <!-- <span id="first" class="ml-4" style="color: green;">₹ {{package.discountedPrice}} </span>
+                      <del style="color:red; text-decoration-line: line-through;margin-left:10px">₹ {{package.price}} </del>
+                      <span class="ml-2" style="color: blue;">{{package.discount}}% Off</span> -->
+                      <span id="first"  class="ml-4 faiz" style="color: rgb(51, 51, 51);font-size: 24px;font-family:Mier bold;">₹ {{package.discountedPrice}} </span>
+                  <del style="color:rgb(153,153,153);font-size: 17px;margin-left:8px;font-family: Mier book;text-decoration: revert;">₹ {{package.price}} </del>
+                  <span  style="color: rgb(3,141,99);font-size: 20px;font-family: Mier demi;margin-left: 10px;font-weight: 600px;">{{package.discount}}% Off</span>
+                        <!-- <div class="icon">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                      </div> -->
+                      <div class="btn-center" style=" display: flex; justify-content: center;">
+                      <button href="#" class="card-button"   routerLink="/viewMore/{{package._id}}">View More</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="lpg">
+            <a routerLink="/shop-general-all/package">View all >></a>
+        </div>
+        </div>
 </div>
 
+
+
+
+
+
 <div *ngIf="productList.length>0">
-    <section class="headin">
-        <h3>Our Products</h3>
+    <section  style="margin-top: 20px;">
+        <div class="container package">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header" style="margin-top: 20px;">
+                                    <br>
+                                    <span>Popular Products</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
     </section>
-    <div class="container">
+
+
+    <!-- <div class="container">
         <div class="row cardimg">
             <div class="col-md-3" *ngFor="let product of productList | slice:0:4" style="margin-top:50px;">
                 <div class="card-sl">
@@ -72,80 +106,158 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<div class="container" >
+    <div class="row cardimg">
+        <div class="col-md-6 col-lg-3" *ngFor="let product of productList | slice:0:4">
+            <div style="display: flex; justify-content: center;">          
+                  <div class="card-sl" style="margin-top:40px; ">
+                <div class="card-image">
+                    <img
+                        src="{{product.image}}" alt=>
+                </div>
+                <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(product._id)"></i></a>
+                <div class="card-heading">
+                <h4>{{product.name}}</h4>                                 
+                  <!--   <span id="first" class="ml-4" style="color: green;">₹ {{product.discountedPrice}} </span>
+                  <del style="color:red; text-decoration-line: line-through;margin-left:10px">₹ {{product.price}} </del>
+                  <span class="ml-2" style="color: blue;">{{product.discount}}% Off</span> -->
+                  <span id="first"  class="ml-4 faiz" style="color: rgb(51, 51, 51);font-size: 24px;font-family:Mier bold;">₹ {{product.discountedPrice}} </span>
+                  <del style="color:rgb(153,153,153);font-size: 17px;margin-left:8px;font-family: Mier book;text-decoration: revert;">₹ {{product.price}} </del>
+                  <span  style="color: rgb(3,141,99);font-size: 20px;font-family: Mier demi;margin-left: 10px;font-weight: 600px;">{{product.discount}}% Off</span>
+                    <!-- <div class="icon">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                  </div> -->
+                  <div class="btn-center" style=" display: flex; justify-content: center;">
+                  <button href="#" class="card-button"   routerLink="/viewMore/{{product._id}}">View More</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lpg">
+        <a routerLink="/shop-general-all/product">View all >></a>
+    </div>
+    </div>
+
+
+
+
+
 <div *ngIf="photoFrameList.length>0">
-    <section class="headin">
-        <h3>Photo Frames</h3>
+    <section  style="margin-top: 20px;">
+        <div class="container package">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header" style="margin-top: 20px;">
+                                    <br>
+                                    <span>Photo Frames</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
     </section>
-    <div class="container">
-        <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let frams of photoFrameList | slice:0:4"  style="margin-top:50px;">
-                <div class="card-sl">
-                    <div class="card-image">
-                        <img src="{{frams.image}}" />
-                    </div>
-
-                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(frams._id)"></i></a>
-                    <div class="card-heading">
-                        <h4>{{frams.name}}</h4>
-
-
-                        <h6>Up to 10% Discount</h6>
-                        <h5 for="">Price : <del style="color:red;">100</del><span id="first" style="color: green;"> 90
-                                ₹</span></h5><br>
-                        <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                        </div>
-                        <a class="card-button">View More</a>
-                    </div>
+    
+<div class="container" >
+    <div class="row cardimg">
+        <div class="col-md-6 col-lg-3" *ngFor="let frams of photoFrameList | slice:0:4">
+            <div style="display: flex; justify-content: center;">          
+                  <div class="card-sl" style="margin-top:40px; ">
+                <div class="card-image">
+                    <img
+                        src="{{frams.image}}" alt=>
+                </div>
+                <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(frams._id)"></i></a>
+                <div class="card-heading">
+                  <h4>{{frams.name}}</h4>                                 
+                  <!-- <span id="first" class="ml-4" style="color: green;">₹ {{frams.discountedPrice}} </span>
+                  <del style="color:red; text-decoration-line: line-through;margin-left:10px">₹ {{frams.price}} </del>
+                  <span class="ml-2" style="color: blue;">{{frams.discount}}% Off</span> -->
+                  <span id="first"  class="ml-4 faiz" style="color: rgb(51, 51, 51);font-size: 24px;font-family:Mier bold;">₹ {{frams.discountedPrice}} </span>
+                  <del style="color:rgb(153,153,153);font-size: 17px;margin-left:8px;font-family: Mier book;text-decoration: revert;">₹ {{frams.price}} </del>
+                  <span  style="color: rgb(3,141,99);font-size: 20px;font-family: Mier demi;margin-left: 10px;font-weight: 600px;">{{frams.discount}}% Off</span>
+                    <!-- <div class="icon">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                  </div> -->
+                  <div class="btn-center" style=" display: flex; justify-content: center;">
+                  <button href="#" class="card-button"   routerLink="/viewMore/{{frams._id}}">View More</button>
+                </div>
                 </div>
             </div>
-
-            <div class="lpg">
-                <a routerLink="/shop-general-all/photo">View all >></a>
             </div>
         </div>
     </div>
-</div>
+    <div class="lpg">
+        <a routerLink="/shop-general-all/photo">View all >></a>
+    </div>
+    </div>
+
+
+
+
 <div *ngIf="murtiList.length>0">
-    <section class="headin">
-        <h3>Murti</h3>
-    </section>
-    <div class="container">
-        <div class="row cardimg">
-            <div class="col-md-3" *ngFor="let murti of murtiList | slice:0:4" style="margin-top:50px;">
-                <div class="card-sl">
-                    <div class="card-image">
-                        <img src="{{murti.image}}" />
+    <section  style="margin-top: 20px;">
+        <div class="container package">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header" style="margin-top: 20px;">
+                                    <br>
+                                    <span>Murti</span>
+                            </div>
                     </div>
-
-                    <a class="card-action"><i class="fas fa-shopping-cart" (click)="addToCart(murti._id)"></i></a>
-                    <div class="card-heading">
-                        <h4>{{murti.name}}</h4>
-
-
-                        <h6>Up to {{murti.discount}}% Discount</h6>
-                        <h5 for="">Price : <del style="color:red;">100</del><span id="first" style="color: green;">
-                                {{murti.price}}} ₹</span></h5><br>
-                        <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                        </div>
-                        <a class="card-button">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lpg">
-                <a routerLink="/shop-general-all/Murti">View all >></a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <div class="container" >
+        <div class="row cardimg">
+            <div class="col-md-6 col-lg-3" *ngFor="let murti of murtiList | slice:0:4">
+                <div style="display: flex; justify-content: center;">          
+                      <div class="card-sl" style="margin-top:40px; ">
+                    <div class="card-image">
+                        <img
+                            src="{{murti.image}}" alt=>
+                    </div>
+                    <a class="card-action"><i class="fa fa-shopping-cart fa-lg" (click)="addToCart(murti._id)"></i></a>
+                    <div class="card-heading">
+                      <h4>{{murti.name}}</h4>                                 
+                      <!-- <span id="first" class="ml-4" style="color: green;">₹ {{murti.discountedPrice}} </span>
+                      <del style="color:red; text-decoration-line: line-through;margin-left:10px">₹ {{murti.price}} </del>
+                      <span class="ml-2" style="color: blue;">{{murti.discount}}% Off</span> -->
+                      <span id="first"  class="ml-4 faiz" style="color: rgb(51, 51, 51);font-size: 24px;font-family:Mier bold;">₹ {{murti.discountedPrice}} </span>
+                      <del style="color:rgb(153,153,153);font-size: 17px;margin-left:8px;font-family: Mier book;text-decoration: revert;">₹ {{murti.price}} </del>
+                      <span  style="color: rgb(3,141,99);font-size: 20px;font-family: Mier demi;margin-left: 10px;font-weight: 600px;">{{murti.discount}}% Off</span>
+                        <!-- <div class="icon">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                      </div> -->
+                      <div class="btn-center" style=" display: flex; justify-content: center;">
+                      <button href="#" class="card-button"   routerLink="/viewMore/{{murti._id}}">View More</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="lpg">
+            <a routerLink="/shop-general-all/Murti">View all >></a>
+        </div>
+        </div>
+    
+
+
+
 </div>

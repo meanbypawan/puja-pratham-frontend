@@ -53,6 +53,8 @@ import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-p
 import { CacheInterceptorService } from './interceptor/cache-interceptor.service';
 import { TokenInterceptorService } from './interceptor/token-interceptor.service';
 import { OrderedProductComponent } from './user/ordered-product/ordered-product.component';
+import { AboutUsComponent } from './user/about-us/about-us.component';
+import { ContactUsComponent } from './user/contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +88,8 @@ import { OrderedProductComponent } from './user/ordered-product/ordered-product.
     OrderHistoryComponent,
     BookTemplePoojaComponent,
     OrderedProductComponent,
+    AboutUsComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

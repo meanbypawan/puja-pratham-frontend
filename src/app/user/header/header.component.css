@@ -1,29 +1,44 @@
-/* html::-webkit-scrollbar {
-    width: 1rem;
-  }
-  
-  html::-webkit-scrollbar-track {
-    background: #fff;
-  }
-  
-  html::-webkit-scrollbar-thumb {
-    background: #ffa047;
-  } */
- 
- 
-  
 
+
+
+ 
+  .badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background:#ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
+
+  
+.fixed-top{
+  z-index: 994;
+}
   
 
  
   .header {
     padding: 2rem 9%;
-    position: -webkit-sticky;
+    /* position: -webkit-sticky;
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 100; */
+  
     background: #faf6f2f5;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -62,8 +77,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border: 0.1rem solid #fd860e;
-    margin-right: 100px;
+    border: 2px solid #fd860e;
+    /* margin-right: 100px; */
   
   }
   
@@ -120,7 +135,7 @@
     }
   }
 
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 350px) {
     .header .logo {
       font-size: 1.5rem;
     }
@@ -521,23 +536,15 @@
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     #search-btn {
       display: inline-block;
     }
     .header .search-form {
       position: absolute;
-      top: -101%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      border-radius: 0;
-      border-left: 0;
-      border-right: 0;
+      
     }
-    .header .search-form .active {
-      top: -50;
-    }
+    
   }
 
   
@@ -556,3 +563,20 @@
       gap: 1rem;
     }
   }
+
+@media only screen and (min-width:270px) and (max-width:350px){
+  .header .search-form{
+     width: 15rem;
+  }
+}
+
+@media only screen and (min-width:350px) and (max-width:400px){
+  .header .search-form{
+    width: 18rem;
+  }
+}
+@media only screen and (min-width:400px) and (max-width:600px){
+  .header .search-form{
+    width: 21rem;
+  }
+}
