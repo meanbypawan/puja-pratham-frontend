@@ -62,7 +62,7 @@ export class BookTemplePoojaComponent implements OnInit {
                   this.router.navigate(['']);
                   this.router.events.subscribe(event=>{
                     if(event instanceof NavigationEnd){
-                      this.toasterService.success("Ordered","Yor order have been sucessfully")
+                      this.toasterService.success("Ordered","Your order have been sucessfully")
                       location.reload();
                     }
                   })
