@@ -49,6 +49,7 @@
   z-index: 100; */
   position: -webkit-sticky;
   /* position: sticky; */
+  margin-top: 120px;
 }
 
 .nav-item:hover .nav-link{
@@ -59,15 +60,74 @@
 
  .nav-item {
 font-size: 18px;
-margin-left: 30px;
- 
+margin-left: 16px;
+ margin-right: 16px;
  }  
 
- @media screen and (min-width: 750px) and (max-width:1150px){
+
+ @media screen and (min-width: 270px) and (max-width:499px){
+  .navbar{
+    margin-top: 113px;
+  }
+ }
+ @media screen and (min-width: 500px) and (max-width:990px){
+  .navbar{
+    margin-top: 116px;
+  }
+ }
+ @media screen and (min-width: 991px) and (max-width:1051px){
   .nav-item {
-    font-size: 15px;
-    margin-left: 20px;
-     
+    font-size: 12px;
+    margin-left: 14px;
+     margin-right: 14px;
      } 
  }
  
+ @media screen and (min-width: 1051px) and (max-width:1120px){
+  .nav-item {
+    font-size: 13px;
+    margin-left: 15px;
+     margin-right: 15px;
+     } 
+ }
+
+ @media screen and (min-width: 1121px) and (max-width:1200px){
+  .nav-item {
+    font-size: 13px;
+    margin-left: 15px;
+     margin-right: 15px;
+     } 
+ }
+
+ @media screen and (min-width: 1201px) and (max-width:1312px){
+  .nav-item {
+    font-size: 16px;
+    margin-left: 15px;
+     margin-right: 15px;
+     } 
+ }
+ 
+
+ @media screen and (min-width: 1450px) and (max-width:1600px){
+  .nav-item {
+    font-size: 20px;
+    margin-left: 18px;
+     margin-right: 18px;
+     } 
+ }
+
+ @media screen and (min-width: 1601px) and (max-width:1800px){
+  .nav-item {
+    font-size: 24px;
+    margin-left: 17px;
+     margin-right: 16px;
+     } 
+ }
+
+ @media screen and (min-width: 1801px) and (max-width:2000px){
+  .nav-item {
+    font-size: 27px;
+    margin-left: 19px;
+     margin-right: 19px;
+     } 
+ }

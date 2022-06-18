@@ -10,6 +10,10 @@ body {
   bottom: 10px;
 }
 
+.card-heading span {
+  font-size: 16px;
+  padding-top : 5px;
+}
 .inner {
   display: inline-block;
 }
@@ -53,8 +57,15 @@ body {
 
 
 .card-heading h1 {
-  font-size: 20px;
+  /* font-size: 20px;
   padding-top: 5px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap; */
+   color: rgb(51, 51, 51);
+   font-size: 22px;
+   margin-top: 10px;
+   padding-left: 10px;
    text-overflow: ellipsis;
    overflow: hidden;
    white-space: nowrap;
@@ -67,10 +78,10 @@ body {
 
 .card-sl {
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 3px 5px 0 rgba(0, 0, 0, 0.07);
+    height: 340px;
   width: 90%;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   position: relative;
 }
 
@@ -94,7 +105,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   background: #fff;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
 }
 
 

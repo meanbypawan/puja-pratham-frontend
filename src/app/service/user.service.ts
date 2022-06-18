@@ -83,7 +83,7 @@ export class UserService {
 
   public orderHistory():Observable<any>{
     let userId = JSON.parse(sessionStorage.getItem("user")|| "{}").id;
-    let api = "http://localhost:3000/order/view-orders/"+userId;
+    let api = "https://puja-pratham-backend.herokuapp.com/order/view-orders/"+userId;
     return this.http.get(api);
   }
 
@@ -93,22 +93,22 @@ export class UserService {
   }
 
   createTemplePooja():Observable<any>{
-    let api = "http://localhost:3000/book-temple-pooja/create";
+    let api = "https://puja-pratham-backend.herokuapp.com/book-temple-pooja/create";
     return this.http.get(api);
   }
 
   placeTemplePooja(order:any):Observable<any>{
-    let api = "http://localhost:3000/book-temple-pooja/place";
+    let api = "https://puja-pratham-backend.herokuapp.com/book-temple-pooja/place";
     return this.http.post(api,order);
   }
 
   public viewOrderedProduct(orderId:any):Observable<any>{
-    let api = "http://localhost:3000/order/view-one-order/" + orderId;
+    let api = "https://puja-pratham-backend.herokuapp.com/order/view-one-order/" + orderId;
     return this.http.get(api);
   }
 
   public reviewProduct(comment:any):Observable<any>{
-    let api = "http://localhost:3000/product/add-rating-and-comment";
+    let api = "https://puja-pratham-backend.herokuapp.com/product/add-rating-and-comment";
     return this.http.post(api,comment);
   }
   

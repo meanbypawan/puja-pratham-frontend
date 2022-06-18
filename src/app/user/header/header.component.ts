@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { ToastrService } from 'ngx-toastr';
@@ -12,7 +12,10 @@ declare var webkitSpeechRecognition:any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  @ViewChild('myCounter') myCounter: ElementRef;
+  // @Output() dataEvent = new EventEmitter<any>();
+  @Input() dataCounter:any;
+  count:any;
   user!: SocialUser;
   email: string = "";
   password: string = "";
@@ -20,7 +23,11 @@ export class HeaderComponent implements OnInit {
   panditProfile: any;
   cartList: any[] = [];
   search:any; 
-  
+
+  // public sendValue(){
+    
+  // }
+
   constructor(private toasterService:ToastrService,private authService: SocialAuthService,private userService:UserService,private productService:ProductService,private router:Router) {
     this.viewCartProduct();
   }
@@ -59,6 +66,8 @@ export class HeaderComponent implements OnInit {
       this.userService.viewCart().subscribe(data=>{
         if(data){
           this.cartList = data.productList;
+          this.count = this.cartList.length;
+          this.myCounter.nativeElement.innerHTML = this.count;
           for(let element of this.cartList){
             element.discountedPrice = element.price - (element.price * element.discount / 100) ;
             this.totalPrice += element.discountedPrice;
@@ -142,6 +151,7 @@ export class HeaderComponent implements OnInit {
   }
   searchBtn(search: any) {
     search.classList.toggle('active');
+    console.log("active")
   }
 
    loginAsUser (){

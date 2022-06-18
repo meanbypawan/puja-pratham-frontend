@@ -13,7 +13,7 @@
 
 .title-heading{
   text-align: center; 
-
+  /* margin-top: 50px; */
  }
  .title-heading span{
   border:1px solid #ffa047;
@@ -30,7 +30,7 @@ position: relative;
  
 
  .container img{
-   height: 220px;
+   height: 250px;
    width: 90%;
    margin-bottom: 20px;
    margin-top: 20px;

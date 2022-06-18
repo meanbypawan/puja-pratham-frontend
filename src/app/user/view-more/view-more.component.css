@@ -1,13 +1,8 @@
-/* Basic Styling */
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-  }
+
+  
    
   .bigImage{
-    /* height: 460px; */
+
     width: 90%;
     margin-top: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
@@ -15,16 +10,15 @@ html, body {
     display: flex;
     justify-content: center;
     margin: auto;
-    /* border: 2px solid #779 ; */
+ 
 
   }
 .card{
-  /* border: 3px solid #779 ; */
-  /* margin-top: 30px; */
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
   width: 90%;
   border-radius:10px ;
-  /* margin-top: 10px; */
+
    display: flex;
   justify-content: center;
 margin: auto;
@@ -32,68 +26,100 @@ margin: auto;
 
 }
 
+ /* Basic Styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
  
-  .product-description span {
-    font-size: 20px;
-    color: #358ED7;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    /* margin-left: 10px; */
-  }
-  .product-description h1 , h2 {
-    font-weight: 300;
-    font-size: 30px;
-    color:#43484D;
-    letter-spacing: -1px;
-    margin-left: 10px;
-    margin-right: 6px;
-  }
-  h5{
-    font-size: 20px;
-    margin-left: 20px;
-    margin-right: 6px;
-    margin-top: 20px;
-  }
-  .product-description p {
-    font-size: 12px;
-    /* font-weight: 300px; */
-    color: black;
-    line-height: 24px;
-    margin-left: 10px;
-    margin-right: 6px;
-  }
-  .viewMore{
-    font-size: 15px;
-    text-align: center;
-    justify-content: center;
-    color: rgb(65, 77, 253);
-  }
-
-   .btn {
-    width: 20%;
-    text-align: center;
-    background-color:#ffa047;
-    color: #fff;
-    margin: 1rem 0;
-   font-size: 15px;
-    height: 35px;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 6px;
-  }
- .btn:hover{
-    color: black;
-    background-color:#eeae71 ;
-  }
- .h2{
-   font-size: 16px;
-   margin-left: 10px;
-   margin-right: 6px;
- }
-
-  .comment {
-   
-  }
 
 
+.product-description span {
+  font-size: 20px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.product-description h1 , h2 {
+  font-weight: 300;
+  font-size: 30px;
+  color:#43484D;
+  letter-spacing: -1px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+h5{
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 6px;
+  margin-top: 20px;
+}
+.product-description p {
+  font-size: 12px;
+  /* font-weight: 300px; */
+  color: black;
+  line-height: 24px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.viewMore{
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  color: rgb(65, 77, 253);
+}
+
+ .btn {
+  width: 25%;
+  text-align: center;
+  background-color:#ffa047;
+  color: #fff;
+  margin: 1rem 0;
+ font-size: 15px;
+  height: 35px;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-right: 6px;
+}
+.btn:hover{
+  color: black;
+  background-color:#eeae71 ;
+}
+.h2{
+ font-size: 16px;
+ margin-left: 15px;
+ margin-right: 6px;
+}
+
+.comment {
+ 
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+  .bigImage{
+    width: 95%;
+    height: 280px;
+  }
+  .card{
+width: 90%;
+  }
+
+}
+
+@media only screen and (min-width: 450px) and (max-width: 500px){
+  .btn{
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 450px){
+  .btn{
+    width: 45%;
+  }
+}

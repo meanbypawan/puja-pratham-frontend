@@ -11,31 +11,34 @@ body {
 	width: 100%;
 	display: flex;
     flex-direction: column;
-    background-color: #DFDBE5;
-    background-image: url("../../../assets/images/backg.jpg");
+    /* background-color: #DFDBE5; */
+    /* background-image: url("../../../assets/images/backg.jpg"); */
     /* color:#ff9642; */
     position:relative;
     /* border-radius: 1.5rem; */
 }
 .rightside sel :optional{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .card {
-	width: 40rem;
+	width: 50rem;
     margin: auto;
     background: white;
     position:center;
     align-self: center;
     /* top: 50rem; */
     /* border-radius: 1.5rem; */
-    box-shadow: 4px 3px 20px #3535358c;
+    /* box-shadow: 4px 3px 20px #3535358c; */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 3px 5px 0 rgba(0, 0, 0, 0.07);
     display:flex;
     flex-direction: row;
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    height: 460px;
 
     /* margin-bottom: 500px; */
     
@@ -115,12 +118,17 @@ p{
     border-radius: 50px;
     color: white;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 19px;
     margin-top: 10px;
-    width:100%;
+    width:55%;
+    height: 60px;
     letter-spacing: .11rem;
     outline:none;
     margin-top: 20px;
+    display: flex;
+    margin: auto;
+    margin-top: 53px;
+    justify-content: center;
 }
 
 .button:hover

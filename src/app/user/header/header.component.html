@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header fixed-top">
 
     <a routerLink="" class="logo"><img src="../../../assets/images/logo2.png" alt="">Puja Pratham</a>
 
@@ -10,9 +10,11 @@
 <audio src="../../../assets/audios/mic.wav"></audio>
     <div class="icons">
         <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
-    <!-- <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div> -->
-   
+         
     <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)" ></div>
+    <span  class='badge badge-warning' id='lblCartCount' #myCounter></span>
+    <!-- <i class="fa" style="font-size:24px">&#xf07a;</i>
+    <span class='badge badge-warning' id='lblCartCount'> 5 </span> -->
     <div id="login-btn" class="fas fa-user"(click)="showLogin(login)" ></div>
 
 </div>
@@ -36,7 +38,7 @@
             <img src="{{pro.image}}" alt="">
             <div class="content">
                 <h3>{{pro.name}}</h3>
-                <span class="price"> {{pro.discountedPrice}}</span>
+                <span class="price">₹ {{pro.discountedPrice}}</span>
             </div>
         </div>
         <div *ngIf="checkCart(); else cartMessage">

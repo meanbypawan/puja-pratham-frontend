@@ -1,0 +1,114 @@
+section {
+    padding: 3rem 9%;
+  }
+  .contact form h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color: #ffa047;
+   
+  }
+  .btn {
+    /* display: flex; */
+    justify-content: center;
+    width: 47%;
+    height: 35px;
+    background-color:transparent;
+    color:black;
+    font-size: 17px;
+    border-radius:25px;
+    border: 1px solid #ff9642 ;
+/* margin-left: 70px; */
+    justify-content: center;
+  /* margin-left: 13px; */
+  /* position: absolute; */
+  /* text-align: center; */
+  padding-top: 4px;
+  bottom: 13px;
+
+  }
+  
+  .btn:hover {
+    text-decoration: none;
+    background-color: #ff9642;
+    color: #fff;
+  
+  }
+
+.about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .image {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+            flex: 1 1 40rem;
+  }
+  
+  .about .image img {
+    width: 95%;
+  }
+  
+  .about .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+            flex: 1 1 40rem;
+  }
+  
+  .about .content span {
+    font-size: 2rem;
+    color: #779;
+  }
+  
+  .about .content h3 {
+    font-size: 2.5rem;
+    color: #ffa047;
+    padding-top: 1rem;
+  }
+  
+  .about .content p {
+    font-size: 1.4rem;
+    color: #779;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+  
+.services .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30rem, 1fr)),[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .services .box-container .box {
+    padding: 2rem;
+    text-align: center;
+    border: 0.1rem solid #ffa047;
+  }
+  
+  .services .box-container .box img {
+    height: 8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services .box-container .box h3 {
+    font-size: 2.2rem;
+    color: #ffa047;
+  }
+  
+  .services .box-container .box p {
+    font-size: 1.4rem;
+    color: #779;
+    line-height: 2;
+    padding: 1rem 0;
+  }
+  
+  

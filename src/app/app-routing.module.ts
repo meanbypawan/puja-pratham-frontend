@@ -23,6 +23,8 @@ import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { BookTemplePoojaComponent } from './user/book-temple-pooja/book-temple-pooja.component';
 import { OrderedProductComponent } from './user/ordered-product/ordered-product.component';
+import { AboutUsComponent } from './user/about-us/about-us.component';
+import { ContactUsComponent } from './user/contact-us/contact-us.component';
 
 const routes: Routes = [
   {path : "signup" , component:SignupComponent},
@@ -32,6 +34,8 @@ const routes: Routes = [
   
   {path : "" , component:DashboardComponent,children:[
   {path : "" , component:HomeComponent},
+  {path:"aboutus",component:AboutUsComponent},
+  {path:"contactus",component:ContactUsComponent},
   {path:"media", component:MediaGeneralComponent},
   {path:"medias/:id",component:MediaSpecificComponent},
   {path:"temples/:id",component:TempleSpecificComponent},

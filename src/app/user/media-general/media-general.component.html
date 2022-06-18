@@ -1,42 +1,55 @@
-<section class="heading">
-    <h1>Audios</h1>    
-  </section>
-  <div class="container">
-   <div class="row flex-xl-nowrap">
-     
-     <div class="card-deck">
-         <div class="card border-0 col-sm-4 p-0" *ngFor="let aud of audios">
-           <div class="card-body">
-               <img src="{{aud.image}}" alt="" routerLink="/media-one/{{aud._id}}">
-               <div class="icons">
-                   <a href="" ><i class="fa fa-play"></i><h6>Play Now</h6></a>
-                     
-                 </div>
-             <p class="card-text font-weight-bold programme-title lead">{{aud.name}}</p>
-             
-           </div>
-         </div>
- </div>
- </div>
-</div>
-  <section class="heading">
-    <h3>videos</h3>    
+<section class="title-heading1">
+  <span>Audios</span>
 </section>
 <div class="container">
-    <div class="row flex-xl-nowrap">
-      
-      <div class="card-deck">
-          <div class="card border-0 col-sm-4 p-0" *ngFor="let vid of videos">
-            <div class="card-body">
-                <img src="{{vid.image}}" alt="" routerLink="/media-one/{{vid._id}}">
-                <div class="icons">
-                    <a href="" ><i class="fa fa-play"></i><h6>Play Now</h6></a>
-                      
+  <div class="row">
+                  <div class="col-md-6 col-lg-4 col-xl-3 col-xl-2"  *ngFor="let aud of audios" style="margin-top: 30px;">
+
+                          <div class="card-body" >
+                                  <img src="{{aud.image}}" class="media" alt=""routerLink="/media-one/{{aud._id}}">
+                                  <div class="icons">
+                                          <a>
+                                                  <i class="fas fa-music" routerLink="/media-one/{{aud._id}}"></i>
+                                                  <h6 routerLink="/media-one/{{aud._id}}">Play Now</h6>
+                                          </a>
+                                  </div>
+
+                                  <h1 style="color: orange;text-align: center;padding-top: 14px;">
+                                          {{aud.type}}</h1>
+
+                                  <p class="card-text font-weight-bold programme-title lead">
+                                          {{aud.name}}</p>
+
+                          </div>
                   </div>
-              <p class="card-text font-weight-bold programme-title lead">{{vid.name}}</p>
-              
-            </div>
-          </div>
   </div>
+
+
+</div>
+
+
+<section class="title-heading2">
+  <span>Videos</span>
+</section>
+<div class="container">
+  <div class="row">
+                  <div class="col-md-6 col-lg-4 col-xl-3 col-xl-2" *ngFor="let vid of videos" style="margin-top: 30px;">
+
+                          <div class="card-body" >
+                                  <img src="{{vid.image}}" class="media" alt="" routerLink="/media-one/{{vid._id}}">
+                                  <div class="icons">
+                                          <a>
+                                                  <i class="fa fa-play" routerLink="/media-one/{{vid._id}}"></i>
+                                                  <h6 routerLink="/media-one/{{vid._id}}">Play Now</h6>
+                                          </a>
+                                  </div>
+
+                                  <h1 style="color: orange;text-align: center;padding-top: 14px;">
+                                          {{vid.type}}</h1>
+
+                                  <p class="card-text font-weight-bold programme-title lead">
+                                          {{vid.name}}</p>
+                          </div>
+                  </div>
   </div>
 </div>

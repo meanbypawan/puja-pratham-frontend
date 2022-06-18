@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShopServiceService } from 'src/app/service/shop-service.service';
 import { UserService } from 'src/app/service/user.service';
@@ -8,11 +8,13 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./shop-general-all.component.css']
 })
 export class ShopGeneralAllComponent implements OnInit {
+  
   typeList: any[] = [];
   p: number = 1;
   total: number = 0;
   type: any;
   cart:any[]=[];
+  totalCounter:any;
   constructor(private userService:UserService,private shopService: ShopServiceService, private activatedRoute: ActivatedRoute) {
     this.type = activatedRoute.snapshot.paramMap.get("type");
     console.log(this.type)
@@ -21,6 +23,8 @@ export class ShopGeneralAllComponent implements OnInit {
         for (let element of data) {
           if (element.catId.type == this.type)
             this.typeList.push(element);
+            console.log(element)
+            // console.log(this.typeList.discountedPrice)
         }
       }
       else
@@ -35,6 +39,13 @@ export class ShopGeneralAllComponent implements OnInit {
       this.userService.viewCart().subscribe(data=>{
         if(data){
           this.cart = data.productList;
+          //this.cartCount.emit(this.cart.length);
+          //this.totalCounter = this.cart.length;
+          let obj = document.getElementById("lblCartCount");//
+          if(obj!=null){//
+            obj.innerHTML = ""+this.cart.length;//
+          }//
+          
           console.log(this.cart);
         }
       })
@@ -61,6 +72,7 @@ export class ShopGeneralAllComponent implements OnInit {
         this.userService.addToCart(productId).subscribe(data=>{
           if(data){
             alert("Product Added");
+      
             this.ngOnInit();
           }
         })
