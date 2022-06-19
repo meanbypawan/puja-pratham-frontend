@@ -13,7 +13,7 @@ export class MediaGeneralComponent implements OnInit {
   constructor(private service:CategoryService) { 
     service.viewMedia().subscribe(data=>{
       console.log(data);
-      for(let element of data){
+      for(let element of data.RESULT){
         if(element.type == "audio")
           this.audios.push(element);
         else
