@@ -7,7 +7,7 @@
       <input type="text" [(ngModel)]="name" autocomplete="off" placeholder="Beneficiary Name" name="name" required>
       <label><br><b>Contact No.</b>
         <br></label>
-      <input type="Number" [(ngModel)]="mobile" autocomplete="off" placeholder="Enter Contact Number" name="contact" required>
+      <input type="text" [(ngModel)]="mobile" autocomplete="off" placeholder="Enter Contact Number" name="contact" required>
       <br><br>
       <p>Will You Come </p>
         <input type="radio" value="1" name="come" (change)="changeStatus($event)">
@@ -17,5 +17,5 @@
         <br><br>
         <label for="psw-repeat"><b>Note :- </b> </label><br>
     <p style="padding-left: 45px;">{{templePooja.name}} will be done by {{templePooja.catId.name}} which is located at {{templePooja.catId.address}} on next {{templePooja.day}} If Pooja will not happpen on that day you will get a notification and pooja will be done on next upcoming {{templePooja.day}}.</p>    </div>
-    <button class="btn btn-primary" (click)="bookNow()">Book Now</button>
+    <button class="btn " (click)="bookNow()">Book Now</button>
   </form>

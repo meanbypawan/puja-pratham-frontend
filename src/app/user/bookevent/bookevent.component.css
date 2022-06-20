@@ -29,6 +29,7 @@ color: orange;
 
   button:hover {
     opacity:1;
+    color: rgba(255, 255, 255, 0.932);
   }
   
   /* Extra styles for the cancel button */
@@ -109,8 +110,8 @@ color: orange;
   }
 
   .btn{
-    height: 35px;
-    width: 30%;
+    height: 40px;
+    width: 40%;
     border-radius: 25px;
     display: flex;
     justify-content: center;

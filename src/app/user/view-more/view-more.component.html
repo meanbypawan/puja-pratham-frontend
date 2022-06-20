@@ -14,7 +14,7 @@
         <div class="product-description">
           <!-- <span>{{product.catId.name}}</span> -->
           <h1 style="margin-top: 17px;"><b> {{product.name}}</b></h1>
-          <h2><b> {{product.price}}</b></h2>
+          <span id="first"  class="ml-4 faiz" style="color: rgb(51, 51, 51);font-size: 24px;font-family:Mier bold;font-weight: bold;">₹ {{product.price}} </span>
           <p style="justify-content: center;" *ngFor="let point of points">{{point}}</p>
           <button class="btn" (click)="addToCart(product._id)">Add to Cart</button>
           <div class="comment">

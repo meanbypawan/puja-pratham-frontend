@@ -15,7 +15,7 @@
    <br><br>
     <label><br><b>Contact No.</b>
       <br></label>
-    <input type="Number" [(ngModel)]="contact" placeholder="Enter Contact Number" name="contact" required>
+    <input type="text" [(ngModel)]="contact" placeholder="Enter Contact Number" name="contact" required>
 
     <label><b>Address</b>
       <br></label>
@@ -31,7 +31,7 @@
     <label for="psw-repeat"><b>Note :- </b> </label><br>
     <p style="padding-left: 45px;">{{event.name}} will be performed by {{event.catId.type}}. On the day of booking you will get the proper arrangement of the Items which are necessary for the {{event.name}}. If you choose cash option then you have to pay to that delievery guy. And the {{event.catId.type}} will not demand for any dakshina. If anything changes then we will contact to you on the number provided by you. </p>
   </div>
-  <button (click)="bookEvent()" class="btn btn-primary">Book</button>
+  <button (click)="bookEvent()" class="btn">Book</button>
 </form>
 
 

@@ -9,14 +9,15 @@
             </div>    
             <div class="row border-top border-bottom" *ngFor="let product of products;index as i">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{product.image}}" style="border-radius:20px;"></div>
-                    <div class="col">
-                        <div class="row" style="font-size: 15px;">{{product.name}}</div>
+                    <div class="col-3"><img class="img-fluid" src="{{product.image}}" style="border-radius:20px;"></div>
+                    <div class="col-4">
+                        <div class="row name" >{{product.name}}</div>
                     </div>
-                    <div class="col">
-                        <input type="number" (change)="changeQuantity($event,i)" min="1" value="{{product.qty}}"  style="width: 50px; height: 30px; font-size: 15px; text-align: center;">
+                    <div class="col-2">
+                        <input type="number" class="box" (change)="changeQuantity($event,i)" min="1" value="{{product.qty}}"  style="">
                     </div>
-                    <div class="col"style="font-size: 15px;" >₹ {{product.discountedPrice}} <i class="fa fa-close" (click)="removeFromCart(product._id,i)"></i></div>
+                    <div class="col-2 price" >₹ {{product.discountedPrice}}</div>
+                    <div class="col-1"> <i  class="fa fa-close"(click)="removeFromCart(product._id,i)"></i></div>
                 </div>
             </div>
             
@@ -24,8 +25,8 @@
             <div class="back-to-shop"><a >&leftarrow;</a><span class="text-muted">Back to shop</span></div>
         </div>
         <div class="col-md-4 summary">
-            <div style="color: #ff9642;" ><h5><b  style="font-size: 2.5rem;">Summary</b></h5></div>
-            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0; font-size: 15px;">
+            <div style="color: #ff9642; " ><h5><b  style="font-size: 2.5rem;">Summary</b></h5></div>
+            <div class="row" style="border-top: 1px solid #ff9642; padding: 2vh 0; font-size: 15px;">
                 <div class="col" >TOTAL PRICE</div>
                 <div class="col text-right" >₹ {{totalPrice}} </div>
             </div>

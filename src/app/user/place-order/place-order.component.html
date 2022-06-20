@@ -3,12 +3,12 @@
       
             <form action="" style="margin: 30px;">
                 <h2 style="text-align: center;">Customer Information</h2>
-                <p style="margin-top: 50px;">Address</p>
+                <p style="margin-top: 40px;">Address</p>
                 <input type="text" class="inputbox" name="number" required [(ngModel)]="address"/>
                 <p style="margin-top: 0px;">Contact No.</p>
                 <input type="text" class="inputbox" name="name" [(ngModel)]="contact" required />
                 <label for="" style="font-size: 1.8rem;margin-top: 10px;">Payment Option</label>
-                <select name="" id="sel" class="selector" style="font-size: 1.8rem; margin-left: 35px;" (change)="change($event)">
+                <select name="" id="sel" class="selector" (change)="change($event)">
                     <option value="0">Select Option</option>
                     <option value="1">Cash On Delivery</option>
                     <option value="2">Online Payment</option>

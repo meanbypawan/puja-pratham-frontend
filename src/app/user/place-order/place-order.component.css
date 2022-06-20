@@ -5,6 +5,10 @@ body {
 	box-sizing: border-box;
 }
 
+.selector{
+    font-size: 1.8rem;
+     margin-left: 55px;
+}
 .mainscreen
 {
 	min-height: 100vh;
@@ -38,7 +42,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 460px;
+    height: 450px;
 
     /* margin-bottom: 500px; */
     
@@ -113,14 +117,14 @@ p{
     background: linear-gradient(
 135deg
 , #ff9642 0%, #FFCD38 100%);
-    padding: 15px;
+    padding: 16px;
     border: none;
     border-radius: 50px;
     color: white;
     font-weight: 400;
     font-size: 19px;
     margin-top: 10px;
-    width:55%;
+    width:60%;
     height: 60px;
     letter-spacing: .11rem;
     outline:none;
@@ -159,3 +163,60 @@ p{
       border-radius:0;
     }
 }
+
+@media only screen and (min-width: 750px) and (max-width: 950px) {
+    .button{
+        padding: 14px;
+      
+        font-size: 15px;
+        width: 60%;
+        height:50px; 
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 750px) {
+    .button{
+        padding: 14px;
+      
+        font-size: 13px;
+        width: 70%;
+        height:45px; 
+    }
+  }
+  @media only screen and (min-width: 10px) and (max-width: 600px) {
+    .button{
+        padding: 13px;
+      
+        font-size: 10px;
+        width: 90%;
+        height:40px; 
+    }
+  }
+
+  @media only screen and (min-width: 740px) and (max-width: 800px){
+      .selector{
+          margin-left: 20px;
+      }
+  }
+
+  @media only screen and (min-width: 680px) and (max-width: 740px){
+    .selector{
+        margin-left: 20px;
+        margin-top: 8px;
+    }
+}
+
+@media only screen and (min-width: 10px) and (max-width: 680px){
+    .selector{
+   margin-left: 0px;
+        margin-top: 8px;
+    }
+}
+/* padding: 12px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 60%;
+    height: 45px; */

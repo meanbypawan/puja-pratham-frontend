@@ -54,7 +54,7 @@ export class EditProfileComponent implements OnInit {
     },err=>{
       if(err instanceof HttpErrorResponse){
         console.log(err);
-        this.toasterService.error("Error","Something went Wrong");
+        this.toasterService.error("Error","Something Went Wrong");
 
       }
     })

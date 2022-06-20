@@ -85,6 +85,7 @@ export class BookeventComponent implements OnInit {
               if(data.message == "Pay success"){
                 console.log(data.order);  
                 this.router.navigate(['']);
+                this.tostarService.success('Order Placed Successfully','Success')
                 this.router.events.subscribe(event=>{
                   if(event instanceof NavigationEnd){
                     location.reload();

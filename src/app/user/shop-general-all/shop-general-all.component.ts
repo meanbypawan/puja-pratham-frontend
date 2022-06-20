@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShopServiceService } from 'src/app/service/shop-service.service';
 import { UserService } from 'src/app/service/user.service';
+import { ToastrService } from 'ngx-toastr'
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-shop-general-all',
   templateUrl: './shop-general-all.component.html',
@@ -15,20 +17,28 @@ export class ShopGeneralAllComponent implements OnInit {
   type: any;
   cart:any[]=[];
   totalCounter:any;
-  constructor(private userService:UserService,private shopService: ShopServiceService, private activatedRoute: ActivatedRoute) {
+  constructor(private userService:UserService,private shopService: ShopServiceService, private activatedRoute: ActivatedRoute,
+    private toasterService:ToastrService,private spinner:NgxSpinnerService) {
     this.type = activatedRoute.snapshot.paramMap.get("type");
     console.log(this.type)
     this.shopService.ViewProduct().subscribe(data => {
       if (data) {
         for (let element of data) {
-          if (element.catId.type == this.type)
-            this.typeList.push(element);
+          if (element.catId.type == this.type){
+       
             console.log(element)
+            this.spinner.show();
+            setTimeout(() => {
+              /** spinner ends after 5 seconds */
+              this.spinner.hide();
+            }, 2000);
+            this.typeList.push(element);
             // console.log(this.typeList.discountedPrice)
         }
       }
+      }
       else
-        alert('Something went wrong')
+      this.toasterService.error("Error","Something Went Wrong");
     })
 
   }
@@ -38,6 +48,13 @@ export class ShopGeneralAllComponent implements OnInit {
     if(sessionStorage.getItem("user")){
       this.userService.viewCart().subscribe(data=>{
         if(data){
+       
+          this.spinner.show();
+          setTimeout(() => {
+            /** spinner ends after 5 seconds */
+            this.spinner.hide();
+          }, 2000);
+
           this.cart = data.productList;
           //this.cartCount.emit(this.cart.length);
           //this.totalCounter = this.cart.length;
@@ -66,18 +83,18 @@ export class ShopGeneralAllComponent implements OnInit {
         }
       }
       if(flag){
-        alert("Product is already added to your cart");
+        this.toasterService.warning('Item Aready Added In Cart','Warning')
       }
       else{
         this.userService.addToCart(productId).subscribe(data=>{
           if(data){
-            alert("Product Added");
+          this.toasterService.success('Item SuccessFully Added In Cart','Success')
       
             this.ngOnInit();
           }
         })
       }
     }else 
-      alert("Please Login First");
+     this.toasterService.warning('Please Login First','warning')
   }
 }

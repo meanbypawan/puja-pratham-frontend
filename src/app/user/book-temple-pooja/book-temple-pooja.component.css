@@ -29,6 +29,7 @@ color: orange;
 
   button:hover {
     opacity:1;
+    color: rgba(255, 255, 255, 0.904);
   }
   
   /* Extra styles for the cancel button */
@@ -98,12 +99,33 @@ color: orange;
     clear: both;
     display: table;
   }
-  
+/*   
   button{
       color:white ;
       background-color: orange;
       font-size: 20px;
-  }
+  } */
+  
+  button{
+    color:white ;
+    background-color: orange;
+    font-size: 20px;
+}
+.dropdown-menu{
+    font-size: 20px;
+}
+
+.btn{
+  height: 40px;
+  width: 40%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+  margin-bottom: 8px;
+  padding: 3px;
+  font-size: 20px;
+}
   .dropdown-menu{
       font-size: 20px;
   }

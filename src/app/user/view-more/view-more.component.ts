@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { UserService } from 'src/app/service/user.service';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-view-more',
@@ -17,7 +18,7 @@ export class ViewMoreComponent implements OnInit {
 
   points:any[]=[];
 
-  constructor(private userService:UserService,private prouctService: ProductService, private ActivatedRoute: ActivatedRoute, private router:Router) {
+  constructor(private userService:UserService,private prouctService: ProductService, private ActivatedRoute: ActivatedRoute, private router:Router,private toasterService:ToastrService) {
     this.router.events.subscribe(event=>{
     this.id = <string>this.ActivatedRoute.snapshot.paramMap.get("id");
     if(event instanceof NavigationEnd){
@@ -41,18 +42,19 @@ addToCart(productId:any){
       }
     }
     if(flag){
-      alert("Product is already added to your cart");
+      // alert("Product is already added to your cart");
+      this.toasterService.warning('Item Already Added In Cart','Warning')
     }
     else{
       this.userService.addToCart(productId).subscribe(data=>{
         if(data){
-          alert("Product Added");
+          this.toasterService.success('Item Added Successfully','Success')
           this.ngOnInit();
         }
       })
     }
   }else 
-    alert("Please Login First");
+  this.toasterService.warning('Please Login First','Warning')
 }
   ngOnInit(): void {
     if(sessionStorage.getItem("user")){

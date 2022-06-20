@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-order-history',
@@ -8,12 +9,19 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class OrderHistoryComponent implements OnInit {
   orders:any[]=[];
-  constructor(private userService:UserService) {}
+  constructor(private userService:UserService,
+    private spinner:NgxSpinnerService) {}
 
   ngOnInit(): void {
     this.userService.orderHistory().subscribe(data=>{
       console.log(data);
-      this.orders = data;
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 2000);
+      this.orders = data; 
+       this.spinner.show();
+   
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       for(let order of this.orders){
         order.date = new Date(order.date).getDate() + " " + months[new Date(order.date).getMonth()] + ", " +  new Date(order.date).getFullYear(); 
