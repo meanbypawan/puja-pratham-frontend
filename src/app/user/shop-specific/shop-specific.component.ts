@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
+import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-shop-specific',
@@ -14,7 +16,8 @@ export class ShopSpecificComponent implements OnInit {
  products:any[]=[];
  cart:any[]=[];
 
-  constructor(private userService:UserService, private productService:ProductService, private ActivatedRoute:ActivatedRoute, private router:Router, ) { 
+  constructor(private toasterService:ToastrService,private userService:UserService, private productService:ProductService,
+     private ActivatedRoute:ActivatedRoute, private router:Router,private spinner:NgxSpinnerService ) { 
    this.router.events.subscribe(event=>{
      this.catid   =  <string>this.ActivatedRoute.snapshot.paramMap.get("id");
      if(event instanceof NavigationEnd){
@@ -22,7 +25,14 @@ export class ShopSpecificComponent implements OnInit {
           for(let element of data){
             element.discountedPrice = element.price - (element.price * element.discount / 100);
           }
-         this.products = data;
+        
+         this.spinner.show();
+            setTimeout(() => {
+              /** spinner ends after 5 seconds */
+              this.spinner.hide();
+            }, 2000);
+
+            this.products = data;
        })
      }
    })
@@ -49,18 +59,18 @@ export class ShopSpecificComponent implements OnInit {
         }
       }
       if(flag){
-        alert("Product is already added to your cart");
+        this.toasterService.warning('Item Already Added In Cart','Warning');
       }
       else{
         this.userService.addToCart(productId).subscribe(data=>{
           if(data){
-            alert("Product Added");
+           this.toasterService.success('Item Added In Cart','Success');
             this.ngOnInit();
           }
         })
       }
     }else 
-      alert("Please Login First");
+     this.toasterService.warning('Please Login First','Warning');
   }
 
 }

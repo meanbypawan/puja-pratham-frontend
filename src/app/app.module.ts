@@ -35,6 +35,7 @@ import { BookeventComponent } from './user/bookevent/bookevent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 //timepicker
 
@@ -103,7 +104,8 @@ import { ContactUsComponent } from './user/contact-us/contact-us.component';
     MatInputModule,
     NgxMatTimepickerModule,
     SocialLoginModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
 
   ],
   providers: [

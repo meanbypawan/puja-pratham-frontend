@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
+import { ToastrService } from 'ngx-toastr';
 declare let Razorpay: any;
 
 @Component({
@@ -16,7 +17,7 @@ export class PlaceOrderComponent implements OnInit {
   productList: any[] = [];
   user: any;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router,private toasterService:ToastrService) {
     this.products = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
     for (let i = 0; i < this.products.length; i++) {
       let item = { product: this.products[i]._id, totalPrice: this.products[i].discountedPrice, qty: this.products[i].qty };
@@ -41,6 +42,8 @@ export class PlaceOrderComponent implements OnInit {
         if (data) {
           this.userService.deletecart().subscribe(data => {
             this.router.navigate([""]);
+            this.toasterService.success('Order Placed Succesfully','Success')
+          
           });
         }
       });
@@ -79,10 +82,11 @@ export class PlaceOrderComponent implements OnInit {
               if(data.message == "Pay success"){
                 this.userService.deletecart().subscribe(data=>{
                   this.router.navigate(['']);
+                  this.toasterService.success('Order Placed Succesfully','Success')
                 })
               }
               else{
-                console.log(data);
+                this.toasterService.error('Order Failed..','Error')
               }
             });
           },

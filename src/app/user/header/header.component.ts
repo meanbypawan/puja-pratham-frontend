@@ -112,6 +112,7 @@ export class HeaderComponent implements OnInit {
   removeFormCart(pid: string) {
     this.userService.removeFromCart(pid).subscribe(data => {
       this.viewCartProduct();
+      this.toasterService.success('Item Remove Successfully From Cart','Success');
     })
   }
 

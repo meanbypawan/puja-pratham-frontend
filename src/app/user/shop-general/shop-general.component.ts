@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from "ngx-spinner";
 import { ShopServiceService } from 'src/app/service/shop-service.service';
 import { UserService } from 'src/app/service/user.service';
 @Component({
@@ -14,12 +16,19 @@ export class ShopGeneralComponent implements OnInit {
   murtiList: any[] = [];
   cart:any[]=[];
 
-  constructor(private shopService: ShopServiceService,private userService:UserService) {
+  constructor(private shopService: ShopServiceService,private userService:UserService
+    ,private toasterService:ToastrService,private spinner:NgxSpinnerService) {
     this.shopService.ViewProduct().subscribe(data => {
+      this.spinner.show();
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 2000);
       if (data) {
         for (let element of data) {
           element.discountedPrice = element.price - (element.price * element.discount / 100);
           if (element.catId.type == "product")
+          
             this.productList.push(element);
           else if (element.catId.type == "package")
             this.packageList.push(element);
@@ -43,18 +52,19 @@ export class ShopGeneralComponent implements OnInit {
         }
       }
       if(flag){
-        alert("Product is already added to your cart");
+        // alert("Product is already added to your cart");
+        this.toasterService.warning('Item Already Added In Cart','Warning');
       }
       else{
         this.userService.addToCart(productId).subscribe(data=>{
           if(data){
-            alert("Product Added");
+          this.toasterService.success('Item Added Successfully','Success');
             this.ngOnInit();
           }
         })
       }
     }else 
-      alert("Please Login First");
+    this.toasterService.warning('Please Login First','Warning')
   }
 
   ngOnInit(): void {
