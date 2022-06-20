@@ -12,16 +12,13 @@ export class MediaGeneralComponent implements OnInit {
   audios:any[] = [];
   constructor(private service:CategoryService,private spinner:NgxSpinnerService) { 
     service.viewMedia().subscribe(data=>{
-      console.log(data);
-      for(let element of data){
+      for(let element of data.RESULT){
         if(element.type == "audio"){
           this.spinner.show();
           setTimeout(() => {
             /** spinner ends after 5 seconds */
             this.spinner.hide();
           }, 2000);
-      for(let element of data.RESULT){
-        if(element.type == "audio")
           this.audios.push(element);     
         }
         else{
