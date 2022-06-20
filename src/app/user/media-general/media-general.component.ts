@@ -20,8 +20,9 @@ export class MediaGeneralComponent implements OnInit {
             /** spinner ends after 5 seconds */
             this.spinner.hide();
           }, 2000);
-          this.audios.push(element);
-     
+      for(let element of data.RESULT){
+        if(element.type == "audio")
+          this.audios.push(element);     
         }
         else{
            this.spinner.show();
